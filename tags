@@ -45,6 +45,7 @@
 !_TAG_ROLE_DESCRIPTION!Python!module	namespace	/namespace from where classes\/variables\/functions are imported/
 !_TAG_ROLE_DESCRIPTION!Python!unknown	imported	/imported from the other module/
 !_TAG_ROLE_DESCRIPTION!Python!unknown	indirectlyImported	/classes\/variables\/functions\/modules imported in alternative name/
+API Structure	readme.md	/^## API Structure$/;"	s	chapter:Axion Python SDK
 Authentication	readme.md	/^## Authentication$/;"	s	chapter:Axion Python SDK
 Axion	axion/axion.py	/^class Axion:$/;"	c
 Axion Python SDK	readme.md	/^# Axion Python SDK$/;"	c
@@ -56,6 +57,7 @@ Credit Ratings API	readme.md	/^### Credit Ratings API$/;"	S	section:Axion Python
 CreditAPI	axion/axion.py	/^class CreditAPI(BaseAPI):$/;"	c
 CryptoAPI	axion/axion.py	/^class CryptoAPI(BaseAPI):$/;"	c
 Cryptocurrency API	readme.md	/^### Cryptocurrency API$/;"	S	section:Axion Python SDK""Features
+Data Normalization	readme.md	/^## Data Normalization$/;"	s	chapter:Axion Python SDK
 Date Formats	readme.md	/^## Date Formats$/;"	s	chapter:Axion Python SDK
 ESG API	readme.md	/^### ESG API$/;"	S	section:Axion Python SDK""Features
 ESGAPI	axion/axion.py	/^class ESGAPI(BaseAPI):$/;"	c
@@ -67,7 +69,6 @@ Error Handling	readme.md	/^## Error Handling$/;"	s	chapter:Axion Python SDK
 Features	readme.md	/^## Features$/;"	s	chapter:Axion Python SDK
 Forex API	readme.md	/^### Forex API$/;"	S	section:Axion Python SDK""Features
 ForexAPI	axion/axion.py	/^class ForexAPI(BaseAPI):$/;"	c
-Free Tier Limitations	readme.md	/^## Free Tier Limitations$/;"	s	chapter:Axion Python SDK
 Futures API	readme.md	/^### Futures API$/;"	S	section:Axion Python SDK""Features
 FuturesAPI	axion/axion.py	/^class FuturesAPI(BaseAPI):$/;"	c
 Indices API	readme.md	/^### Indices API$/;"	S	section:Axion Python SDK""Features

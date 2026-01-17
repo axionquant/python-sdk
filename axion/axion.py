@@ -1,7 +1,7 @@
 import requests
 import json
 
-BASE_URL = "http://localhost:3001"
+BASE_URL = "https://api.axionquant.com"
 
 
 def normalize(obj):

@@ -5,7 +5,7 @@ A comprehensive Python client for accessing financial market data, economic indi
 ## Installation
 
 ```bash
-pip install axion-sdk
+pip install axionquant-sdk
 ```
 
 ## Quick Start
@@ -17,13 +17,13 @@ from axion import Axion
 client = Axion(api_key="your_api_key_here")
 
 # Get stock prices
-prices = client.get_stock_prices("AAPL", from_date="2024-01-01", to_date="2024-12-31")
+prices = client.stocks.prices("AAPL", from_date="2024-01-01", to_date="2024-12-31")
 
 # Search for economic data
-econ_data = client.search_econ("unemployment rate")
+econ_data = client.econ.search("unemployment rate")
 
 # Get company news
-news = client.get_company_news("TSLA")
+news = client.news.company("TSLA")
 ```
 
 ## Authentication
@@ -42,13 +42,13 @@ Get stock ticker information, prices, and historical data.
 
 ```python
 # Get all stock tickers (filtered by country/exchange)
-tickers = client.get_stock_tickers(country="america")
+tickers = client.stocks.tickers(country="america")
 
 # Get specific ticker information
-ticker_info = client.get_stock_ticker_by_symbol("AAPL")
+ticker_info = client.stocks.quote("AAPL")
 
 # Get historical prices
-prices = client.get_stock_prices(
+prices = client.stocks.prices(
     ticker="AAPL",
     from_date="2024-01-01",
     to_date="2024-12-31",
@@ -62,31 +62,44 @@ Access comprehensive company information and financial statements.
 
 ```python
 # Company overview and business summary
-profile = client.get_company_asset_profile("AAPL")
+profile = client.profiles.asset("AAPL")
+
+# Company information
+info = client.profiles.info("AAPL")
 
 # Financial statements
-income_statement = client.get_company_income_statement("AAPL")
-balance_sheet = client.get_company_balance_sheet("AAPL")
-cashflow = client.get_company_cashflow("AAPL")
+income_statement = client.profiles.income("AAPL")
+balance_sheet = client.profiles.balancesheet("AAPL")
+cashflow = client.profiles.cashflow("AAPL")
+financials = client.profiles.financials("AAPL")
 
 # Key statistics and ratios
-stats = client.get_company_statistics("AAPL")
+stats = client.profiles.statistics("AAPL")
+summary = client.profiles.summary("AAPL")
 
 # Earnings data
-earnings = client.get_company_earnings_history("AAPL")
-earnings_trend = client.get_company_earnings_trend("AAPL")
+earnings = client.profiles.earnings("AAPL")
+earnings_trend = client.profiles.earnings_trend("AAPL")
 
 # Ownership information
-insiders = client.get_company_insider_holders("AAPL")
-institutions = client.get_company_institution_ownership("AAPL")
-major_holders = client.get_company_major_holders("AAPL")
+insiders = client.profiles.insiders("AAPL")
+institutions = client.profiles.institution_ownership("AAPL")
+fund_ownership = client.profiles.fund_ownership("AAPL")
+major_holders = client.profiles.ownership("AAPL")
+
+# Insider activity
+transactions = client.profiles.transactions("AAPL")
+activity = client.profiles.activity("AAPL")
 
 # Analyst data
-recommendations = client.get_company_recommendation_trend("AAPL")
+recommendations = client.profiles.recommendation("AAPL")
+
+# Trends and estimates
+index_trend = client.profiles.index_trend("AAPL")
 
 # Other data
-calendar = client.get_company_calendar_events("AAPL")
-traffic = client.get_company_website_traffic("AAPL")
+calendar = client.profiles.calendar("AAPL")
+traffic = client.profiles.traffic("AAPL")
 ```
 
 ### Cryptocurrency API
@@ -95,13 +108,13 @@ Access cryptocurrency ticker data and historical prices.
 
 ```python
 # Get all crypto tickers
-crypto_tickers = client.get_crypto_tickers(type="coin")
+crypto_tickers = client.crypto.tickers(type="coin")
 
 # Get specific crypto information
-btc_info = client.get_crypto_ticker_by_symbol("BTC")
+btc_info = client.crypto.quote("BTC")
 
 # Get crypto prices
-btc_prices = client.get_crypto_prices(
+btc_prices = client.crypto.prices(
     ticker="BTC",
     from_date="2024-01-01",
     frame="daily"
@@ -114,13 +127,13 @@ Access foreign exchange rates and historical data.
 
 ```python
 # Get forex tickers
-forex_tickers = client.get_forex_tickers()
+forex_tickers = client.forex.tickers()
 
 # Get specific forex pair
-pair_info = client.get_forex_ticker_by_symbol("EURUSD")
+pair_info = client.forex.quote("EURUSD")
 
 # Get forex prices
-prices = client.get_forex_prices("EURUSD", from_date="2024-01-01")
+prices = client.forex.prices("EURUSD", from_date="2024-01-01")
 ```
 
 ### Futures API
@@ -129,13 +142,13 @@ Access futures contract data and prices.
 
 ```python
 # Get futures tickers
-futures = client.get_futures_tickers(exchange="CME")
+futures = client.futures.tickers(exchange="CME")
 
 # Get specific futures contract
-contract = client.get_futures_ticker_by_symbol("ES")
+contract = client.futures.quote("ES")
 
 # Get futures prices
-prices = client.get_futures_prices("ES", from_date="2024-01-01")
+prices = client.futures.prices("ES", from_date="2024-01-01")
 ```
 
 ### Indices API
@@ -144,13 +157,13 @@ Access market index data and historical performance.
 
 ```python
 # Get index tickers
-indices = client.get_index_tickers()
+indices = client.indices.tickers()
 
 # Get specific index
-index_info = client.get_index_ticker_by_symbol("SPX")
+index_info = client.indices.quote("SPX")
 
 # Get index prices
-prices = client.get_index_prices("SPX", from_date="2024-01-01")
+prices = client.indices.prices("SPX", from_date="2024-01-01")
 ```
 
 ### Economic Data API
@@ -159,19 +172,19 @@ Search and retrieve economic indicators and calendar events.
 
 ```python
 # Search for economic series
-results = client.search_econ("GDP")
+results = client.econ.search("GDP")
 
 # Get economic dataset
-dataset = client.get_econ_dataset("UNRATE")
+dataset = client.econ.dataset("UNRATE")
 
 # Get economic calendar with filters
-calendar = client.get_econ_calendar(
+calendar = client.econ.calendar(
     from_date="2024-01-01",
     to_date="2024-12-31",
-    country="US,UK,CA",
+    country="US",
     min_importance=3,
     currency="USD",
-    category="employment,inflation"
+    category="employment"
 )
 ```
 
@@ -181,13 +194,13 @@ Access ETF fund data, holdings, and exposure information.
 
 ```python
 # Get ETF fund details
-fund_data = client.get_etf_fund_data("SPY")
+fund_data = client.etfs.fund("SPY")
 
 # Get ETF holdings
-holdings = client.get_etf_holdings("SPY")
+holdings = client.etfs.holdings("SPY")
 
 # Get exposure data
-exposure = client.get_etf_exposure("SPY")
+exposure = client.etfs.exposure("SPY")
 ```
 
 ### News API
@@ -196,16 +209,16 @@ Access financial news articles by company, country, or category.
 
 ```python
 # Get general news
-news = client.get_news()
+news = client.news.general()
 
 # Get company-specific news
-company_news = client.get_company_news("AAPL")
+company_news = client.news.company("AAPL")
 
 # Get country news
-country_news = client.get_country_news("US")
+country_news = client.news.country("US")
 
 # Get category news
-category_news = client.get_category_news("technology")
+category_news = client.news.category("technology")
 ```
 
 ### Sentiment API
@@ -214,12 +227,12 @@ Analyze market sentiment from social media, news, and analyst ratings.
 
 ```python
 # Get all sentiment data
-all_sentiment = client.get_sentiment_all("AAPL")
+all_sentiment = client.sentiment.all("AAPL")
 
 # Get specific sentiment types
-social = client.get_sentiment_social("AAPL")
-news = client.get_sentiment_news("AAPL")
-analyst = client.get_sentiment_analyst("AAPL")
+social = client.sentiment.social("AAPL")
+news_sentiment = client.sentiment.news("AAPL")
+analyst = client.sentiment.analyst("AAPL")
 ```
 
 ### ESG API
@@ -227,7 +240,7 @@ analyst = client.get_sentiment_analyst("AAPL")
 Access Environmental, Social, and Governance data.
 
 ```python
-esg_data = client.get_esg_data("AAPL")
+esg_data = client.esg.data("AAPL")
 ```
 
 ### Credit Ratings API
@@ -236,10 +249,10 @@ Search for credit entities and retrieve credit ratings.
 
 ```python
 # Search for credit entities
-results = client.search_credit("Apple Inc")
+results = client.credit.search("Apple Inc")
 
 # Get credit ratings
-ratings = client.get_credit_ratings("entity_id_here")
+ratings = client.credit.ratings("entity_id_here")
 ```
 
 ### Supply Chain API
@@ -248,13 +261,13 @@ Analyze company supply chain relationships.
 
 ```python
 # Get customers
-customers = client.get_supply_chain_customers("AAPL")
+customers = client.supply_chain.customers("AAPL")
 
 # Get suppliers
-suppliers = client.get_supply_chain_suppliers("AAPL")
+suppliers = client.supply_chain.suppliers("AAPL")
 
 # Get peers
-peers = client.get_supply_chain_peers("AAPL")
+peers = client.supply_chain.peers("AAPL")
 ```
 
 ## Error Handling
@@ -263,7 +276,7 @@ The SDK provides detailed error messages for various failure scenarios:
 
 ```python
 try:
-    data = client.get_stock_prices("INVALID")
+    data = client.stocks.prices("INVALID")
 except Exception as e:
     print(f"Error: {e}")
 ```
@@ -274,18 +287,16 @@ Common errors include:
 - **Timeout Error**: Request took too long to complete
 - **Authentication Error**: Missing or invalid API key
 
-## Free Tier Limitations
+## Data Normalization
 
-The free tier has some restrictions:
-- Stock API: Limited to 'america' country
-- Rate limits may apply to certain endpoints
+The SDK automatically normalizes all API responses by converting string numbers to integers or floats, and string booleans to actual boolean values. This ensures consistent data types across all responses.
 
 ## Date Formats
 
 All date parameters should be in `YYYY-MM-DD` format:
 
 ```python
-data = client.get_stock_prices("AAPL", from_date="2024-01-01", to_date="2024-12-31")
+data = client.stocks.prices("AAPL", from_date="2024-01-01", to_date="2024-12-31")
 ```
 
 ## Time Frames
@@ -298,8 +309,26 @@ Price endpoints support various time frames:
 - `yearly`
 
 ```python
-prices = client.get_stock_prices("AAPL", frame="monthly")
+prices = client.stocks.prices("AAPL", frame="monthly")
 ```
+
+## API Structure
+
+The SDK is organized into the following modules:
+
+- `client.stocks` - Stock market data
+- `client.crypto` - Cryptocurrency data
+- `client.forex` - Foreign exchange data
+- `client.futures` - Futures contracts data
+- `client.indices` - Market indices data
+- `client.profiles` - Company profiles and financials
+- `client.econ` - Economic data and calendar
+- `client.etfs` - ETF data and holdings
+- `client.news` - Financial news
+- `client.sentiment` - Market sentiment analysis
+- `client.esg` - ESG ratings
+- `client.credit` - Credit ratings
+- `client.supply_chain` - Supply chain relationships
 
 ## Support
 
