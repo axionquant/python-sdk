@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "axionquant-sdk"
-version = "1.1.0"
+version = "1.1.1"
 description = "Short description"
 readme = "README.md"
 requires-python = ">=3.8"
