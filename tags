@@ -50,130 +50,120 @@ Axion	axion/axion.py	/^class Axion:$/;"	c
 Axion Python SDK	readme.md	/^# Axion Python SDK$/;"	c
 AxionExample	example2.py	/^class AxionExample:$/;"	c
 BASE_URL	axion/axion.py	/^BASE_URL = "http:\/\/localhost:3001"$/;"	v
+BaseAPI	axion/axion.py	/^class BaseAPI:$/;"	c
 Company Profiles API	readme.md	/^### Company Profiles API$/;"	S	section:Axion Python SDK""Features
 Credit Ratings API	readme.md	/^### Credit Ratings API$/;"	S	section:Axion Python SDK""Features
+CreditAPI	axion/axion.py	/^class CreditAPI(BaseAPI):$/;"	c
+CryptoAPI	axion/axion.py	/^class CryptoAPI(BaseAPI):$/;"	c
 Cryptocurrency API	readme.md	/^### Cryptocurrency API$/;"	S	section:Axion Python SDK""Features
 Date Formats	readme.md	/^## Date Formats$/;"	s	chapter:Axion Python SDK
 ESG API	readme.md	/^### ESG API$/;"	S	section:Axion Python SDK""Features
+ESGAPI	axion/axion.py	/^class ESGAPI(BaseAPI):$/;"	c
 ETF API	readme.md	/^### ETF API$/;"	S	section:Axion Python SDK""Features
+ETFAPI	axion/axion.py	/^class ETFAPI(BaseAPI):$/;"	c
+EconAPI	axion/axion.py	/^class EconAPI(BaseAPI):$/;"	c
 Economic Data API	readme.md	/^### Economic Data API$/;"	S	section:Axion Python SDK""Features
 Error Handling	readme.md	/^## Error Handling$/;"	s	chapter:Axion Python SDK
 Features	readme.md	/^## Features$/;"	s	chapter:Axion Python SDK
 Forex API	readme.md	/^### Forex API$/;"	S	section:Axion Python SDK""Features
+ForexAPI	axion/axion.py	/^class ForexAPI(BaseAPI):$/;"	c
 Free Tier Limitations	readme.md	/^## Free Tier Limitations$/;"	s	chapter:Axion Python SDK
 Futures API	readme.md	/^### Futures API$/;"	S	section:Axion Python SDK""Features
+FuturesAPI	axion/axion.py	/^class FuturesAPI(BaseAPI):$/;"	c
 Indices API	readme.md	/^### Indices API$/;"	S	section:Axion Python SDK""Features
+IndicesAPI	axion/axion.py	/^class IndicesAPI(BaseAPI):$/;"	c
 Installation	readme.md	/^## Installation$/;"	s	chapter:Axion Python SDK
 License	readme.md	/^## License$/;"	s	chapter:Axion Python SDK
 News API	readme.md	/^### News API$/;"	S	section:Axion Python SDK""Features
+NewsAPI	axion/axion.py	/^class NewsAPI(BaseAPI):$/;"	c
+ProfilesAPI	axion/axion.py	/^class ProfilesAPI(BaseAPI):$/;"	c
 Quick Start	readme.md	/^## Quick Start$/;"	s	chapter:Axion Python SDK
 Sentiment API	readme.md	/^### Sentiment API$/;"	S	section:Axion Python SDK""Features
+SentimentAPI	axion/axion.py	/^class SentimentAPI(BaseAPI):$/;"	c
 Stocks API	readme.md	/^### Stocks API$/;"	S	section:Axion Python SDK""Features
+StocksAPI	axion/axion.py	/^class StocksAPI(BaseAPI):$/;"	c
 Supply Chain API	readme.md	/^### Supply Chain API$/;"	S	section:Axion Python SDK""Features
+SupplyChainAPI	axion/axion.py	/^class SupplyChainAPI(BaseAPI):$/;"	c
 Support	readme.md	/^## Support$/;"	s	chapter:Axion Python SDK
 Time Frames	readme.md	/^## Time Frames$/;"	s	chapter:Axion Python SDK
 __all__	axion/__init__.py	/^__all__ = ['Axion', 'visualize', 'ta', 'utils', 'models']$/;"	v
 __init__	axion/axion.py	/^    def __init__(self, api_key: str = None):$/;"	m	class:Axion
+__init__	axion/axion.py	/^    def __init__(self, client):$/;"	m	class:BaseAPI
 __init__	example2.py	/^    def __init__(self, api_key: str = None):$/;"	m	class:AxionExample
 _request	axion/axion.py	/^    def _request(self, method: str, path: str, params: dict = None, json_data: dict = None, auth/;"	m	class:Axion
+_request	axion/axion.py	/^    def _request(self, method: str, path: str, params: dict = None, json_data: dict = None, auth/;"	m	class:BaseAPI
+activity	axion/axion.py	/^    def activity(self, ticker: str):$/;"	m	class:ProfilesAPI
 adx	axion/ta.py	/^def adx(df, period=14):$/;"	f
+all	axion/axion.py	/^    def all(self, ticker: str):$/;"	m	class:SentimentAPI
+analyst	axion/axion.py	/^    def analyst(self, ticker: str):$/;"	m	class:SentimentAPI
 area	axion/visualize.py	/^def area(df, x, y, group, sub=""):$/;"	f
+asset	axion/axion.py	/^    def asset(self, ticker: str):$/;"	m	class:ProfilesAPI
 atr	axion/ta.py	/^def atr(df, period=14):$/;"	f
 axion_utils	example.py	/^from axion import Axion, ta, visualize, utils as axion_utils$/;"	Y	nameref:unknown:utils
+balancesheet	axion/axion.py	/^    def balancesheet(self, ticker: str):$/;"	m	class:ProfilesAPI
 bar	axion/visualize.py	/^def bar(df, x, y):$/;"	f
 barh	axion/visualize.py	/^def barh(df, x, y):$/;"	f
 bbands	axion/ta.py	/^def bbands(df, column="close", period=20, num_std_dev=2):$/;"	f
 beta	axion/models.py	/^def beta(df, x, y):$/;"	f
 cache	axion/utils.py	/^def cache(id, fn):$/;"	f
+calendar	axion/axion.py	/^    def calendar(self, from_date: str = None, to_date: str = None, country: str = None,$/;"	m	class:EconAPI
+calendar	axion/axion.py	/^    def calendar(self, ticker: str):$/;"	m	class:ProfilesAPI
 candles	axion/visualize.py	/^def candles(df):$/;"	f
+cashflow	axion/axion.py	/^    def cashflow(self, ticker: str):$/;"	m	class:ProfilesAPI
+category	axion/axion.py	/^    def category(self, category: str):$/;"	m	class:NewsAPI
 cmo	axion/ta.py	/^def cmo(df, column="close", period=20):$/;"	f
 coerce	axion/axion.py	/^def coerce(value):$/;"	f
+company	axion/axion.py	/^    def company(self, ticker: str):$/;"	m	class:NewsAPI
 company_examples	example2.py	/^    def company_examples(self):$/;"	m	class:AxionExample
 compare	axion/utils.py	/^def compare(dfs, joins=['fact','value']):$/;"	f
 composite	axion/utils.py	/^def composite(dfs, joins=['fact', 'label'], col='value'):$/;"	f
 contrast	axion/utils.py	/^def contrast(dfs, joins=['CashAndCashEquivalentsAtCarryingValue', 'ShortTermInvestments'], col="/;"	f
 convert_text_to_zero	axion/utils.py	/^def convert_text_to_zero(value):$/;"	f
+country	axion/axion.py	/^    def country(self, country: str):$/;"	m	class:NewsAPI
 cov	axion/visualize.py	/^def cov(df):$/;"	f
 create_sequences	axion/models.py	/^def create_sequences(data, sequence_length, n_preds):$/;"	f
 credit_esg_examples	example2.py	/^    def credit_esg_examples(self):$/;"	m	class:AxionExample
 crypto_examples	example2.py	/^    def crypto_examples(self):$/;"	m	class:AxionExample
+customers	axion/axion.py	/^    def customers(self, ticker: str):$/;"	m	class:SupplyChainAPI
 d	axion/utils.py	/^d, day = 'D', 'D'   # daily$/;"	v
 d	axion/utils.py	/^def d(date_string):$/;"	f
+data	axion/axion.py	/^    def data(self, ticker: str):$/;"	m	class:ESGAPI
+dataset	axion/axion.py	/^    def dataset(self, series_id: str):$/;"	m	class:EconAPI
 day	axion/utils.py	/^d, day = 'D', 'D'   # daily$/;"	v
 dedup	axion/utils.py	/^def dedup(lst):$/;"	f
 dema	axion/ta.py	/^def dema(df, column="close", period=14):$/;"	f
 df	axion/utils.py	/^def df(items):$/;"	f
 difference	axion/utils.py	/^def difference(dfs, col):$/;"	f
 doit	axion/utils.py	/^    def doit():$/;"	f	function:scribe	file:
+earnings	axion/axion.py	/^    def earnings(self, ticker: str):$/;"	m	class:ProfilesAPI
+earnings_trend	axion/axion.py	/^    def earnings_trend(self, ticker: str):$/;"	m	class:ProfilesAPI
 economic_examples	example2.py	/^    def economic_examples(self):$/;"	m	class:AxionExample
 ema	axion/ta.py	/^def ema(df, column="close", period=14):$/;"	f
 etf_examples	example2.py	/^    def etf_examples(self):$/;"	m	class:AxionExample
+exposure	axion/axion.py	/^    def exposure(self, ticker: str):$/;"	m	class:ETFAPI
 false	axion/utils.py	/^false = False$/;"	v
 fib	axion/ta.py	/^def fib(df):$/;"	f
 filter	axion/utils.py	/^def filter(df, col, items):$/;"	f
+financials	axion/axion.py	/^    def financials(self, ticker: str):$/;"	m	class:ProfilesAPI
 fit	axion/visualize.py	/^def fit(df, x, y, log=False, hover=[], group=None):$/;"	f
+fund	axion/axion.py	/^    def fund(self, ticker: str):$/;"	m	class:ETFAPI
+fund_ownership	axion/axion.py	/^    def fund_ownership(self, ticker: str):$/;"	m	class:ProfilesAPI
 gainers	axion/utils.py	/^def gainers(prices, frame, col='close', limit=500, relative=True, reverse=True):$/;"	f
+general	axion/axion.py	/^    def general(self):$/;"	m	class:NewsAPI
 generate_color_map	axion/visualize.py	/^def generate_color_map(column_values):$/;"	f
-get_category_news	axion/axion.py	/^    def get_category_news(self, category: str):$/;"	m	class:Axion
-get_company_asset_profile	axion/axion.py	/^    def get_company_asset_profile(self, ticker: str):$/;"	m	class:Axion
-get_company_balance_sheet	axion/axion.py	/^    def get_company_balance_sheet(self, ticker: str):$/;"	m	class:Axion
-get_company_calendar_events	axion/axion.py	/^    def get_company_calendar_events(self, ticker: str):$/;"	m	class:Axion
-get_company_cashflow	axion/axion.py	/^    def get_company_cashflow(self, ticker: str):$/;"	m	class:Axion
-get_company_earnings_history	axion/axion.py	/^    def get_company_earnings_history(self, ticker: str):$/;"	m	class:Axion
-get_company_earnings_trend	axion/axion.py	/^    def get_company_earnings_trend(self, ticker: str):$/;"	m	class:Axion
-get_company_financial_data	axion/axion.py	/^    def get_company_financial_data(self, ticker: str):$/;"	m	class:Axion
-get_company_fund_ownership	axion/axion.py	/^    def get_company_fund_ownership(self, ticker: str):$/;"	m	class:Axion
-get_company_income_statement	axion/axion.py	/^    def get_company_income_statement(self, ticker: str):$/;"	m	class:Axion
-get_company_index_trend	axion/axion.py	/^    def get_company_index_trend(self, ticker: str):$/;"	m	class:Axion
-get_company_insider_holders	axion/axion.py	/^    def get_company_insider_holders(self, ticker: str):$/;"	m	class:Axion
-get_company_insider_transactions	axion/axion.py	/^    def get_company_insider_transactions(self, ticker: str):$/;"	m	class:Axion
-get_company_institution_ownership	axion/axion.py	/^    def get_company_institution_ownership(self, ticker: str):$/;"	m	class:Axion
-get_company_major_holders	axion/axion.py	/^    def get_company_major_holders(self, ticker: str):$/;"	m	class:Axion
-get_company_news	axion/axion.py	/^    def get_company_news(self, ticker: str):$/;"	m	class:Axion
-get_company_profile_info	axion/axion.py	/^    def get_company_profile_info(self, ticker: str):$/;"	m	class:Axion
-get_company_recommendation_trend	axion/axion.py	/^    def get_company_recommendation_trend(self, ticker: str):$/;"	m	class:Axion
-get_company_share_activity	axion/axion.py	/^    def get_company_share_activity(self, ticker: str):$/;"	m	class:Axion
-get_company_statistics	axion/axion.py	/^    def get_company_statistics(self, ticker: str):$/;"	m	class:Axion
-get_company_summary	axion/axion.py	/^    def get_company_summary(self, ticker: str):$/;"	m	class:Axion
-get_company_website_traffic	axion/axion.py	/^    def get_company_website_traffic(self, ticker: str):$/;"	m	class:Axion
-get_country_news	axion/axion.py	/^    def get_country_news(self, country: str):$/;"	m	class:Axion
-get_credit_ratings	axion/axion.py	/^    def get_credit_ratings(self, entity_id: str):$/;"	m	class:Axion
-get_crypto_prices	axion/axion.py	/^    def get_crypto_prices(self, ticker: str, from_date: str = None, to_date: str = None, frame: /;"	m	class:Axion
-get_crypto_ticker_by_symbol	axion/axion.py	/^    def get_crypto_ticker_by_symbol(self, ticker: str):$/;"	m	class:Axion
-get_crypto_tickers	axion/axion.py	/^    def get_crypto_tickers(self, type: str = None):$/;"	m	class:Axion
-get_econ_calendar	axion/axion.py	/^    def get_econ_calendar(self, from_date: str = None, to_date: str = None, country: str = None,/;"	m	class:Axion
-get_econ_dataset	axion/axion.py	/^    def get_econ_dataset(self, series_id: str):$/;"	m	class:Axion
-get_esg_data	axion/axion.py	/^    def get_esg_data(self, ticker: str):$/;"	m	class:Axion
-get_etf_exposure	axion/axion.py	/^    def get_etf_exposure(self, ticker: str):$/;"	m	class:Axion
-get_etf_fund_data	axion/axion.py	/^    def get_etf_fund_data(self, ticker: str):$/;"	m	class:Axion
-get_etf_holdings	axion/axion.py	/^    def get_etf_holdings(self, ticker: str):$/;"	m	class:Axion
-get_forex_prices	axion/axion.py	/^    def get_forex_prices(self, ticker: str, from_date: str = None, to_date: str = None, frame: s/;"	m	class:Axion
-get_forex_ticker_by_symbol	axion/axion.py	/^    def get_forex_ticker_by_symbol(self, ticker: str):$/;"	m	class:Axion
-get_forex_tickers	axion/axion.py	/^    def get_forex_tickers(self, country: str = None, exchange: str = None):$/;"	m	class:Axion
-get_futures_prices	axion/axion.py	/^    def get_futures_prices(self, ticker: str, from_date: str = None, to_date: str = None, frame:/;"	m	class:Axion
-get_futures_ticker_by_symbol	axion/axion.py	/^    def get_futures_ticker_by_symbol(self, ticker: str):$/;"	m	class:Axion
-get_futures_tickers	axion/axion.py	/^    def get_futures_tickers(self, exchange: str = None):$/;"	m	class:Axion
-get_index_prices	axion/axion.py	/^    def get_index_prices(self, ticker: str, from_date: str = None, to_date: str = None, frame: s/;"	m	class:Axion
-get_index_ticker_by_symbol	axion/axion.py	/^    def get_index_ticker_by_symbol(self, ticker: str):$/;"	m	class:Axion
-get_index_tickers	axion/axion.py	/^    def get_index_tickers(self, exchange: str = None):$/;"	m	class:Axion
-get_news	axion/axion.py	/^    def get_news(self):$/;"	m	class:Axion
-get_sentiment_all	axion/axion.py	/^    def get_sentiment_all(self, ticker: str):$/;"	m	class:Axion
-get_sentiment_analyst	axion/axion.py	/^    def get_sentiment_analyst(self, ticker: str):$/;"	m	class:Axion
-get_sentiment_news	axion/axion.py	/^    def get_sentiment_news(self, ticker: str):$/;"	m	class:Axion
-get_sentiment_social	axion/axion.py	/^    def get_sentiment_social(self, ticker: str):$/;"	m	class:Axion
-get_stock_prices	axion/axion.py	/^    def get_stock_prices(self, ticker: str, from_date: str = None, to_date: str = None, frame: s/;"	m	class:Axion
-get_stock_ticker_by_symbol	axion/axion.py	/^    def get_stock_ticker_by_symbol(self, ticker: str):$/;"	m	class:Axion
-get_stock_tickers	axion/axion.py	/^    def get_stock_tickers(self, country: str = None, exchange: str = None):$/;"	m	class:Axion
-get_supply_chain_customers	axion/axion.py	/^    def get_supply_chain_customers(self, ticker: str):$/;"	m	class:Axion
-get_supply_chain_peers	axion/axion.py	/^    def get_supply_chain_peers(self, ticker: str):$/;"	m	class:Axion
-get_supply_chain_suppliers	axion/axion.py	/^    def get_supply_chain_suppliers(self, ticker: str):$/;"	m	class:Axion
 go	axion/visualize.py	/^import plotly.graph_objects as go$/;"	I	nameref:module:plotly.graph_objects
 graph	axion/visualize.py	/^def graph(df, x, bars=[], lines=[], areas=[], title='', color=None):$/;"	f
 h	axion/utils.py	/^h, hour = 'H', 'M'  # hourly$/;"	v
 heatmap	axion/visualize.py	/^def heatmap(df, x, y, hover=[]):$/;"	f
+holdings	axion/axion.py	/^    def holdings(self, ticker: str):$/;"	m	class:ETFAPI
 hour	axion/utils.py	/^h, hour = 'H', 'M'  # hourly$/;"	v
 ichi	axion/ta.py	/^def ichi(df):$/;"	f
+income	axion/axion.py	/^    def income(self, ticker: str):$/;"	m	class:ProfilesAPI
+index_trend	axion/axion.py	/^    def index_trend(self, ticker: str):$/;"	m	class:ProfilesAPI
 indexed	axion/utils.py	/^def indexed(prices):$/;"	f
+info	axion/axion.py	/^    def info(self, ticker: str):$/;"	m	class:ProfilesAPI
+insiders	axion/axion.py	/^    def insiders(self, ticker: str):$/;"	m	class:ProfilesAPI
+institution_ownership	axion/axion.py	/^    def institution_ownership(self, ticker: str):$/;"	m	class:ProfilesAPI
 kama	axion/ta.py	/^def kama(df, column="close", period=14, fast=14, slow=30):$/;"	f
 kc	axion/ta.py	/^def kc(df, period=20, atr_period=10, multiplier=2):$/;"	f
 line	axion/visualize.py	/^def line(df, x, y, log=False):$/;"	f
@@ -190,6 +180,7 @@ monthago	axion/utils.py	/^monthago = '1 month ago'$/;"	v
 monthfrom	axion/utils.py	/^monthfrom = '1 month from now'$/;"	v
 multiLinearRegression	axion/models.py	/^def multiLinearRegression(df, x, target, features, n_preds=10, scale='D'):$/;"	f
 nearest_day	axion/utils.py	/^def nearest_day(date_str, force=False):$/;"	f
+news	axion/axion.py	/^    def news(self, ticker: str):$/;"	m	class:SentimentAPI
 news_sentiment_examples	example2.py	/^    def news_sentiment_examples(self):$/;"	m	class:AxionExample
 normalize	axion/axion.py	/^def normalize(obj):$/;"	f
 now	axion/utils.py	/^now = 'today'$/;"	v
@@ -199,17 +190,31 @@ np	axion/utils.py	/^import numpy as np$/;"	I	nameref:module:numpy
 obv	axion/ta.py	/^def obv(df):$/;"	f
 other_assets_examples	example2.py	/^    def other_assets_examples(self):$/;"	m	class:AxionExample
 overlap	axion/utils.py	/^def overlap(dfs, col):$/;"	f
+ownership	axion/axion.py	/^    def ownership(self, ticker: str):$/;"	m	class:ProfilesAPI
 pd	axion/models.py	/^import pandas as pd$/;"	I	nameref:module:pandas
 pd	axion/ta.py	/^import pandas as pd$/;"	I	nameref:module:pandas
 pd	axion/utils.py	/^import pandas as pd$/;"	I	nameref:module:pandas
 pd	axion/visualize.py	/^import pandas as pd$/;"	I	nameref:module:pandas
 pds	axion/utils.py	/^def pds(l):$/;"	f
+peers	axion/axion.py	/^    def peers(self, ticker: str):$/;"	m	class:SupplyChainAPI
 pie	axion/visualize.py	/^def pie(df, values, labels):$/;"	f
 pio	axion/visualize.py	/^import plotly.io as pio$/;"	I	nameref:module:plotly.io
 polls	axion/visualize.py	/^def polls(df):$/;"	f
+prices	axion/axion.py	/^    def prices(self, ticker: str, from_date: str = None, to_date: str = None, frame: str = 'dail/;"	m	class:CryptoAPI
+prices	axion/axion.py	/^    def prices(self, ticker: str, from_date: str = None, to_date: str = None, frame: str = 'dail/;"	m	class:ForexAPI
+prices	axion/axion.py	/^    def prices(self, ticker: str, from_date: str = None, to_date: str = None, frame: str = 'dail/;"	m	class:FuturesAPI
+prices	axion/axion.py	/^    def prices(self, ticker: str, from_date: str = None, to_date: str = None, frame: str = 'dail/;"	m	class:IndicesAPI
+prices	axion/axion.py	/^    def prices(self, ticker: str, from_date: str = None, to_date: str = None, frame: str = 'dail/;"	m	class:StocksAPI
 px	axion/visualize.py	/^import plotly.express as px$/;"	I	nameref:module:plotly.express
+quote	axion/axion.py	/^    def quote(self, ticker: str):$/;"	m	class:CryptoAPI
+quote	axion/axion.py	/^    def quote(self, ticker: str):$/;"	m	class:ForexAPI
+quote	axion/axion.py	/^    def quote(self, ticker: str):$/;"	m	class:FuturesAPI
+quote	axion/axion.py	/^    def quote(self, ticker: str):$/;"	m	class:IndicesAPI
+quote	axion/axion.py	/^    def quote(self, ticker: str):$/;"	m	class:StocksAPI
 radar	axion/visualize.py	/^def radar(df, values, labels):$/;"	f
+ratings	axion/axion.py	/^    def ratings(self, entity_id: str):$/;"	m	class:CreditAPI
 read	axion/utils.py	/^def read(id):$/;"	f
+recommendation	axion/axion.py	/^    def recommendation(self, ticker: str):$/;"	m	class:ProfilesAPI
 relativity	axion/utils.py	/^def relativity(df, cols):$/;"	f
 resample	axion/utils.py	/^def resample(df, dates, col='time'):$/;"	f
 roc	axion/ta.py	/^def roc(df, column="close", period=10):$/;"	f
@@ -219,23 +224,34 @@ sar	axion/ta.py	/^def sar(df, af=0.02, af_max=0.2):$/;"	f
 save	axion/utils.py	/^def save(id, obj):$/;"	f
 scatter	axion/visualize.py	/^def scatter(df, x, y, log=False, hover=[], group=None):$/;"	f
 scribe	axion/utils.py	/^def scribe(df, id, cb):$/;"	f
-search_credit	axion/axion.py	/^    def search_credit(self, query: str):$/;"	m	class:Axion
-search_econ	axion/axion.py	/^    def search_econ(self, query: str):$/;"	m	class:Axion
+search	axion/axion.py	/^    def search(self, query: str):$/;"	m	class:CreditAPI
+search	axion/axion.py	/^    def search(self, query: str):$/;"	m	class:EconAPI
 shades_of_white	axion/visualize.py	/^shades_of_white = [$/;"	v
 simmer	axion/utils.py	/^def simmer(arr):$/;"	f
 sma	axion/ta.py	/^def sma(df, column="close", period=14):$/;"	f
 smm	axion/ta.py	/^def smm(df, column="close", period=14):$/;"	f
 snap	axion/utils.py	/^def snap(dfs, names=[], overwrite=[], col='time'):$/;"	f
+social	axion/axion.py	/^    def social(self, ticker: str):$/;"	m	class:SentimentAPI
 spread	axion/visualize.py	/^def spread(dfs, x, y):$/;"	f
 ssma	axion/ta.py	/^def ssma(df, column="close", period=14):$/;"	f
 stack	axion/utils.py	/^def stack(dfs):$/;"	f
+statistics	axion/axion.py	/^    def statistics(self, ticker: str):$/;"	m	class:ProfilesAPI
 stitch	axion/utils.py	/^def stitch(dfs, col='time'):$/;"	f
 stochastic_oscillator	axion/ta.py	/^def stochastic_oscillator(df, k_period=14, d_period=3):$/;"	f
 stock_examples	example2.py	/^    def stock_examples(self):$/;"	m	class:AxionExample
+summary	axion/axion.py	/^    def summary(self, ticker: str):$/;"	m	class:ProfilesAPI
+suppliers	axion/axion.py	/^    def suppliers(self, ticker: str):$/;"	m	class:SupplyChainAPI
 supply_chain_examples	example2.py	/^    def supply_chain_examples(self):$/;"	m	class:AxionExample
+tickers	axion/axion.py	/^    def tickers(self, country: str = None, exchange: str = None):$/;"	m	class:ForexAPI
+tickers	axion/axion.py	/^    def tickers(self, country: str = None, exchange: str = None):$/;"	m	class:StocksAPI
+tickers	axion/axion.py	/^    def tickers(self, exchange: str = None):$/;"	m	class:FuturesAPI
+tickers	axion/axion.py	/^    def tickers(self, exchange: str = None):$/;"	m	class:IndicesAPI
+tickers	axion/axion.py	/^    def tickers(self, type: str = None):$/;"	m	class:CryptoAPI
 to_timestamp	axion/utils.py	/^def to_timestamp(date):$/;"	f
 today	axion/utils.py	/^today = 'today'$/;"	v
 tomorrow	axion/utils.py	/^tomorrow = '1 day from now'$/;"	v
+traffic	axion/axion.py	/^    def traffic(self, ticker: str):$/;"	m	class:ProfilesAPI
+transactions	axion/axion.py	/^    def transactions(self, ticker: str):$/;"	m	class:ProfilesAPI
 tree	axion/visualize.py	/^def tree(df):$/;"	f
 trima	axion/ta.py	/^def trima(df, column="close", period=14):$/;"	f
 true	axion/utils.py	/^true = True$/;"	v
