@@ -50,7 +50,7 @@ Authentication	readme.md	/^## Authentication$/;"	s	chapter:Axion Python SDK
 Axion	axion/axion.py	/^class Axion:$/;"	c
 Axion Python SDK	readme.md	/^# Axion Python SDK$/;"	c
 AxionExample	example2.py	/^class AxionExample:$/;"	c
-BASE_URL	axion/axion.py	/^BASE_URL = "http:\/\/localhost:3001"$/;"	v
+BASE_URL	axion/axion.py	/^BASE_URL = "https:\/\/api.axionquant.com"$/;"	v
 BaseAPI	axion/axion.py	/^class BaseAPI:$/;"	c
 Company Profiles API	readme.md	/^### Company Profiles API$/;"	S	section:Axion Python SDK""Features
 Credit Ratings API	readme.md	/^### Credit Ratings API$/;"	S	section:Axion Python SDK""Features
