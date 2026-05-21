@@ -167,6 +167,8 @@ go	axion/visualize.py	/^import plotly.graph_objects as go$/;"	I	nameref:module:p
 graph	axion/visualize.py	/^def graph(df, x, bars=[], lines=[], areas=[], title='', color=None):$/;"	f
 h	axion/utils.py	/^h, hour = 'H', 'M'  # hourly$/;"	v
 heatmap	axion/visualize.py	/^def heatmap(df, x, y, hover=[]):$/;"	f
+help	axion/axion.py	/^    def help(self):$/;"	m	class:Axion
+help	axion/axion.py	/^    def help(self):$/;"	m	class:BaseAPI
 history	axion/axion.py	/^    def history(self, ticker: str):$/;"	m	class:EarningsAPI
 holdings	axion/axion.py	/^    def holdings(self, ticker: str):$/;"	m	class:ETFAPI
 hour	axion/utils.py	/^h, hour = 'H', 'M'  # hourly$/;"	v
@@ -222,6 +224,7 @@ prices	axion/axion.py	/^    def prices(self, ticker: str, from_date: str = None,
 profile	axion/axion.py	/^    def profile(self, ticker: str):$/;"	m	class:ProfilesAPI
 px	axion/visualize.py	/^import plotly.express as px$/;"	I	nameref:module:plotly.express
 radar	axion/visualize.py	/^def radar(df, values, labels):$/;"	f
+ranger	axion/utils.py	/^def ranger(df, start, end=None, date_col="date"):$/;"	f
 ratings	axion/axion.py	/^    def ratings(self, entity_id: str):$/;"	m	class:CreditAPI
 read	axion/utils.py	/^def read(id):$/;"	f
 recommendation	axion/axion.py	/^    def recommendation(self, ticker: str):$/;"	m	class:ProfilesAPI

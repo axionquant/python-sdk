@@ -84,6 +84,27 @@ def to_timestamp(date):
 def df(items):
     return pd.DataFrame(items)
 
+#resize frame based on start and end dates
+def ranger(df, start, end=None, date_col="date"):
+    if date_col not in df.columns:
+        raise ValueError(f"Column '{date_col}' not found")
+
+    target = df.copy()
+
+    # normalize to datetime with UTC
+    target[date_col] = pd.to_datetime(target[date_col], utc=True)
+
+    start = pd.to_datetime(start, utc=True)
+    end = pd.to_datetime(end, utc=True) if end else None
+
+    if end is not None:
+        mask = (target[date_col] >= start) & (target[date_col] <= end)
+    else:
+        mask = target[date_col] >= start
+
+    return target.loc[mask]
+
+
 # turn 2d list of dicts into 1d list of dataframes (helpful for turning abstract json data to DFs)
 def pds(l):
     return [pd.DataFrame(x) for x in l]

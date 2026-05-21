@@ -1,6 +1,7 @@
 import plotly.express as px
 import plotly.graph_objects as go
 from IPython.display import HTML
+from IPython import get_ipython
 import plotly.io as pio
 import random
 import pandas as pd
@@ -9,9 +10,11 @@ import pandas as pd
 pio.templates.default = "plotly_dark"
 
 def visualize(fig):
-    # vizFileName = '.viz-' + str(random.randint(1, 100)) + '.html'
-    # fig.write_html(vizFileName, auto_open=False, config={"responsive":True })
-    # return HTML(filename=vizFileName)
+    if get_ipython() is not None:
+        vizFileName = '.viz-' + str(random.randint(1, 100)) + '.html'
+        fig.write_html(vizFileName, auto_open=False, config={"responsive": True})
+        return HTML(filename=vizFileName)
+
     pio.show(fig)
 
 def cov(df):

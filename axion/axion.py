@@ -31,6 +31,10 @@ class BaseAPI:
     def __init__(self, client):
         self.client = client
 
+    def help(self):
+        methods = [m for m in dir(self) if not m.startswith('_') and callable(getattr(self, m)) and m != 'help']
+        print('\n'.join(methods))
+
     def _request(self, method: str, path: str, params: dict = None, json_data: dict = None,
                  auth_required: bool = True):
         return self.client._request(method, path, params, json_data, auth_required)
@@ -488,6 +492,10 @@ class Axion:
         self.financials = FinancialsAPI(self)
         self.insiders = InsidersAPI(self)
         self.web_traffic = WebTrafficAPI(self)
+
+    def help(self):
+        apis = [m for m in dir(self) if not m.startswith('_') and isinstance(getattr(self, m), BaseAPI)]
+        print('\n'.join(apis))
 
     def _request(self, method: str, path: str, params: dict = None, json_data: dict = None,
                  auth_required: bool = True):
