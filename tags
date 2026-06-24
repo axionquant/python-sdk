@@ -217,6 +217,7 @@ pie	axion/visualize.py	/^def pie(df, values, labels):$/;"	f
 pio	axion/visualize.py	/^import plotly.io as pio$/;"	I	nameref:module:plotly.io
 polls	axion/visualize.py	/^def polls(df):$/;"	f
 prices	axion/axion.py	/^    def prices(self, ticker: str, from_date: str = None, to_date: str = None, frame: str = 'dail/;"	m	class:CryptoAPI
+prices	axion/axion.py	/^    def prices(self, ticker: str, from_date: str = None, to_date: str = None, frame: str = 'dail/;"	m	class:ETFAPI
 prices	axion/axion.py	/^    def prices(self, ticker: str, from_date: str = None, to_date: str = None, frame: str = 'dail/;"	m	class:ForexAPI
 prices	axion/axion.py	/^    def prices(self, ticker: str, from_date: str = None, to_date: str = None, frame: str = 'dail/;"	m	class:FuturesAPI
 prices	axion/axion.py	/^    def prices(self, ticker: str, from_date: str = None, to_date: str = None, frame: str = 'dail/;"	m	class:IndicesAPI
@@ -263,10 +264,12 @@ summary	axion/axion.py	/^    def summary(self, ticker: str):$/;"	m	class:Profile
 suppliers	axion/axion.py	/^    def suppliers(self, ticker: str):$/;"	m	class:SupplyChainAPI
 supply_chain_examples	example.py	/^    def supply_chain_examples(self):$/;"	m	class:AxionExample
 ticker	axion/axion.py	/^    def ticker(self, ticker: str):$/;"	m	class:CryptoAPI
+ticker	axion/axion.py	/^    def ticker(self, ticker: str):$/;"	m	class:ETFAPI
 ticker	axion/axion.py	/^    def ticker(self, ticker: str):$/;"	m	class:ForexAPI
 ticker	axion/axion.py	/^    def ticker(self, ticker: str):$/;"	m	class:FuturesAPI
 ticker	axion/axion.py	/^    def ticker(self, ticker: str):$/;"	m	class:IndicesAPI
 ticker	axion/axion.py	/^    def ticker(self, ticker: str):$/;"	m	class:StocksAPI
+tickers	axion/axion.py	/^    def tickers(self, country: str = None, exchange: str = None):$/;"	m	class:ETFAPI
 tickers	axion/axion.py	/^    def tickers(self, country: str = None, exchange: str = None):$/;"	m	class:ForexAPI
 tickers	axion/axion.py	/^    def tickers(self, country: str = None, exchange: str = None):$/;"	m	class:StocksAPI
 tickers	axion/axion.py	/^    def tickers(self, exchange: str = None):$/;"	m	class:FuturesAPI
@@ -291,6 +294,7 @@ w	axion/utils.py	/^w, week = 'W', 'W'  # weekly$/;"	v
 week	axion/utils.py	/^w, week = 'W', 'W'  # weekly$/;"	v
 weekago	axion/utils.py	/^weekago = '1 week ago'$/;"	v
 weekfrom	axion/utils.py	/^weekfrom = '1 week from today'$/;"	v
+weights	axion/axion.py	/^    def weights(self, ticker: str):$/;"	m	class:ETFAPI
 williams_r	axion/ta.py	/^def williams_r(df, period=14):$/;"	f
 work	axion/utils.py	/^def work(df, cb, ref):$/;"	f
 y	axion/utils.py	/^y, year = 'Y', 'Y'  # annually$/;"	v

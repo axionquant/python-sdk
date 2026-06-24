@@ -57,6 +57,30 @@ class ESGAPI(BaseAPI):
 
 
 class ETFAPI(BaseAPI):
+    def tickers(self, country: str = None, exchange: str = None):
+        """Get all stock tickers with optional filtering."""
+        params = {}
+        if country:
+            params["country"] = country
+        if exchange:
+            params["exchange"] = exchange
+        return self._request("GET", "etfs/tickers", params=params)
+
+    def ticker(self, ticker: str):
+        """Get a single stock ticker by its symbol."""
+        return self._request("GET", f"etfs/{ticker}")
+
+    def prices(self, ticker: str, from_date: str = None, to_date: str = None, frame: str = 'daily'):
+        """Get historical prices for an etf."""
+        params = {}
+        if from_date:
+            params["from"] = from_date
+        if to_date:
+            params["to"] = to_date
+        if frame != 'daily':
+            params["frame"] = frame
+        return self._request("GET", f"etfs/{ticker}/prices", params=params)
+
     def fund(self, ticker: str):
         """Get detailed fund data for an ETF."""
         return self._request("GET", f"etfs/{ticker}/fund")
@@ -68,6 +92,46 @@ class ETFAPI(BaseAPI):
     def exposure(self, ticker: str):
         """Get exposure data for an ETF holding."""
         return self._request("GET", f"etfs/{ticker}/exposure")
+
+    def weights(self, ticker: str):
+        """Get weights data for an ETF's components."""
+        return self._request("GET", f"etfs/{ticker}/weights")
+
+    def gainers(self):
+        """Get top ETF gainers."""
+        return self._request("GET", "etfs/gainers")
+
+    def losers(self):
+        """Get top ETF losers."""
+        return self._request("GET", "etfs/losers")
+
+    def list_market(self):
+        """Get unique market values for ETFs."""
+        return self._request("GET", "etfs/list/market")
+
+    def list_country(self):
+        """Get unique country values for ETFs."""
+        return self._request("GET", "etfs/list/country")
+
+    def list_currency(self):
+        """Get unique currency values for ETFs."""
+        return self._request("GET", "etfs/list/currency")
+
+    def list_sector(self):
+        """Get unique sector values for ETFs."""
+        return self._request("GET", "etfs/list/sector")
+
+    def list_industry(self):
+        """Get unique industry values for ETFs."""
+        return self._request("GET", "etfs/list/industry")
+
+    def list_type(self):
+        """Get unique type values for ETFs."""
+        return self._request("GET", "etfs/list/type")
+
+    def quote(self, ticker: str):
+        """Get a quote for an ETF by its symbol."""
+        return self._request("GET", f"etfs/{ticker}/quote")
 
 
 class SupplyChainAPI(BaseAPI):
@@ -109,6 +173,42 @@ class StocksAPI(BaseAPI):
             params["frame"] = frame
         return self._request("GET", f"stocks/{ticker}/prices", params=params)
 
+    def gainers(self):
+        """Get top stock gainers."""
+        return self._request("GET", "stocks/gainers")
+
+    def losers(self):
+        """Get top stock losers."""
+        return self._request("GET", "stocks/losers")
+
+    def list_market(self):
+        """Get unique market values for stocks."""
+        return self._request("GET", "stocks/list/market")
+
+    def list_country(self):
+        """Get unique country values for stocks."""
+        return self._request("GET", "stocks/list/country")
+
+    def list_currency(self):
+        """Get unique currency values for stocks."""
+        return self._request("GET", "stocks/list/currency")
+
+    def list_sector(self):
+        """Get unique sector values for stocks."""
+        return self._request("GET", "stocks/list/sector")
+
+    def list_industry(self):
+        """Get unique industry values for stocks."""
+        return self._request("GET", "stocks/list/industry")
+
+    def list_type(self):
+        """Get unique type values for stocks."""
+        return self._request("GET", "stocks/list/type")
+
+    def quote(self, ticker: str):
+        """Get a quote for a stock by its symbol."""
+        return self._request("GET", f"stocks/{ticker}/quote")
+
 
 class CryptoAPI(BaseAPI):
     def tickers(self, type: str = None):
@@ -132,6 +232,30 @@ class CryptoAPI(BaseAPI):
         if frame != 'daily':
             params["frame"] = frame
         return self._request("GET", f"crypto/{ticker}/prices", params=params)
+
+    def gainers(self):
+        """Get top crypto gainers."""
+        return self._request("GET", "crypto/gainers")
+
+    def losers(self):
+        """Get top crypto losers."""
+        return self._request("GET", "crypto/losers")
+
+    def list_category(self):
+        """Get unique category values for crypto."""
+        return self._request("GET", "crypto/list/category")
+
+    def list_rating(self):
+        """Get unique rating values for crypto."""
+        return self._request("GET", "crypto/list/rating")
+
+    def list_type(self):
+        """Get unique type values for crypto."""
+        return self._request("GET", "crypto/list/type")
+
+    def quote(self, ticker: str):
+        """Get a quote for a cryptocurrency by its symbol."""
+        return self._request("GET", f"crypto/{ticker}/quote")
 
 
 class ForexAPI(BaseAPI):
@@ -159,6 +283,30 @@ class ForexAPI(BaseAPI):
             params["frame"] = frame
         return self._request("GET", f"forex/{ticker}/prices", params=params)
 
+    def gainers(self):
+        """Get top forex gainers."""
+        return self._request("GET", "forex/gainers")
+
+    def losers(self):
+        """Get top forex losers."""
+        return self._request("GET", "forex/losers")
+
+    def list_exchange(self):
+        """Get unique exchange values for forex."""
+        return self._request("GET", "forex/list/exchange")
+
+    def list_rating(self):
+        """Get unique rating values for forex."""
+        return self._request("GET", "forex/list/rating")
+
+    def list_country(self):
+        """Get unique country values for forex."""
+        return self._request("GET", "forex/list/country")
+
+    def quote(self, ticker: str):
+        """Get a quote for a forex pair by its symbol."""
+        return self._request("GET", f"forex/{ticker}/quote")
+
 
 class FuturesAPI(BaseAPI):
     def tickers(self, exchange: str = None):
@@ -183,6 +331,34 @@ class FuturesAPI(BaseAPI):
             params["frame"] = frame
         return self._request("GET", f"futures/{ticker}/prices", params=params)
 
+    def gainers(self):
+        """Get top futures gainers."""
+        return self._request("GET", "futures/gainers")
+
+    def losers(self):
+        """Get top futures losers."""
+        return self._request("GET", "futures/losers")
+
+    def list_exchange(self):
+        """Get unique exchange values for futures."""
+        return self._request("GET", "futures/list/exchange")
+
+    def list_currency(self):
+        """Get unique currency values for futures."""
+        return self._request("GET", "futures/list/currency")
+
+    def list_timezone(self):
+        """Get unique timezone values for futures."""
+        return self._request("GET", "futures/list/timezone")
+
+    def list_country(self):
+        """Get unique country values for futures."""
+        return self._request("GET", "futures/list/country")
+
+    def quote(self, ticker: str):
+        """Get a quote for a futures contract by its symbol."""
+        return self._request("GET", f"futures/{ticker}/quote")
+
 
 class IndicesAPI(BaseAPI):
     def tickers(self, exchange: str = None):
@@ -206,6 +382,30 @@ class IndicesAPI(BaseAPI):
         if frame != 'daily':
             params["frame"] = frame
         return self._request("GET", f"indices/{ticker}/prices", params=params)
+
+    def gainers(self):
+        """Get top index gainers."""
+        return self._request("GET", "indices/gainers")
+
+    def losers(self):
+        """Get top index losers."""
+        return self._request("GET", "indices/losers")
+
+    def list_exchange(self):
+        """Get unique exchange values for indices."""
+        return self._request("GET", "indices/list/exchange")
+
+    def list_timezone(self):
+        """Get unique timezone values for indices."""
+        return self._request("GET", "indices/list/timezone")
+
+    def list_country(self):
+        """Get unique country values for indices."""
+        return self._request("GET", "indices/list/country")
+
+    def quote(self, ticker: str):
+        """Get a quote for an index by its symbol."""
+        return self._request("GET", f"indices/{ticker}/quote")
 
 
 class EconAPI(BaseAPI):
