@@ -97,13 +97,23 @@ class ETFAPI(BaseAPI):
         """Get weights data for an ETF's components."""
         return self._request("GET", f"etfs/{ticker}/weights")
 
-    def gainers(self):
+    def gainers(self, days: int = None, limit: int = None):
         """Get top ETF gainers."""
-        return self._request("GET", "etfs/gainers")
+        params = {}
+        if days is not None:
+            params["days"] = days
+        if limit is not None:
+            params["limit"] = limit
+        return self._request("GET", "etfs/gainers", params=params)
 
-    def losers(self):
+    def losers(self, days: int = None, limit: int = None):
         """Get top ETF losers."""
-        return self._request("GET", "etfs/losers")
+        params = {}
+        if days is not None:
+            params["days"] = days
+        if limit is not None:
+            params["limit"] = limit
+        return self._request("GET", "etfs/losers", params=params)
 
     def list_market(self):
         """Get unique market values for ETFs."""
@@ -128,6 +138,10 @@ class ETFAPI(BaseAPI):
     def list_type(self):
         """Get unique type values for ETFs."""
         return self._request("GET", "etfs/list/type")
+
+    def list(self, column: str):
+        """Get unique values for a given column from the ETFs database."""
+        return self._request("GET", f"etfs/list/{column}")
 
     def quote(self, ticker: str):
         """Get a quote for an ETF by its symbol."""
@@ -173,13 +187,27 @@ class StocksAPI(BaseAPI):
             params["frame"] = frame
         return self._request("GET", f"stocks/{ticker}/prices", params=params)
 
-    def gainers(self):
+    def gainers(self, days: int = None, limit: int = None, market: str = None):
         """Get top stock gainers."""
-        return self._request("GET", "stocks/gainers")
+        params = {}
+        if days is not None:
+            params["days"] = days
+        if limit is not None:
+            params["limit"] = limit
+        if market is not None:
+            params["market"] = market
+        return self._request("GET", "stocks/gainers", params=params)
 
-    def losers(self):
+    def losers(self, days: int = None, limit: int = None, market: str = None):
         """Get top stock losers."""
-        return self._request("GET", "stocks/losers")
+        params = {}
+        if days is not None:
+            params["days"] = days
+        if limit is not None:
+            params["limit"] = limit
+        if market is not None:
+            params["market"] = market
+        return self._request("GET", "stocks/losers", params=params)
 
     def list_market(self):
         """Get unique market values for stocks."""
@@ -204,6 +232,10 @@ class StocksAPI(BaseAPI):
     def list_type(self):
         """Get unique type values for stocks."""
         return self._request("GET", "stocks/list/type")
+
+    def list(self, column: str):
+        """Get unique values for a given column from the stocks database."""
+        return self._request("GET", f"stocks/list/{column}")
 
     def quote(self, ticker: str):
         """Get a quote for a stock by its symbol."""
@@ -233,13 +265,23 @@ class CryptoAPI(BaseAPI):
             params["frame"] = frame
         return self._request("GET", f"crypto/{ticker}/prices", params=params)
 
-    def gainers(self):
+    def gainers(self, days: int = None, limit: int = None):
         """Get top crypto gainers."""
-        return self._request("GET", "crypto/gainers")
+        params = {}
+        if days is not None:
+            params["days"] = days
+        if limit is not None:
+            params["limit"] = limit
+        return self._request("GET", "crypto/gainers", params=params)
 
-    def losers(self):
+    def losers(self, days: int = None, limit: int = None):
         """Get top crypto losers."""
-        return self._request("GET", "crypto/losers")
+        params = {}
+        if days is not None:
+            params["days"] = days
+        if limit is not None:
+            params["limit"] = limit
+        return self._request("GET", "crypto/losers", params=params)
 
     def list_category(self):
         """Get unique category values for crypto."""
@@ -252,6 +294,10 @@ class CryptoAPI(BaseAPI):
     def list_type(self):
         """Get unique type values for crypto."""
         return self._request("GET", "crypto/list/type")
+
+    def list(self, column: str):
+        """Get unique values for a given column from the crypto database."""
+        return self._request("GET", f"crypto/list/{column}")
 
     def quote(self, ticker: str):
         """Get a quote for a cryptocurrency by its symbol."""
@@ -283,13 +329,23 @@ class ForexAPI(BaseAPI):
             params["frame"] = frame
         return self._request("GET", f"forex/{ticker}/prices", params=params)
 
-    def gainers(self):
+    def gainers(self, days: int = None, limit: int = None):
         """Get top forex gainers."""
-        return self._request("GET", "forex/gainers")
+        params = {}
+        if days is not None:
+            params["days"] = days
+        if limit is not None:
+            params["limit"] = limit
+        return self._request("GET", "forex/gainers", params=params)
 
-    def losers(self):
+    def losers(self, days: int = None, limit: int = None):
         """Get top forex losers."""
-        return self._request("GET", "forex/losers")
+        params = {}
+        if days is not None:
+            params["days"] = days
+        if limit is not None:
+            params["limit"] = limit
+        return self._request("GET", "forex/losers", params=params)
 
     def list_exchange(self):
         """Get unique exchange values for forex."""
@@ -302,6 +358,10 @@ class ForexAPI(BaseAPI):
     def list_country(self):
         """Get unique country values for forex."""
         return self._request("GET", "forex/list/country")
+
+    def list(self, column: str):
+        """Get unique values for a given column from the forex database."""
+        return self._request("GET", f"forex/list/{column}")
 
     def quote(self, ticker: str):
         """Get a quote for a forex pair by its symbol."""
@@ -331,13 +391,23 @@ class FuturesAPI(BaseAPI):
             params["frame"] = frame
         return self._request("GET", f"futures/{ticker}/prices", params=params)
 
-    def gainers(self):
+    def gainers(self, days: int = None, limit: int = None):
         """Get top futures gainers."""
-        return self._request("GET", "futures/gainers")
+        params = {}
+        if days is not None:
+            params["days"] = days
+        if limit is not None:
+            params["limit"] = limit
+        return self._request("GET", "futures/gainers", params=params)
 
-    def losers(self):
+    def losers(self, days: int = None, limit: int = None):
         """Get top futures losers."""
-        return self._request("GET", "futures/losers")
+        params = {}
+        if days is not None:
+            params["days"] = days
+        if limit is not None:
+            params["limit"] = limit
+        return self._request("GET", "futures/losers", params=params)
 
     def list_exchange(self):
         """Get unique exchange values for futures."""
@@ -354,6 +424,10 @@ class FuturesAPI(BaseAPI):
     def list_country(self):
         """Get unique country values for futures."""
         return self._request("GET", "futures/list/country")
+
+    def list(self, column: str):
+        """Get unique values for a given column from the futures database."""
+        return self._request("GET", f"futures/list/{column}")
 
     def quote(self, ticker: str):
         """Get a quote for a futures contract by its symbol."""
@@ -383,13 +457,31 @@ class IndicesAPI(BaseAPI):
             params["frame"] = frame
         return self._request("GET", f"indices/{ticker}/prices", params=params)
 
-    def gainers(self):
+    def gainers(self, days: int = None, limit: int = None):
         """Get top index gainers."""
-        return self._request("GET", "indices/gainers")
+        params = {}
+        if days is not None:
+            params["days"] = days
+        if limit is not None:
+            params["limit"] = limit
+        return self._request("GET", "indices/gainers", params=params)
 
-    def losers(self):
+    def losers(self, days: int = None, limit: int = None):
         """Get top index losers."""
-        return self._request("GET", "indices/losers")
+        params = {}
+        if days is not None:
+            params["days"] = days
+        if limit is not None:
+            params["limit"] = limit
+        return self._request("GET", "indices/losers", params=params)
+
+    def components(self, ticker: str):
+        """Get index components for a given index ticker."""
+        return self._request("GET", f"indices/{ticker}/components")
+
+    def exposure(self, ticker: str):
+        """Get index exposure for a given index ticker."""
+        return self._request("GET", f"indices/{ticker}/exposure")
 
     def list_exchange(self):
         """Get unique exchange values for indices."""
@@ -403,12 +495,20 @@ class IndicesAPI(BaseAPI):
         """Get unique country values for indices."""
         return self._request("GET", "indices/list/country")
 
+    def list(self, column: str):
+        """Get unique values for a given column from the indices database."""
+        return self._request("GET", f"indices/list/{column}")
+
     def quote(self, ticker: str):
         """Get a quote for an index by its symbol."""
         return self._request("GET", f"indices/{ticker}/quote")
 
 
 class EconAPI(BaseAPI):
+    def find(self, query: str):
+        """Find economic series using natural language description."""
+        return self._request("GET", "econ/find", params={"query": query})
+
     def search(self, query: str):
         """Search for economic series."""
         return self._request("GET", "econ/search", params={"query": query})
@@ -516,6 +616,15 @@ class EarningsAPI(BaseAPI):
         params = {"year": year, "quarter": quarter}
         return self._request("GET", f"earnings/{ticker}/report", params=params)
 
+    def transcript(self, ticker: str, year: str, quarter: str):
+        """Get earnings call transcript for a ticker, year, and quarter."""
+        params = {"year": year, "quarter": quarter}
+        return self._request("GET", f"earnings/{ticker}/transcript", params=params)
+
+    def transcript_sentiment(self, id: str):
+        """Get sentiment analysis of an earnings call transcript by its base64 ID."""
+        return self._request("GET", "earnings/transcript/sentiment", params={"id": id})
+
 
 class FilingsAPI(BaseAPI):
     def filings(self, ticker: str, limit: int = None, form: str = None):
@@ -551,8 +660,43 @@ class FilingsAPI(BaseAPI):
             params["ticker"] = ticker
         return self._request("GET", "filings/search", params=params)
 
+    def document_sentiment(self, document_id: str):
+        """Get sentiment analysis of an SEC filing document by its base64 document ID."""
+        return self._request("GET", "filings/document/sentiment", params={"documentId": document_id})
+
+    def document_text(self, document_id: str):
+        """Get the raw text content of an SEC filing document by its base64 document ID."""
+        return self._request("GET", "filings/document/text", params={"documentId": document_id})
+
 
 class FinancialsAPI(BaseAPI):
+    def balance_sheet(self, ticker: str, year: str = None, quarter: str = None):
+        """Get balance sheet statement for a ticker."""
+        params = {}
+        if year:
+            params["year"] = year
+        if quarter:
+            params["quarter"] = quarter
+        return self._request("GET", f"financials/statements/{ticker}/balance", params=params)
+
+    def income_statement(self, ticker: str, year: str = None, quarter: str = None):
+        """Get income statement for a ticker."""
+        params = {}
+        if year:
+            params["year"] = year
+        if quarter:
+            params["quarter"] = quarter
+        return self._request("GET", f"financials/statements/{ticker}/income", params=params)
+
+    def cash_flow_statement(self, ticker: str, year: str = None, quarter: str = None):
+        """Get cash flow statement for a ticker."""
+        params = {}
+        if year:
+            params["year"] = year
+        if quarter:
+            params["quarter"] = quarter
+        return self._request("GET", f"financials/statements/{ticker}/cashflow", params=params)
+
     def revenue(self, ticker: str, periods: int = None):
         params = {}
         if periods is not None:

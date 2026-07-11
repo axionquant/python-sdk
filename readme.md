@@ -53,36 +53,53 @@ client = Axion(api_key="your_api_key_here")
 ### Stocks
 ```python
 client.stocks.tickers(country="america")
+client.stocks.ticker("AAPL")              # Single ticker lookup
 client.stocks.quote("AAPL")
 client.stocks.prices("AAPL", from_date="2024-01-01", to_date="2024-12-31", frame="daily")
+client.stocks.gainers(days=5, limit=10)  # Top gainers
+client.stocks.losers(days=5, limit=10)   # Top losers
 ```
 
 ### Crypto
 ```python
 client.crypto.tickers(type="coin")
+client.crypto.ticker("BTC")              # Single ticker lookup
 client.crypto.quote("BTC")
 client.crypto.prices("BTC", from_date="2024-01-01", frame="weekly")
+client.crypto.gainers(days=5, limit=10)
+client.crypto.losers(days=5, limit=10)
 ```
 
 ### Forex
 ```python
 client.forex.tickers()
+client.forex.ticker("EURUSD")            # Single ticker lookup
 client.forex.quote("EURUSD")
 client.forex.prices("EURUSD", from_date="2024-01-01")
+client.forex.gainers(limit=5)
+client.forex.losers(limit=5)
 ```
 
 ### Futures
 ```python
 client.futures.tickers(exchange="CME")
+client.futures.ticker("ES")              # Single ticker lookup
 client.futures.quote("ES")
 client.futures.prices("ES", from_date="2024-01-01")
+client.futures.gainers(limit=5)
+client.futures.losers(limit=5)
 ```
 
 ### Indices
 ```python
 client.indices.tickers()
+client.indices.ticker("SPX")             # Single ticker lookup
 client.indices.quote("SPX")
 client.indices.prices("SPX", from_date="2024-01-01")
+client.indices.components("SPX")         # Index constituents
+client.indices.exposure("AAPL")          # Which indices hold AAPL
+client.indices.gainers(limit=5)
+client.indices.losers(limit=5)
 ```
 
 ### Company Profiles
@@ -101,15 +118,25 @@ client.earnings.history("AAPL")
 client.earnings.trend("AAPL")
 client.earnings.index("AAPL")
 client.earnings.report("AAPL", year="2024", quarter="Q1")
+client.earnings.transcript("AAPL", year="2024", quarter="Q1")        # Earnings call transcript
+client.earnings.transcript_sentiment("base64_encoded_id")             # Transcript sentiment
 ```
 
 ### Financials
 ```python
+# Financial statements
+client.financials.balance_sheet("AAPL")
+client.financials.income_statement("AAPL")
+client.financials.cash_flow_statement("AAPL")
+
+# Historical financial metrics
 client.financials.revenue("AAPL", periods=8)
 client.financials.net_income("AAPL")
 client.financials.free_cash_flow("AAPL")
 client.financials.total_assets("AAPL")
 client.financials.total_liabilities("AAPL")
+client.financials.current_assets("AAPL")
+client.financials.current_liabilities("AAPL")
 client.financials.stockholders_equity("AAPL")
 client.financials.operating_cash_flow("AAPL")
 client.financials.capital_expenditures("AAPL")
@@ -135,10 +162,13 @@ client.filings.filings("AAPL", limit=10, form="10-K")
 client.filings.forms("AAPL", form_type="10-Q", year="2024", quarter="Q2")
 client.filings.search(year="2024", quarter="Q1", form="10-K", ticker="AAPL")
 client.filings.desc_forms()           # List available form types
+client.filings.document_text("document_id")     # Raw filing text
+client.filings.document_sentiment("document_id") # Filing sentiment
 ```
 
 ### Economic Data
 ```python
+client.econ.find("semiconductor spending")  # AI-powered FRED search
 client.econ.search("unemployment rate")
 client.econ.dataset("UNRATE")
 client.econ.calendar(
@@ -153,9 +183,15 @@ client.econ.calendar(
 
 ### ETFs
 ```python
+client.etfs.tickers()
+client.etfs.ticker("SPY")              # Single ticker lookup
 client.etfs.fund("SPY")
 client.etfs.holdings("SPY")
 client.etfs.exposure("SPY")
+client.etfs.weights("SPY")             # Sector & region weights
+client.etfs.quote("SPY")
+client.etfs.gainers(limit=5)
+client.etfs.losers(limit=5)
 ```
 
 ### News

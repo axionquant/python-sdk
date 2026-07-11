@@ -45,12 +45,34 @@
 !_TAG_ROLE_DESCRIPTION!Python!module	namespace	/namespace from where classes\/variables\/functions are imported/
 !_TAG_ROLE_DESCRIPTION!Python!unknown	imported	/imported from the other module/
 !_TAG_ROLE_DESCRIPTION!Python!unknown	indirectlyImported	/classes\/variables\/functions\/modules imported in alternative name/
+1. Stocks API	api-reference-and-responses.md	/^### 1. Stocks API$/;"	S	section:Axion API Reference""Market Data APIs
+10. Company Web Traffic API	api-reference-and-responses.md	/^### 10. Company Web Traffic API$/;"	S	section:Axion API Reference""Alternative Data APIs
+11. Financials API	api-reference-and-responses.md	/^### 11. Financials API$/;"	S	section:Axion API Reference""Fundamentals APIs
+12. Profile API (Corp. Intelligence)	api-reference-and-responses.md	/^### 12. Profile API (Corp. Intelligence)$/;"	S	section:Axion API Reference""Fundamentals APIs
+13. Insiders & Ownership API	api-reference-and-responses.md	/^### 13. Insiders & Ownership API$/;"	S	section:Axion API Reference""Fundamentals APIs
+14. SEC Filings API	api-reference-and-responses.md	/^### 14. SEC Filings API$/;"	S	section:Axion API Reference""Fundamentals APIs
+15. Earnings API	api-reference-and-responses.md	/^### 15. Earnings API$/;"	S	section:Axion API Reference""Fundamentals APIs
+16. Credit Ratings API	api-reference-and-responses.md	/^### 16. Credit Ratings API$/;"	S	section:Axion API Reference""Fundamentals APIs
+17. Economic Data API	api-reference-and-responses.md	/^### 17. Economic Data API$/;"	S	section:Axion API Reference""Macros & Signals APIs
+18. News API	api-reference-and-responses.md	/^### 18. News API$/;"	S	section:Axion API Reference""Macros & Signals APIs
+19. Corporate Events (Calendar)	api-reference-and-responses.md	/^### 19. Corporate Events (Calendar)$/;"	S	section:Axion API Reference""Macros & Signals APIs
+2. Indices API	api-reference-and-responses.md	/^### 2. Indices API$/;"	S	section:Axion API Reference""Market Data APIs
+3. Futures API	api-reference-and-responses.md	/^### 3. Futures API$/;"	S	section:Axion API Reference""Market Data APIs
+4. Forex API	api-reference-and-responses.md	/^### 4. Forex API$/;"	S	section:Axion API Reference""Market Data APIs
+5. Crypto API	api-reference-and-responses.md	/^### 5. Crypto API$/;"	S	section:Axion API Reference""Market Data APIs
+6. ETFs API	api-reference-and-responses.md	/^### 6. ETFs API$/;"	S	section:Axion API Reference""Market Data APIs
+7. Supply Chain API	api-reference-and-responses.md	/^### 7. Supply Chain API$/;"	S	section:Axion API Reference""Alternative Data APIs
+8. Sentiment API	api-reference-and-responses.md	/^### 8. Sentiment API$/;"	S	section:Axion API Reference""Alternative Data APIs
+9. ESG API	api-reference-and-responses.md	/^### 9. ESG API$/;"	S	section:Axion API Reference""Alternative Data APIs
+Alternative Data APIs	api-reference-and-responses.md	/^## Alternative Data APIs$/;"	s	chapter:Axion API Reference
 Axion	axion/axion.py	/^class Axion:$/;"	c
+Axion API Reference	api-reference-and-responses.md	/^# Axion API Reference$/;"	c
 Axion Client	readme.md	/^## Axion Client$/;"	s	chapter:Axion Python SDK
 Axion Python SDK	readme.md	/^# Axion Python SDK$/;"	c
 AxionExample	example.py	/^class AxionExample:$/;"	c
 BASE_URL	axion/axion.py	/^BASE_URL = "https:\/\/api.axionquant.com"$/;"	v
 BaseAPI	axion/axion.py	/^class BaseAPI:$/;"	c
+Basic Shares Outstanding	api-reference-and-responses.md	/^#### Basic Shares Outstanding$/;"	t	subsection:Axion API Reference""Fundamentals APIs""11. Financials API
 Company Profiles	readme.md	/^### Company Profiles$/;"	S	section:Axion Python SDK""Axion Client
 Credit Ratings	readme.md	/^### Credit Ratings$/;"	S	section:Axion Python SDK""Axion Client
 CreditAPI	axion/axion.py	/^class CreditAPI(BaseAPI):$/;"	c
@@ -64,36 +86,103 @@ ETFs	readme.md	/^### ETFs$/;"	S	section:Axion Python SDK""Axion Client
 Earnings	readme.md	/^### Earnings$/;"	S	section:Axion Python SDK""Axion Client
 EarningsAPI	axion/axion.py	/^class EarningsAPI(BaseAPI):$/;"	c
 EconAPI	axion/axion.py	/^class EconAPI(BaseAPI):$/;"	c
+Economic Calendar	api-reference-and-responses.md	/^#### Economic Calendar$/;"	t	subsection:Axion API Reference""Macros & Signals APIs""17. Economic Data API
 Economic Data	readme.md	/^### Economic Data$/;"	S	section:Axion Python SDK""Axion Client
 Error Handling	readme.md	/^## Error Handling$/;"	s	chapter:Axion Python SDK
 FilingsAPI	axion/axion.py	/^class FilingsAPI(BaseAPI):$/;"	c
+Financial Metrics (Composite)	api-reference-and-responses.md	/^#### Financial Metrics (Composite)$/;"	t	subsection:Axion API Reference""Fundamentals APIs""11. Financials API
+Financial Snapshot	api-reference-and-responses.md	/^#### Financial Snapshot$/;"	t	subsection:Axion API Reference""Fundamentals APIs""11. Financials API
 Financials	readme.md	/^### Financials$/;"	S	section:Axion Python SDK""Axion Client
 FinancialsAPI	axion/axion.py	/^class FinancialsAPI(BaseAPI):$/;"	c
 Forex	readme.md	/^### Forex$/;"	S	section:Axion Python SDK""Axion Client
 ForexAPI	axion/axion.py	/^class ForexAPI(BaseAPI):$/;"	c
+Fundamentals APIs	api-reference-and-responses.md	/^## Fundamentals APIs$/;"	s	chapter:Axion API Reference
 Futures	readme.md	/^### Futures$/;"	S	section:Axion Python SDK""Axion Client
 FuturesAPI	axion/axion.py	/^class FuturesAPI(BaseAPI):$/;"	c
+Get All Cryptocurrency Tickers	api-reference-and-responses.md	/^#### Get All Cryptocurrency Tickers$/;"	t	subsection:Axion API Reference""Market Data APIs""5. Crypto API
+Get All Forex Tickers	api-reference-and-responses.md	/^#### Get All Forex Tickers$/;"	t	subsection:Axion API Reference""Market Data APIs""4. Forex API
+Get All Futures Tickers	api-reference-and-responses.md	/^#### Get All Futures Tickers$/;"	t	subsection:Axion API Reference""Market Data APIs""3. Futures API
+Get All Index Tickers	api-reference-and-responses.md	/^#### Get All Index Tickers$/;"	t	subsection:Axion API Reference""Market Data APIs""2. Indices API
+Get All Sentiment Data	api-reference-and-responses.md	/^#### Get All Sentiment Data$/;"	t	subsection:Axion API Reference""Alternative Data APIs""8. Sentiment API
+Get All Stock Tickers	api-reference-and-responses.md	/^#### Get All Stock Tickers$/;"	t	subsection:Axion API Reference""Market Data APIs""1. Stocks API
+Get Analyst Sentiment	api-reference-and-responses.md	/^#### Get Analyst Sentiment$/;"	t	subsection:Axion API Reference""Alternative Data APIs""8. Sentiment API
+Get Calendar Events	api-reference-and-responses.md	/^#### Get Calendar Events$/;"	t	subsection:Axion API Reference""Fundamentals APIs""12. Profile API (Corp. Intelligence)
+Get Company Info	api-reference-and-responses.md	/^#### Get Company Info$/;"	t	subsection:Axion API Reference""Fundamentals APIs""12. Profile API (Corp. Intelligence)
+Get Company News	api-reference-and-responses.md	/^#### Get Company News$/;"	t	subsection:Axion API Reference""Macros & Signals APIs""18. News API
+Get Company Profile	api-reference-and-responses.md	/^#### Get Company Profile$/;"	t	subsection:Axion API Reference""Fundamentals APIs""12. Profile API (Corp. Intelligence)
+Get Competitors (Peers)	api-reference-and-responses.md	/^#### Get Competitors (Peers)$/;"	t	subsection:Axion API Reference""Alternative Data APIs""7. Supply Chain API
+Get Corporate Events	api-reference-and-responses.md	/^#### Get Corporate Events$/;"	t	subsection:Axion API Reference""Macros & Signals APIs""19. Corporate Events (Calendar)
+Get Credit Ratings	api-reference-and-responses.md	/^#### Get Credit Ratings$/;"	t	subsection:Axion API Reference""Fundamentals APIs""16. Credit Ratings API
+Get Cryptocurrency Ticker Details	api-reference-and-responses.md	/^#### Get Cryptocurrency Ticker Details$/;"	t	subsection:Axion API Reference""Market Data APIs""5. Crypto API
+Get Dataset by ID	api-reference-and-responses.md	/^#### Get Dataset by ID$/;"	t	subsection:Axion API Reference""Macros & Signals APIs""17. Economic Data API
+Get ESG Scores by Ticker	api-reference-and-responses.md	/^#### Get ESG Scores by Ticker$/;"	t	subsection:Axion API Reference""Alternative Data APIs""9. ESG API
+Get ETF Exposure Analysis	api-reference-and-responses.md	/^#### Get ETF Exposure Analysis$/;"	t	subsection:Axion API Reference""Market Data APIs""6. ETFs API
+Get Earnings History	api-reference-and-responses.md	/^#### Get Earnings History$/;"	t	subsection:Axion API Reference""Fundamentals APIs""15. Earnings API
+Get Earnings Report (8-K Tables)	api-reference-and-responses.md	/^#### Get Earnings Report (8-K Tables)$/;"	t	subsection:Axion API Reference""Fundamentals APIs""15. Earnings API
+Get Earnings Trend	api-reference-and-responses.md	/^#### Get Earnings Trend$/;"	t	subsection:Axion API Reference""Fundamentals APIs""15. Earnings API
+Get Forex Ticker Details	api-reference-and-responses.md	/^#### Get Forex Ticker Details$/;"	t	subsection:Axion API Reference""Market Data APIs""4. Forex API
+Get Fund Information	api-reference-and-responses.md	/^#### Get Fund Information$/;"	t	subsection:Axion API Reference""Market Data APIs""6. ETFs API
+Get Fund Ownership	api-reference-and-responses.md	/^#### Get Fund Ownership$/;"	t	subsection:Axion API Reference""Fundamentals APIs""13. Insiders & Ownership API
+Get General News	api-reference-and-responses.md	/^#### Get General News$/;"	t	subsection:Axion API Reference""Macros & Signals APIs""18. News API
+Get Historical Exchange Rate Data	api-reference-and-responses.md	/^#### Get Historical Exchange Rate Data$/;"	t	subsection:Axion API Reference""Market Data APIs""4. Forex API
+Get Historical Index Data	api-reference-and-responses.md	/^#### Get Historical Index Data$/;"	t	subsection:Axion API Reference""Market Data APIs""2. Indices API
+Get Historical Price Data	api-reference-and-responses.md	/^#### Get Historical Price Data$/;"	t	subsection:Axion API Reference""Market Data APIs""3. Futures API
+Get Historical Price Data	api-reference-and-responses.md	/^#### Get Historical Price Data$/;"	t	subsection:Axion API Reference""Market Data APIs""5. Crypto API
+Get Historical Stock Price Data	api-reference-and-responses.md	/^#### Get Historical Stock Price Data$/;"	t	subsection:Axion API Reference""Market Data APIs""1. Stocks API
+Get Index Ticker Details	api-reference-and-responses.md	/^#### Get Index Ticker Details$/;"	t	subsection:Axion API Reference""Market Data APIs""2. Indices API
+Get Individual Insider Holders	api-reference-and-responses.md	/^#### Get Individual Insider Holders$/;"	t	subsection:Axion API Reference""Fundamentals APIs""13. Insiders & Ownership API
+Get Insider Transactions	api-reference-and-responses.md	/^#### Get Insider Transactions$/;"	t	subsection:Axion API Reference""Fundamentals APIs""13. Insiders & Ownership API
+Get Institutional Ownership	api-reference-and-responses.md	/^#### Get Institutional Ownership$/;"	t	subsection:Axion API Reference""Fundamentals APIs""13. Insiders & Ownership API
+Get Key Statistics	api-reference-and-responses.md	/^#### Get Key Statistics$/;"	t	subsection:Axion API Reference""Fundamentals APIs""12. Profile API (Corp. Intelligence)
+Get Key Suppliers	api-reference-and-responses.md	/^#### Get Key Suppliers$/;"	t	subsection:Axion API Reference""Alternative Data APIs""7. Supply Chain API
+Get Major Customers	api-reference-and-responses.md	/^#### Get Major Customers$/;"	t	subsection:Axion API Reference""Alternative Data APIs""7. Supply Chain API
+Get Major Holders Breakdown	api-reference-and-responses.md	/^#### Get Major Holders Breakdown$/;"	t	subsection:Axion API Reference""Fundamentals APIs""13. Insiders & Ownership API
+Get Net Share Purchase Activity	api-reference-and-responses.md	/^#### Get Net Share Purchase Activity$/;"	t	subsection:Axion API Reference""Fundamentals APIs""13. Insiders & Ownership API
+Get News Sentiment	api-reference-and-responses.md	/^#### Get News Sentiment$/;"	t	subsection:Axion API Reference""Alternative Data APIs""8. Sentiment API
+Get News by Category	api-reference-and-responses.md	/^#### Get News by Category$/;"	t	subsection:Axion API Reference""Macros & Signals APIs""18. News API
+Get News by Country	api-reference-and-responses.md	/^#### Get News by Country$/;"	t	subsection:Axion API Reference""Macros & Signals APIs""18. News API
+Get Performance Summary	api-reference-and-responses.md	/^#### Get Performance Summary$/;"	t	subsection:Axion API Reference""Fundamentals APIs""12. Profile API (Corp. Intelligence)
+Get Recent Filings	api-reference-and-responses.md	/^#### Get Recent Filings$/;"	t	subsection:Axion API Reference""Fundamentals APIs""14. SEC Filings API
+Get Recommendation Trends	api-reference-and-responses.md	/^#### Get Recommendation Trends$/;"	t	subsection:Axion API Reference""Fundamentals APIs""12. Profile API (Corp. Intelligence)
+Get Sector & Region Weights	api-reference-and-responses.md	/^#### Get Sector & Region Weights$/;"	t	subsection:Axion API Reference""Market Data APIs""6. ETFs API
+Get Social Media Sentiment	api-reference-and-responses.md	/^#### Get Social Media Sentiment$/;"	t	subsection:Axion API Reference""Alternative Data APIs""8. Sentiment API
+Get Specific Futures Ticker	api-reference-and-responses.md	/^#### Get Specific Futures Ticker$/;"	t	subsection:Axion API Reference""Market Data APIs""3. Futures API
 Get Started	readme.md	/^## Get Started$/;"	s	chapter:Axion Python SDK
+Get Stock Ticker Details	api-reference-and-responses.md	/^#### Get Stock Ticker Details$/;"	t	subsection:Axion API Reference""Market Data APIs""1. Stocks API
+Get Top Holdings	api-reference-and-responses.md	/^#### Get Top Holdings$/;"	t	subsection:Axion API Reference""Market Data APIs""6. ETFs API
+Get Website Traffic	api-reference-and-responses.md	/^#### Get Website Traffic$/;"	t	subsection:Axion API Reference""Alternative Data APIs""10. Company Web Traffic API
 Indices	readme.md	/^### Indices$/;"	S	section:Axion Python SDK""Axion Client
 IndicesAPI	axion/axion.py	/^class IndicesAPI(BaseAPI):$/;"	c
 Insiders & Ownership	readme.md	/^### Insiders & Ownership$/;"	S	section:Axion Python SDK""Axion Client
 InsidersAPI	axion/axion.py	/^class InsidersAPI(BaseAPI):$/;"	c
 Installation	readme.md	/^## Installation$/;"	s	chapter:Axion Python SDK
 License	readme.md	/^## License$/;"	s	chapter:Axion Python SDK
+List Available Form Types	api-reference-and-responses.md	/^#### List Available Form Types$/;"	t	subsection:Axion API Reference""Fundamentals APIs""14. SEC Filings API
 ML Models (`models`)	readme.md	/^## ML Models (`models`)$/;"	s	chapter:Axion Python SDK
+Macros & Signals APIs	api-reference-and-responses.md	/^## Macros & Signals APIs$/;"	s	chapter:Axion API Reference
+Market Data APIs	api-reference-and-responses.md	/^## Market Data APIs$/;"	s	chapter:Axion API Reference
 Modules	readme.md	/^## Modules$/;"	s	chapter:Axion Python SDK
+Net Income	api-reference-and-responses.md	/^#### Net Income$/;"	t	subsection:Axion API Reference""Fundamentals APIs""11. Financials API
 News	readme.md	/^### News$/;"	S	section:Axion Python SDK""Axion Client
 NewsAPI	axion/axion.py	/^class NewsAPI(BaseAPI):$/;"	c
+Operating Cash Flow	api-reference-and-responses.md	/^#### Operating Cash Flow$/;"	t	subsection:Axion API Reference""Fundamentals APIs""11. Financials API
 ProfilesAPI	axion/axion.py	/^class ProfilesAPI(BaseAPI):$/;"	c
 Quick Start	readme.md	/^## Quick Start$/;"	s	chapter:Axion Python SDK
+Revenue	api-reference-and-responses.md	/^#### Revenue$/;"	t	subsection:Axion API Reference""Fundamentals APIs""11. Financials API
 SEC Filings	readme.md	/^### SEC Filings$/;"	S	section:Axion Python SDK""Axion Client
+Search Economic Series	api-reference-and-responses.md	/^#### Search Economic Series$/;"	t	subsection:Axion API Reference""Macros & Signals APIs""17. Economic Data API
+Search Filings by Year and Quarter	api-reference-and-responses.md	/^#### Search Filings by Year and Quarter$/;"	t	subsection:Axion API Reference""Fundamentals APIs""14. SEC Filings API
+Search Organizations	api-reference-and-responses.md	/^#### Search Organizations$/;"	t	subsection:Axion API Reference""Fundamentals APIs""16. Credit Ratings API
 Sentiment	readme.md	/^### Sentiment$/;"	S	section:Axion Python SDK""Axion Client
 SentimentAPI	axion/axion.py	/^class SentimentAPI(BaseAPI):$/;"	c
+Stockholders' Equity	api-reference-and-responses.md	/^#### Stockholders' Equity$/;"	t	subsection:Axion API Reference""Fundamentals APIs""11. Financials API
 Stocks	readme.md	/^### Stocks$/;"	S	section:Axion Python SDK""Axion Client
 StocksAPI	axion/axion.py	/^class StocksAPI(BaseAPI):$/;"	c
 Supply Chain	readme.md	/^### Supply Chain$/;"	S	section:Axion Python SDK""Axion Client
 SupplyChainAPI	axion/axion.py	/^class SupplyChainAPI(BaseAPI):$/;"	c
 Technical Analysis (`ta`)	readme.md	/^## Technical Analysis (`ta`)$/;"	s	chapter:Axion Python SDK
+Total Assets	api-reference-and-responses.md	/^#### Total Assets$/;"	t	subsection:Axion API Reference""Fundamentals APIs""11. Financials API
+Total Liabilities	api-reference-and-responses.md	/^#### Total Liabilities$/;"	t	subsection:Axion API Reference""Fundamentals APIs""11. Financials API
 Utilities (`utils`)	readme.md	/^## Utilities (`utils`)$/;"	s	chapter:Axion Python SDK
 Visualization (`visualize`)	readme.md	/^## Visualization (`visualize`)$/;"	s	chapter:Axion Python SDK
 Web Traffic	readme.md	/^### Web Traffic$/;"	S	section:Axion Python SDK""Axion Client
@@ -160,6 +249,12 @@ forms	axion/axion.py	/^    def forms(self, ticker: str, form_type: str, year: st
 free_cash_flow	axion/axion.py	/^    def free_cash_flow(self, ticker: str, periods: int = None):$/;"	m	class:FinancialsAPI
 fund	axion/axion.py	/^    def fund(self, ticker: str):$/;"	m	class:ETFAPI
 funds	axion/axion.py	/^    def funds(self, ticker: str):$/;"	m	class:InsidersAPI
+gainers	axion/axion.py	/^    def gainers(self):$/;"	m	class:CryptoAPI
+gainers	axion/axion.py	/^    def gainers(self):$/;"	m	class:ETFAPI
+gainers	axion/axion.py	/^    def gainers(self):$/;"	m	class:ForexAPI
+gainers	axion/axion.py	/^    def gainers(self):$/;"	m	class:FuturesAPI
+gainers	axion/axion.py	/^    def gainers(self):$/;"	m	class:IndicesAPI
+gainers	axion/axion.py	/^    def gainers(self):$/;"	m	class:StocksAPI
 gainers	axion/utils.py	/^def gainers(prices, frame, col='close', limit=500, relative=True, reverse=True):$/;"	f
 general	axion/axion.py	/^    def general(self):$/;"	m	class:NewsAPI
 generate_color_map	axion/visualize.py	/^def generate_color_map(column_values):$/;"	f
@@ -182,6 +277,37 @@ kama	axion/ta.py	/^def kama(df, column="close", period=14, fast=14, slow=30):$/;
 kc	axion/ta.py	/^def kc(df, period=20, atr_period=10, multiplier=2):$/;"	f
 line	axion/visualize.py	/^def line(df, x, y, log=False):$/;"	f
 linearRegression	axion/models.py	/^def linearRegression(df, x, target, n_preds=10, scale='D'):$/;"	f
+list_category	axion/axion.py	/^    def list_category(self):$/;"	m	class:CryptoAPI
+list_country	axion/axion.py	/^    def list_country(self):$/;"	m	class:ETFAPI
+list_country	axion/axion.py	/^    def list_country(self):$/;"	m	class:ForexAPI
+list_country	axion/axion.py	/^    def list_country(self):$/;"	m	class:FuturesAPI
+list_country	axion/axion.py	/^    def list_country(self):$/;"	m	class:IndicesAPI
+list_country	axion/axion.py	/^    def list_country(self):$/;"	m	class:StocksAPI
+list_currency	axion/axion.py	/^    def list_currency(self):$/;"	m	class:ETFAPI
+list_currency	axion/axion.py	/^    def list_currency(self):$/;"	m	class:FuturesAPI
+list_currency	axion/axion.py	/^    def list_currency(self):$/;"	m	class:StocksAPI
+list_exchange	axion/axion.py	/^    def list_exchange(self):$/;"	m	class:ForexAPI
+list_exchange	axion/axion.py	/^    def list_exchange(self):$/;"	m	class:FuturesAPI
+list_exchange	axion/axion.py	/^    def list_exchange(self):$/;"	m	class:IndicesAPI
+list_industry	axion/axion.py	/^    def list_industry(self):$/;"	m	class:ETFAPI
+list_industry	axion/axion.py	/^    def list_industry(self):$/;"	m	class:StocksAPI
+list_market	axion/axion.py	/^    def list_market(self):$/;"	m	class:ETFAPI
+list_market	axion/axion.py	/^    def list_market(self):$/;"	m	class:StocksAPI
+list_rating	axion/axion.py	/^    def list_rating(self):$/;"	m	class:CryptoAPI
+list_rating	axion/axion.py	/^    def list_rating(self):$/;"	m	class:ForexAPI
+list_sector	axion/axion.py	/^    def list_sector(self):$/;"	m	class:ETFAPI
+list_sector	axion/axion.py	/^    def list_sector(self):$/;"	m	class:StocksAPI
+list_timezone	axion/axion.py	/^    def list_timezone(self):$/;"	m	class:FuturesAPI
+list_timezone	axion/axion.py	/^    def list_timezone(self):$/;"	m	class:IndicesAPI
+list_type	axion/axion.py	/^    def list_type(self):$/;"	m	class:CryptoAPI
+list_type	axion/axion.py	/^    def list_type(self):$/;"	m	class:ETFAPI
+list_type	axion/axion.py	/^    def list_type(self):$/;"	m	class:StocksAPI
+losers	axion/axion.py	/^    def losers(self):$/;"	m	class:CryptoAPI
+losers	axion/axion.py	/^    def losers(self):$/;"	m	class:ETFAPI
+losers	axion/axion.py	/^    def losers(self):$/;"	m	class:ForexAPI
+losers	axion/axion.py	/^    def losers(self):$/;"	m	class:FuturesAPI
+losers	axion/axion.py	/^    def losers(self):$/;"	m	class:IndicesAPI
+losers	axion/axion.py	/^    def losers(self):$/;"	m	class:StocksAPI
 losers	axion/utils.py	/^def losers(prices, frame, col='close', relative=True, limit=500):$/;"	f
 lstm	axion/models.py	/^def lstm(df, x, target, features=[], n_preds=10, scale='D'):$/;"	f
 m	axion/utils.py	/^m, month = 'M', 'M' # monthly$/;"	v
@@ -224,6 +350,12 @@ prices	axion/axion.py	/^    def prices(self, ticker: str, from_date: str = None,
 prices	axion/axion.py	/^    def prices(self, ticker: str, from_date: str = None, to_date: str = None, frame: str = 'dail/;"	m	class:StocksAPI
 profile	axion/axion.py	/^    def profile(self, ticker: str):$/;"	m	class:ProfilesAPI
 px	axion/visualize.py	/^import plotly.express as px$/;"	I	nameref:module:plotly.express
+quote	axion/axion.py	/^    def quote(self, ticker: str):$/;"	m	class:CryptoAPI
+quote	axion/axion.py	/^    def quote(self, ticker: str):$/;"	m	class:ETFAPI
+quote	axion/axion.py	/^    def quote(self, ticker: str):$/;"	m	class:ForexAPI
+quote	axion/axion.py	/^    def quote(self, ticker: str):$/;"	m	class:FuturesAPI
+quote	axion/axion.py	/^    def quote(self, ticker: str):$/;"	m	class:IndicesAPI
+quote	axion/axion.py	/^    def quote(self, ticker: str):$/;"	m	class:StocksAPI
 radar	axion/visualize.py	/^def radar(df, values, labels):$/;"	f
 ranger	axion/utils.py	/^def ranger(df, start, end=None, date_col="date"):$/;"	f
 ratings	axion/axion.py	/^    def ratings(self, entity_id: str):$/;"	m	class:CreditAPI

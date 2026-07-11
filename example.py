@@ -12,17 +12,12 @@ Usage:
 
 import os
 import sys
-from datetime import datetime, timedelta
-from dotenv import load_dotenv  # Optional: for loading from .env file
 
 try:
     from axion import Axion
 except ImportError:
-    # If axion.py is not in the same directory, adjust the import path
     sys.path.append(os.path.dirname(os.path.abspath(__file__)))
     from axion import Axion
-
-load_dotenv()
 
 
 class AxionExample:
@@ -34,9 +29,8 @@ class AxionExample:
                 raise ValueError(
                     "API key is required. Set AXION_API_KEY environment variable or pass it directly."
                 )
-
         self.client = Axion(api_key=api_key)
-        print(f"✓ Axion client initialized successfully")
+        print("Axion client initialized successfully")
         print("-" * 50)
 
     def run_all_examples(self):
@@ -45,33 +39,15 @@ class AxionExample:
         print("=" * 50)
 
         try:
-            # 1. Stocks Examples
             self.stock_examples()
-
-            # 2. Company Profile Examples
             self.company_examples()
-
-            # 3. ETF Examples
             self.etf_examples()
-
-            # 4. Crypto Examples
             self.crypto_examples()
-
-            # 5. Economic Data Examples
             self.economic_examples()
-
-            # 6. News and Sentiment Examples
             self.news_sentiment_examples()
-
-            # 7. Credit and ESG Examples
             self.credit_esg_examples()
-
-            # 8. Supply Chain Examples
             self.supply_chain_examples()
-
-            # 9. Other Asset Classes
             self.other_assets_examples()
-
         except Exception as e:
             print(f"Error: {e}")
             print("Make sure your API key is valid and you have access to the requested endpoints.")
@@ -81,39 +57,41 @@ class AxionExample:
         print("\n1. STOCK DATA EXAMPLES")
         print("-" * 30)
 
-        # Get stock tickers (limited to America for free tier)
         print("\nGetting US stock tickers...")
         try:
-            tickers = self.client.get_stock_tickers(country="america", exchange="NASDAQ")
+            tickers = self.client.stocks.tickers(country="america", exchange="NASDAQ")
             print(f"Found {len(tickers) if isinstance(tickers, list) else 'multiple'} tickers")
         except Exception as e:
             print(f"Note: {e}")
 
-        # Get specific stock data
         print("\nGetting Apple (AAPL) data...")
         try:
-            apple_data = self.client.get_stock_ticker_by_symbol("AAPL")
-            print(f"AAPL: {apple_data.get('name', 'Unknown')}")
-            print(f"Market Cap: {apple_data.get('market_cap', 'N/A')}")
+            apple_data = self.client.stocks.ticker("AAPL")
+            if isinstance(apple_data, dict):
+                print(f"AAPL: {apple_data.get('name', 'Unknown')}")
+                print(f"Exchange: {apple_data.get('exchange', 'N/A')}")
         except Exception as e:
             print(f"Error getting AAPL data: {e}")
 
-        # Get stock prices with date range
-        print("\nGetting AAPL prices for last 30 days...")
+        print("\nGetting AAPL stock quote...")
         try:
-            to_date = datetime.now().strftime("%Y-%m-%d")
-            from_date = (datetime.now() - timedelta(days=30)).strftime("%Y-%m-%d")
+            quote = self.client.stocks.quote("AAPL")
+            if isinstance(quote, dict):
+                print(f"AAPL Price: {quote.get('price', 'N/A')}")
+        except Exception as e:
+            print(f"Error getting quote: {e}")
 
-            prices = self.client.get_stock_prices(
+        print("\nGetting AAPL prices...")
+        try:
+            prices = self.client.stocks.prices(
                 ticker="AAPL",
-                from_date=from_date,
-                to_date=to_date,
+                from_date="2024-01-01",
+                to_date="2024-01-31",
                 frame="daily"
             )
-
             if isinstance(prices, list) and len(prices) > 0:
                 print(f"Got {len(prices)} price points")
-                latest = prices[-1] if isinstance(prices[-1], dict) else prices[-1]
+                latest = prices[-1]
                 print(f"Latest close: {latest.get('close', 'N/A')}")
         except Exception as e:
             print(f"Error getting prices: {e}")
@@ -125,22 +103,19 @@ class AxionExample:
 
         print("\nGetting Microsoft (MSFT) company profile...")
         try:
-            # Get basic company info
-            profile = self.client.get_company_profile_info("MSFT")
-            print(f"Company: {profile.get('name', 'N/A')}")
-            print(f"Sector: {profile.get('sector', 'N/A')}")
-            print(f"Industry: {profile.get('industry', 'N/A')}")
+            profile = self.client.profiles.info("MSFT")
+            if isinstance(profile, dict):
+                print(f"Company: {profile.get('name', 'N/A')}")
+                print(f"Sector: {profile.get('sector', 'N/A')}")
+                print(f"Industry: {profile.get('industry', 'N/A')}")
 
-            # Get financial data
-            financials = self.client.get_company_financial_data("MSFT")
+            financials = self.client.financials.metrics("MSFT")
             if financials:
-                print(f"Financial data available: {len(financials) if isinstance(financials, list) else 'Yes'}")
+                print(f"Financial data available: {'Yes' if isinstance(financials, dict) else 'Yes'}")
 
-            # Get earnings data
-            earnings = self.client.get_company_earnings_history("MSFT")
-            if earnings and isinstance(earnings, list):
+            earnings = self.client.earnings.history("MSFT")
+            if isinstance(earnings, list):
                 print(f"Earnings history: {len(earnings)} periods")
-
         except Exception as e:
             print(f"Error: {e}")
 
@@ -151,19 +126,16 @@ class AxionExample:
 
         print("\nGetting SPY ETF data...")
         try:
-            # Get ETF fund data
-            spy_data = self.client.get_etf_fund_data("SPY")
-            print(f"ETF: {spy_data.get('name', 'N/A')}")
-            print(f"Assets: {spy_data.get('total_assets', 'N/A')}")
+            spy_data = self.client.etfs.fund("SPY")
+            if isinstance(spy_data, dict):
+                print(f"ETF: {spy_data.get('fund', 'N/A')}")
 
-            # Get holdings
-            holdings = self.client.get_etf_holdings("SPY")
-            if holdings and isinstance(holdings, list) and len(holdings) > 0:
+            holdings = self.client.etfs.holdings("SPY")
+            if isinstance(holdings, list) and len(holdings) > 0:
                 print(f"Top holdings: {len(holdings)} positions")
-                for i, holding in enumerate(holdings[:3]):  # Show first 3
+                for i, holding in enumerate(holdings[:3]):
                     if isinstance(holding, dict):
-                        print(f"  {i+1}. {holding.get('ticker', 'N/A')}: {holding.get('weight', 'N/A')}%")
-
+                        print(f"  {i+1}. {holding.get('ticker', 'N/A')}: {holding.get('weight', 'N/A')}")
         except Exception as e:
             print(f"Error: {e}")
 
@@ -174,25 +146,22 @@ class AxionExample:
 
         print("\nGetting cryptocurrency tickers...")
         try:
-            crypto_tickers = self.client.get_crypto_tickers(type="coin")
+            crypto_tickers = self.client.crypto.tickers(type="coin")
             print(f"Found {len(crypto_tickers) if isinstance(crypto_tickers, list) else 'multiple'} crypto coins")
 
-            # Get Bitcoin data
-            btc_data = self.client.get_crypto_ticker_by_symbol("BTC")
-            print(f"\nBitcoin (BTC):")
-            print(f"Price: ${btc_data.get('price', 'N/A')}")
-            print(f"Market Cap: ${btc_data.get('market_cap', 'N/A')}")
+            btc_data = self.client.crypto.ticker("BTC")
+            if isinstance(btc_data, dict):
+                print(f"\nBitcoin (BTC):")
+                print(f"Name: {btc_data.get('name', 'N/A')}")
 
-            # Get Bitcoin prices
-            btc_prices = self.client.get_crypto_prices(
+            btc_prices = self.client.crypto.prices(
                 ticker="BTC",
                 from_date="2024-01-01",
                 to_date="2024-01-07",
                 frame="daily"
             )
-            if btc_prices and isinstance(btc_prices, list):
+            if isinstance(btc_prices, list):
                 print(f"BTC price data points: {len(btc_prices)}")
-
         except Exception as e:
             print(f"Error: {e}")
 
@@ -201,24 +170,27 @@ class AxionExample:
         print("\n\n5. ECONOMIC DATA EXAMPLES")
         print("-" * 30)
 
-        print("\nGetting economic calendar for next week...")
+        print("\nGetting economic calendar...")
         try:
-            from_date = datetime.now().strftime("%Y-%m-%d")
-            to_date = (datetime.now() + timedelta(days=7)).strftime("%Y-%m-%d")
-
-            calendar = self.client.get_econ_calendar(
-                from_date=from_date,
-                to_date=to_date,
+            calendar = self.client.econ.calendar(
+                from_date="2024-01-01",
+                to_date="2024-01-07",
                 country="US",
                 min_importance=2
             )
-
-            if calendar and isinstance(calendar, list):
+            if isinstance(calendar, list):
                 print(f"Economic events: {len(calendar)}")
-                for event in calendar[:3]:  # Show first 3 events
+                for event in calendar[:3]:
                     if isinstance(event, dict):
-                        print(f"  • {event.get('title', 'N/A')} - {event.get('date', 'N/A')}")
+                        print(f"  - {event.get('title', 'N/A')} - {event.get('date', 'N/A')}")
+        except Exception as e:
+            print(f"Error: {e}")
 
+        print("\nSearching economic datasets with AI...")
+        try:
+            results = self.client.econ.find("unemployment rate")
+            if isinstance(results, list):
+                print(f"Found {len(results)} datasets")
         except Exception as e:
             print(f"Error: {e}")
 
@@ -229,21 +201,18 @@ class AxionExample:
 
         print("\nGetting general news...")
         try:
-            news = self.client.get_news()
-            if news and isinstance(news, list):
+            news = self.client.news.general()
+            if isinstance(news, list):
                 print(f"Recent news articles: {len(news)}")
-                for article in news[:2]:  # Show first 2 articles
+                for article in news[:2]:
                     if isinstance(article, dict):
-                        print(f"  • {article.get('title', 'N/A')}")
+                        print(f"  - {article.get('title', 'N/A')}")
 
-            # Get sentiment for a stock
-            sentiment = self.client.get_sentiment_all("AAPL")
-            if sentiment:
+            sentiment = self.client.sentiment.all("AAPL")
+            if isinstance(sentiment, dict):
                 print(f"\nAAPL sentiment data available")
-                if isinstance(sentiment, dict):
-                    for key in sentiment:
-                        print(f"  {key}: {sentiment[key]}")
-
+                for key in sentiment:
+                    print(f"  {key}: {sentiment[key]}")
         except Exception as e:
             print(f"Error: {e}")
 
@@ -254,18 +223,16 @@ class AxionExample:
 
         print("\nGetting ESG data for Microsoft...")
         try:
-            esg_data = self.client.get_esg_data("MSFT")
-            if esg_data:
+            esg_data = self.client.esg.data("MSFT")
+            if isinstance(esg_data, list):
                 print("ESG data retrieved")
-                if isinstance(esg_data, dict):
-                    print(f"ESG Score: {esg_data.get('esg_score', 'N/A')}")
-                    print(f"Environment Score: {esg_data.get('environment_score', 'N/A')}")
+                for entry in esg_data:
+                    if isinstance(entry, dict):
+                        print(f"  {entry.get('category', 'N/A')}: {entry.get('score', 'N/A')} ({entry.get('grade', 'N/A')})")
 
-            # Search for credit entities
-            credit_search = self.client.search_credit("Apple")
-            if credit_search and isinstance(credit_search, list):
+            credit_search = self.client.credit.search("Apple")
+            if isinstance(credit_search, list):
                 print(f"\nCredit search results: {len(credit_search)}")
-
         except Exception as e:
             print(f"Error: {e}")
 
@@ -276,16 +243,13 @@ class AxionExample:
 
         print("\nGetting supply chain data for Apple...")
         try:
-            # Get suppliers
-            suppliers = self.client.get_supply_chain_suppliers("AAPL")
-            if suppliers and isinstance(suppliers, list):
+            suppliers = self.client.supply_chain.suppliers("AAPL")
+            if isinstance(suppliers, list):
                 print(f"Suppliers: {len(suppliers)} companies")
 
-            # Get customers
-            customers = self.client.get_supply_chain_customers("AAPL")
-            if customers and isinstance(customers, list):
+            customers = self.client.supply_chain.customers("AAPL")
+            if isinstance(customers, list):
                 print(f"Customers: {len(customers)} companies")
-
         except Exception as e:
             print(f"Error: {e}")
 
@@ -296,30 +260,27 @@ class AxionExample:
 
         print("\nGetting forex data...")
         try:
-            forex_tickers = self.client.get_forex_tickers()
-            if forex_tickers:
-                print(f"Forex pairs available: {len(forex_tickers) if isinstance(forex_tickers, list) else 'Multiple'}")
+            forex_tickers = self.client.forex.tickers()
+            if isinstance(forex_tickers, list):
+                print(f"Forex pairs available: {len(forex_tickers)}")
 
-            # Get indices
-            indices = self.client.get_index_tickers()
-            if indices:
-                print(f"Market indices: {len(indices) if isinstance(indices, list) else 'Multiple'}")
-
+            indices = self.client.indices.tickers()
+            if isinstance(indices, list):
+                print(f"Market indices: {len(indices)}")
         except Exception as e:
             print(f"Error: {e}")
 
 
 def main():
     """Main function to run examples"""
-    print("\n" + "="*60)
+    print("\n" + "=" * 60)
     print("AXION FINANCIAL DATA SDK - EXAMPLE USAGE")
-    print("="*60)
+    print("=" * 60)
 
-    # Initialize with API key (from env var or prompt)
     api_key = os.getenv("AXION_API_KEY")
 
     if not api_key:
-        print("\n⚠  API key not found in environment variables.")
+        print("\nAPI key not found in environment variables.")
         print("You can:")
         print("  1. Set AXION_API_KEY environment variable")
         print("  2. Enter your API key now")
@@ -329,29 +290,24 @@ def main():
 
         if choice == "2":
             api_key = input("Enter your Axion API key: ").strip()
-        elif choice == "3":
-            # Try to load from .env
-            load_dotenv()
-            api_key = os.getenv("AXION_API_KEY")
 
     if not api_key:
-        print("\n No API key provided. Exiting.")
-        print("\nTo get an API key, visit: https://axion.com/api")
+        print("\nNo API key provided. Exiting.")
+        print("\nTo get an API key, visit: https://axionquant.com/dashboard/api-keys")
         return
 
     try:
-        # Create example instance and run all examples
         example = AxionExample(api_key=api_key)
         example.run_all_examples()
 
-        print("\n" + "="*60)
+        print("\n" + "=" * 60)
         print("EXAMPLES COMPLETED SUCCESSFULLY!")
-        print("="*60)
+        print("=" * 60)
         print("\nFor more information and full API documentation:")
-        print("Visit: https://docs.axion.com")
+        print("Visit: https://axionquant.com")
 
     except Exception as e:
-        print(f"\n Failed to initialize or run examples: {e}")
+        print(f"\nFailed to initialize or run examples: {e}")
         print("Please check your API key and internet connection.")
 
 
