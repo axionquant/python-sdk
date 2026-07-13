@@ -273,6 +273,7 @@ help	axion/axion.py	/^    def help(self):$/;"	m	class:Axion
 help	axion/axion.py	/^    def help(self):$/;"	m	class:BaseAPI
 history	axion/axion.py	/^    def history(self, ticker: str):$/;"	m	class:EarningsAPI
 holdings	axion/axion.py	/^    def holdings(self, ticker: str):$/;"	m	class:ETFAPI
+holdings_all	axion/axion.py	/^    def holdings_all(self, ticker: str):$/;"	m	class:ETFAPI
 hour	axion/utils.py	/^h, hour = 'H', 'M'  # hourly$/;"	v
 ichi	axion/ta.py	/^def ichi(df):$/;"	f
 income_statement	axion/axion.py	/^    def income_statement(self, ticker: str, year: str = None, quarter: str = None):$/;"	m	class:FinancialsAPI

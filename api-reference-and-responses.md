@@ -1075,7 +1075,7 @@ GET /financials/:ticker/snapshot
 
 #### Get Company Profile
 ```
-GET /profile/:ticker
+GET /profiles/:ticker
 ```
 **Path Params:** `ticker` (string, required).
 
@@ -1112,7 +1112,7 @@ GET /profile/:ticker
 
 #### Get Company Info
 ```
-GET /profile/:ticker/info
+GET /profiles/:ticker/info
 ```
 **Path Params:** `ticker` (string, required).
 
@@ -1137,7 +1137,7 @@ GET /profile/:ticker/info
 
 #### Get Performance Summary
 ```
-GET /profile/:ticker/summary
+GET /profiles/:ticker/summary
 ```
 **Path Params:** `ticker` (string, required).
 
@@ -1166,7 +1166,7 @@ GET /profile/:ticker/summary
 
 #### Get Key Statistics
 ```
-GET /profile/:ticker/statistics
+GET /profiles/:ticker/statistics
 ```
 **Path Params:** `ticker` (string, required).
 
@@ -1195,7 +1195,7 @@ GET /profile/:ticker/statistics
 
 #### Get Calendar Events
 ```
-GET /profile/:ticker/calendar
+GET /profiles/:ticker/calendar
 ```
 **Path Params:** `ticker` (string, required).
 
@@ -1222,7 +1222,7 @@ GET /profile/:ticker/calendar
 
 #### Get Recommendation Trends
 ```
-GET /profile/:ticker/recommendation
+GET /profiles/:ticker/recommendation
 ```
 **Path Params:** `ticker` (string, required).
 
@@ -1948,7 +1948,7 @@ GET /news
 
 #### Get Corporate Events
 ```
-GET /profile/:ticker/calendar
+GET /profiles/:ticker/calendar
 ```
 **Path Params:** `ticker` (string, required).
 

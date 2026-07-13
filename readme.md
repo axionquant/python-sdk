@@ -187,6 +187,7 @@ client.etfs.tickers()
 client.etfs.ticker("SPY")              # Single ticker lookup
 client.etfs.fund("SPY")
 client.etfs.holdings("SPY")
+client.etfs.holdings_all("SPY")
 client.etfs.exposure("SPY")
 client.etfs.weights("SPY")             # Sector & region weights
 client.etfs.quote("SPY")

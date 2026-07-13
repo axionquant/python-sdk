@@ -89,6 +89,10 @@ class ETFAPI(BaseAPI):
         """Get holdings data for an ETF."""
         return self._request("GET", f"etfs/{ticker}/holdings")
 
+    def holdings_all(self, ticker: str):
+        """Get all holdings data for an ETF."""
+        return self._request("GET", f"etfs/{ticker}/holdings/all")
+
     def exposure(self, ticker: str):
         """Get exposure data for an ETF holding."""
         return self._request("GET", f"etfs/{ticker}/exposure")
