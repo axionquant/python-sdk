@@ -144,6 +144,18 @@ client.financials.shares_outstanding_basic("AAPL")
 client.financials.shares_outstanding_diluted("AAPL")
 client.financials.metrics("AAPL")     # Calculated ratios
 client.financials.snapshot("AAPL")    # Full data snapshot
+
+# Historical valuation ratios
+client.financials.eps("AAPL", from_date="2024-01-01", to_date="2024-12-31")
+client.financials.pe("AAPL")
+client.financials.market_cap("AAPL")
+client.financials.roe("AAPL")
+client.financials.enterprise_value("AAPL")
+client.financials.ebitda("AAPL")
+client.financials.debt_to_equity("AAPL")
+
+client.financials.dcf_value("AAPL")   # DCF valuation (fair price, margin of safety)
+client.financials.dcf_rate("AAPL")    # Discount rate / WACC calculation
 ```
 
 ### Insiders & Ownership

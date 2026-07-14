@@ -1069,6 +1069,60 @@ GET /financials/:ticker/snapshot
 }
 ```
 
+#### DCF Valuation
+
+```
+GET /financials/dcf/:ticker/value
+```
+
+**Path Params:** `ticker` (string, required).
+
+**Response Fields:** `enterpriseValue`, `cash`, `totalDebt`, `equityValue`, `sharesOutstanding`, `fairPrice`, `currentPrice`, `marginOfSafety`, `recommendation`.
+
+**Sample Response:**
+```json
+{
+  "enterpriseValue": 3953331149665.99,
+  "cash": 68507000000,
+  "totalDebt": 111088000000,
+  "equityValue": 3910750149665.99,
+  "sharesOutstanding": 14687356000,
+  "fairPrice": 266.27,
+  "currentPrice": 315.32,
+  "marginOfSafety": -0.18,
+  "recommendation": "Sell"
+}
+```
+
+#### Discount Rate / WACC
+
+```
+GET /financials/dcf/:ticker/rate
+```
+
+**Path Params:** `ticker` (string, required).
+
+**Response Fields:** `marketCap`, `beta_5y`, `totalDebt`, `interestExpense`, `pretaxIncome`, `taxProvision`, `riskFreeRate`, `weightOfDebt`, `weightOfEquity`, `costOfDebt`, `costOfEquity`, `taxRate`, `wacc`.
+
+**Sample Response:**
+```json
+{
+  "marketCap": 4631217093920,
+  "beta_5y": 1.0839,
+  "totalDebt": 111088000000,
+  "interestExpense": 1002000000,
+  "pretaxIncome": 26998000000,
+  "taxProvision": 4042000000,
+  "riskFreeRate": 0.0353,
+  "weightOfDebt": 0.0234,
+  "weightOfEquity": 0.9766,
+  "costOfDebt": 0.009,
+  "costOfEquity": 0.1054,
+  "taxRate": 0.15,
+  "wacc": 0.1031
+}
+```
+
 ---
 
 ### 12. Profile API (Corp. Intelligence)

@@ -78,7 +78,9 @@ Credit Ratings	readme.md	/^### Credit Ratings$/;"	S	section:Axion Python SDK""Ax
 CreditAPI	axion/axion.py	/^class CreditAPI(BaseAPI):$/;"	c
 Crypto	readme.md	/^### Crypto$/;"	S	section:Axion Python SDK""Axion Client
 CryptoAPI	axion/axion.py	/^class CryptoAPI(BaseAPI):$/;"	c
+DCF Valuation	api-reference-and-responses.md	/^#### DCF Valuation$/;"	t	subsection:Axion API Reference""Fundamentals APIs""11. Financials API
 Date Formats & Time Frames	readme.md	/^## Date Formats & Time Frames$/;"	s	chapter:Axion Python SDK
+Discount Rate / WACC	api-reference-and-responses.md	/^#### Discount Rate \/ WACC$/;"	t	subsection:Axion API Reference""Fundamentals APIs""11. Financials API
 ESG	readme.md	/^### ESG$/;"	S	section:Axion Python SDK""Axion Client
 ESGAPI	axion/axion.py	/^class ESGAPI(BaseAPI):$/;"	c
 ETFAPI	axion/axion.py	/^class ETFAPI(BaseAPI):$/;"	c
@@ -233,6 +235,9 @@ d	axion/utils.py	/^def d(date_string):$/;"	f
 data	axion/axion.py	/^    def data(self, ticker: str):$/;"	m	class:ESGAPI
 dataset	axion/axion.py	/^    def dataset(self, series_id: str):$/;"	m	class:EconAPI
 day	axion/utils.py	/^d, day = 'D', 'D'   # daily$/;"	v
+dcf_rate	axion/axion.py	/^    def dcf_rate(self, ticker: str):$/;"	m	class:FinancialsAPI
+dcf_value	axion/axion.py	/^    def dcf_value(self, ticker: str):$/;"	m	class:FinancialsAPI
+debt_to_equity	axion/axion.py	/^    def debt_to_equity(self, ticker: str, from_date: str = None, to_date: str = None):$/;"	m	class:FinancialsAPI
 dedup	axion/utils.py	/^def dedup(lst):$/;"	f
 dema	axion/ta.py	/^def dema(df, column="close", period=14):$/;"	f
 desc_forms	axion/axion.py	/^    def desc_forms(self):$/;"	m	class:FilingsAPI
@@ -241,8 +246,11 @@ difference	axion/utils.py	/^def difference(dfs, col):$/;"	f
 document_sentiment	axion/axion.py	/^    def document_sentiment(self, document_id: str):$/;"	m	class:FilingsAPI
 document_text	axion/axion.py	/^    def document_text(self, document_id: str):$/;"	m	class:FilingsAPI
 doit	axion/utils.py	/^    def doit():$/;"	f	function:scribe	file:
+ebitda	axion/axion.py	/^    def ebitda(self, ticker: str, from_date: str = None, to_date: str = None):$/;"	m	class:FinancialsAPI
 economic_examples	example.py	/^    def economic_examples(self):$/;"	m	class:AxionExample
 ema	axion/ta.py	/^def ema(df, column="close", period=14):$/;"	f
+enterprise_value	axion/axion.py	/^    def enterprise_value(self, ticker: str, from_date: str = None, to_date: str = None, frame: s/;"	m	class:FinancialsAPI
+eps	axion/axion.py	/^    def eps(self, ticker: str, from_date: str = None, to_date: str = None):$/;"	m	class:FinancialsAPI
 etf_examples	example.py	/^    def etf_examples(self):$/;"	m	class:AxionExample
 exposure	axion/axion.py	/^    def exposure(self, ticker: str):$/;"	m	class:ETFAPI
 exposure	axion/axion.py	/^    def exposure(self, ticker: str):$/;"	m	class:IndicesAPI
@@ -328,6 +336,7 @@ lstm	axion/models.py	/^def lstm(df, x, target, features=[], n_preds=10, scale='D
 m	axion/utils.py	/^m, month = 'M', 'M' # monthly$/;"	v
 macd	axion/ta.py	/^def macd(df, column="close", fast_period=12, slow_period=26, signal_period=9):$/;"	f
 main	example.py	/^def main():$/;"	f
+market_cap	axion/axion.py	/^    def market_cap(self, ticker: str, from_date: str = None, to_date: str = None, frame: str = N/;"	m	class:FinancialsAPI
 metrics	axion/axion.py	/^    def metrics(self, ticker: str):$/;"	m	class:FinancialsAPI
 mom	axion/ta.py	/^def mom(df, column="close", period=10):$/;"	f
 month	axion/utils.py	/^m, month = 'M', 'M' # monthly$/;"	v
@@ -353,6 +362,7 @@ pd	axion/ta.py	/^import pandas as pd$/;"	I	nameref:module:pandas
 pd	axion/utils.py	/^import pandas as pd$/;"	I	nameref:module:pandas
 pd	axion/visualize.py	/^import pandas as pd$/;"	I	nameref:module:pandas
 pds	axion/utils.py	/^def pds(l):$/;"	f
+pe	axion/axion.py	/^    def pe(self, ticker: str, from_date: str = None, to_date: str = None, frame: str = None):$/;"	m	class:FinancialsAPI
 peers	axion/axion.py	/^    def peers(self, ticker: str):$/;"	m	class:SupplyChainAPI
 pie	axion/visualize.py	/^def pie(df, values, labels):$/;"	f
 pio	axion/visualize.py	/^import plotly.io as pio$/;"	I	nameref:module:plotly.io
@@ -381,6 +391,7 @@ report	axion/axion.py	/^    def report(self, ticker: str, year: str, quarter: st
 resample	axion/utils.py	/^def resample(df, dates, col='time'):$/;"	f
 revenue	axion/axion.py	/^    def revenue(self, ticker: str, periods: int = None):$/;"	m	class:FinancialsAPI
 roc	axion/ta.py	/^def roc(df, column="close", period=10):$/;"	f
+roe	axion/axion.py	/^    def roe(self, ticker: str, from_date: str = None, to_date: str = None):$/;"	m	class:FinancialsAPI
 rsi	axion/ta.py	/^def rsi(df, column="close", period=14):$/;"	f
 run_all_examples	example.py	/^    def run_all_examples(self):$/;"	m	class:AxionExample
 sar	axion/ta.py	/^def sar(df, af=0.02, af_max=0.2):$/;"	f

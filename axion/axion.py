@@ -781,6 +781,66 @@ class FinancialsAPI(BaseAPI):
         """Get financial data snapshot."""
         return self._request("GET", f"financials/{ticker}/snapshot")
 
+    def eps(self, ticker: str, from_date: str = None, to_date: str = None):
+        """Get TTM earnings per share."""
+        params = {}
+        if from_date: params["from"] = from_date
+        if to_date: params["to"] = to_date
+        return self._request("GET", f"financials/{ticker}/eps", params=params)
+
+    def pe(self, ticker: str, from_date: str = None, to_date: str = None, frame: str = None):
+        """Get price-to-earnings ratio."""
+        params = {}
+        if from_date: params["from"] = from_date
+        if to_date: params["to"] = to_date
+        if frame: params["frame"] = frame
+        return self._request("GET", f"financials/{ticker}/pe", params=params)
+
+    def market_cap(self, ticker: str, from_date: str = None, to_date: str = None, frame: str = None):
+        """Get market capitalization."""
+        params = {}
+        if from_date: params["from"] = from_date
+        if to_date: params["to"] = to_date
+        if frame: params["frame"] = frame
+        return self._request("GET", f"financials/{ticker}/marketcap", params=params)
+
+    def roe(self, ticker: str, from_date: str = None, to_date: str = None):
+        """Get return on equity."""
+        params = {}
+        if from_date: params["from"] = from_date
+        if to_date: params["to"] = to_date
+        return self._request("GET", f"financials/{ticker}/roe", params=params)
+
+    def enterprise_value(self, ticker: str, from_date: str = None, to_date: str = None, frame: str = None):
+        """Get enterprise value."""
+        params = {}
+        if from_date: params["from"] = from_date
+        if to_date: params["to"] = to_date
+        if frame: params["frame"] = frame
+        return self._request("GET", f"financials/{ticker}/ev", params=params)
+
+    def ebitda(self, ticker: str, from_date: str = None, to_date: str = None):
+        """Get TTM EBITDA."""
+        params = {}
+        if from_date: params["from"] = from_date
+        if to_date: params["to"] = to_date
+        return self._request("GET", f"financials/{ticker}/ebitda", params=params)
+
+    def debt_to_equity(self, ticker: str, from_date: str = None, to_date: str = None):
+        """Get debt-to-equity ratio."""
+        params = {}
+        if from_date: params["from"] = from_date
+        if to_date: params["to"] = to_date
+        return self._request("GET", f"financials/{ticker}/de", params=params)
+
+    def dcf_value(self, ticker: str):
+        """Get DCF valuation (fair price, margin of safety, recommendation)."""
+        return self._request("GET", f"financials/dcf/{ticker}/value")
+
+    def dcf_rate(self, ticker: str):
+        """Get discount rate / WACC calculation."""
+        return self._request("GET", f"financials/dcf/{ticker}/rate")
+
 
 class InsidersAPI(BaseAPI):
     def funds(self, ticker: str):
