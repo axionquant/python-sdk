@@ -64,6 +64,7 @@
 7. Supply Chain API	api-reference-and-responses.md	/^### 7. Supply Chain API$/;"	S	section:Axion API Reference""Alternative Data APIs
 8. Sentiment API	api-reference-and-responses.md	/^### 8. Sentiment API$/;"	S	section:Axion API Reference""Alternative Data APIs
 9. ESG API	api-reference-and-responses.md	/^### 9. ESG API$/;"	S	section:Axion API Reference""Alternative Data APIs
+ACCENT_COLOR	axion/visualize.py	/^ACCENT_COLOR = 'rgba(52, 152, 219,1.0)'$/;"	v
 Alternative Data APIs	api-reference-and-responses.md	/^## Alternative Data APIs$/;"	s	chapter:Axion API Reference
 Axion	axion/axion.py	/^class Axion:$/;"	c
 Axion API Reference	api-reference-and-responses.md	/^# Axion API Reference$/;"	c
@@ -71,6 +72,7 @@ Axion Client	readme.md	/^## Axion Client$/;"	s	chapter:Axion Python SDK
 Axion Python SDK	readme.md	/^# Axion Python SDK$/;"	c
 AxionExample	example.py	/^class AxionExample:$/;"	c
 BASE_URL	axion/axion.py	/^BASE_URL = "https:\/\/api.axionquant.com"$/;"	v
+BG_COLOR	axion/visualize.py	/^BG_COLOR = 'rgba(0,0,0,0)'$/;"	v
 BaseAPI	axion/axion.py	/^class BaseAPI:$/;"	c
 Basic Shares Outstanding	api-reference-and-responses.md	/^#### Basic Shares Outstanding$/;"	t	subsection:Axion API Reference""Fundamentals APIs""11. Financials API
 Company Profiles	readme.md	/^### Company Profiles$/;"	S	section:Axion Python SDK""Axion Client
@@ -78,6 +80,7 @@ Credit Ratings	readme.md	/^### Credit Ratings$/;"	S	section:Axion Python SDK""Ax
 CreditAPI	axion/axion.py	/^class CreditAPI(BaseAPI):$/;"	c
 Crypto	readme.md	/^### Crypto$/;"	S	section:Axion Python SDK""Axion Client
 CryptoAPI	axion/axion.py	/^class CryptoAPI(BaseAPI):$/;"	c
+D	axion/utils.py	/^D, day = 'D', 'D'   # daily$/;"	v
 DCF Valuation	api-reference-and-responses.md	/^#### DCF Valuation$/;"	t	subsection:Axion API Reference""Fundamentals APIs""11. Financials API
 Date Formats & Time Frames	readme.md	/^## Date Formats & Time Frames$/;"	s	chapter:Axion Python SDK
 Discount Rate / WACC	api-reference-and-responses.md	/^#### Discount Rate \/ WACC$/;"	t	subsection:Axion API Reference""Fundamentals APIs""11. Financials API
@@ -101,6 +104,7 @@ ForexAPI	axion/axion.py	/^class ForexAPI(BaseAPI):$/;"	c
 Fundamentals APIs	api-reference-and-responses.md	/^## Fundamentals APIs$/;"	s	chapter:Axion API Reference
 Futures	readme.md	/^### Futures$/;"	S	section:Axion Python SDK""Axion Client
 FuturesAPI	axion/axion.py	/^class FuturesAPI(BaseAPI):$/;"	c
+GRID_COLOR	axion/visualize.py	/^GRID_COLOR = 'rgba(255,255,255,0.15)'$/;"	v
 Get All Cryptocurrency Tickers	api-reference-and-responses.md	/^#### Get All Cryptocurrency Tickers$/;"	t	subsection:Axion API Reference""Market Data APIs""5. Crypto API
 Get All Forex Tickers	api-reference-and-responses.md	/^#### Get All Forex Tickers$/;"	t	subsection:Axion API Reference""Market Data APIs""4. Forex API
 Get All Futures Tickers	api-reference-and-responses.md	/^#### Get All Futures Tickers$/;"	t	subsection:Axion API Reference""Market Data APIs""3. Futures API
@@ -160,7 +164,9 @@ InsidersAPI	axion/axion.py	/^class InsidersAPI(BaseAPI):$/;"	c
 Installation	readme.md	/^## Installation$/;"	s	chapter:Axion Python SDK
 License	readme.md	/^## License$/;"	s	chapter:Axion Python SDK
 List Available Form Types	api-reference-and-responses.md	/^#### List Available Form Types$/;"	t	subsection:Axion API Reference""Fundamentals APIs""14. SEC Filings API
+M	axion/utils.py	/^M, month = 'M', 'M' # monthly$/;"	v
 ML Models (`models`)	readme.md	/^## ML Models (`models`)$/;"	s	chapter:Axion Python SDK
+MUTED_TEXT_COLOR	axion/visualize.py	/^MUTED_TEXT_COLOR = 'rgba(180,180,180,1)'$/;"	v
 Macros & Signals APIs	api-reference-and-responses.md	/^## Macros & Signals APIs$/;"	s	chapter:Axion API Reference
 Market Data APIs	api-reference-and-responses.md	/^## Market Data APIs$/;"	s	chapter:Axion API Reference
 Modules	readme.md	/^## Modules$/;"	s	chapter:Axion Python SDK
@@ -168,7 +174,9 @@ Net Income	api-reference-and-responses.md	/^#### Net Income$/;"	t	subsection:Axi
 News	readme.md	/^### News$/;"	S	section:Axion Python SDK""Axion Client
 NewsAPI	axion/axion.py	/^class NewsAPI(BaseAPI):$/;"	c
 Operating Cash Flow	api-reference-and-responses.md	/^#### Operating Cash Flow$/;"	t	subsection:Axion API Reference""Fundamentals APIs""11. Financials API
+PlotHTML	axion/visualize.py	/^class PlotHTML(HTML):$/;"	c
 ProfilesAPI	axion/axion.py	/^class ProfilesAPI(BaseAPI):$/;"	c
+Q	axion/utils.py	/^Q, quarter = 'Q', 'Q'  # quarterly$/;"	v
 Quick Start	readme.md	/^## Quick Start$/;"	s	chapter:Axion Python SDK
 Revenue	api-reference-and-responses.md	/^#### Revenue$/;"	t	subsection:Axion API Reference""Fundamentals APIs""11. Financials API
 SEC Filings	readme.md	/^### SEC Filings$/;"	S	section:Axion Python SDK""Axion Client
@@ -182,84 +190,96 @@ Stocks	readme.md	/^### Stocks$/;"	S	section:Axion Python SDK""Axion Client
 StocksAPI	axion/axion.py	/^class StocksAPI(BaseAPI):$/;"	c
 Supply Chain	readme.md	/^### Supply Chain$/;"	S	section:Axion Python SDK""Axion Client
 SupplyChainAPI	axion/axion.py	/^class SupplyChainAPI(BaseAPI):$/;"	c
+TEXT_COLOR	axion/visualize.py	/^TEXT_COLOR = 'rgba(255,255,255,1)'$/;"	v
 Technical Analysis (`ta`)	readme.md	/^## Technical Analysis (`ta`)$/;"	s	chapter:Axion Python SDK
 Total Assets	api-reference-and-responses.md	/^#### Total Assets$/;"	t	subsection:Axion API Reference""Fundamentals APIs""11. Financials API
 Total Liabilities	api-reference-and-responses.md	/^#### Total Liabilities$/;"	t	subsection:Axion API Reference""Fundamentals APIs""11. Financials API
 Utilities (`utils`)	readme.md	/^## Utilities (`utils`)$/;"	s	chapter:Axion Python SDK
 Visualization (`visualize`)	readme.md	/^## Visualization (`visualize`)$/;"	s	chapter:Axion Python SDK
+W	axion/utils.py	/^W, week = 'W', 'W'  # weekly$/;"	v
 Web Traffic	readme.md	/^### Web Traffic$/;"	S	section:Axion Python SDK""Axion Client
 WebTrafficAPI	axion/axion.py	/^class WebTrafficAPI(BaseAPI):$/;"	c
+Y	axion/utils.py	/^Y, year = 'Y', 'Y'  # annually$/;"	v
 __all__	axion/__init__.py	/^__all__ = ['Axion', 'visualize', 'ta', 'utils', 'models']$/;"	v
 __init__	axion/axion.py	/^    def __init__(self, api_key: str = None):$/;"	m	class:Axion
 __init__	axion/axion.py	/^    def __init__(self, client):$/;"	m	class:BaseAPI
+__init__	axion/visualize.py	/^    def __init__(self, data=None, filename=None, filepath=None):$/;"	m	class:PlotHTML
 __init__	example.py	/^    def __init__(self, api_key: str = None):$/;"	m	class:AxionExample
+_apply_theme	axion/visualize.py	/^def _apply_theme(fig: go.Figure, title: str = '', show_legend: bool = True, margin: Optional[dic/;"	f	typeref:typename:go.Figure
+_decimals_for_step	axion/visualize.py	/^def _decimals_for_step(step: float) -> int:$/;"	f	typeref:typename:int
+_is_datetime	axion/visualize.py	/^def _is_datetime(series: pd.Series) -> bool:$/;"	f	typeref:typename:bool
+_nice_ticks	axion/visualize.py	/^def _nice_ticks(values: pd.Series, n: int = 5, include_zero: bool = False) -> np.ndarray:$/;"	f	typeref:typename:np.ndarray
+_pick_date_ticks	axion/visualize.py	/^def _pick_date_ticks(x_min: pd.Timestamp, x_max: pd.Timestamp) -> Tuple[str, str, str]:$/;"	f	typeref:typename:Tuple[str,str,str]
 _request	axion/axion.py	/^    def _request(self, method: str, path: str, params: dict = None, json_data: dict = None,$/;"	m	class:Axion
 _request	axion/axion.py	/^    def _request(self, method: str, path: str, params: dict = None, json_data: dict = None,$/;"	m	class:BaseAPI
+_style_categorical_axis	axion/visualize.py	/^def _style_categorical_axis(fig: go.Figure) -> go.Figure:$/;"	f	typeref:typename:go.Figure
+_style_time_axis	axion/visualize.py	/^def _style_time_axis(fig: go.Figure, df: pd.DataFrame, x: str) -> go.Figure:$/;"	f	typeref:typename:go.Figure
+_style_value_axis	axion/visualize.py	/^def _style_value_axis(fig: go.Figure, values: pd.Series, axis: str = 'y',$/;"	f	typeref:typename:go.Figure
 activity	axion/axion.py	/^    def activity(self, ticker: str):$/;"	m	class:InsidersAPI
-adx	axion/ta.py	/^def adx(df, period=14):$/;"	f
+adx	axion/ta.py	/^def adx(df: pd.DataFrame, period: int = 14) -> pd.Series:$/;"	f	typeref:typename:pd.Series
 all	axion/axion.py	/^    def all(self, ticker: str):$/;"	m	class:SentimentAPI
 analyst	axion/axion.py	/^    def analyst(self, ticker: str):$/;"	m	class:SentimentAPI
-area	axion/visualize.py	/^def area(df, x, y, group, sub=""):$/;"	f
-atr	axion/ta.py	/^def atr(df, period=14):$/;"	f
+area	axion/visualize.py	/^def area(df: pd.DataFrame, x: str, y: str, group: str, sub: str = "",$/;"	f	typeref:typename:Any
+atr	axion/ta.py	/^def atr(df: pd.DataFrame, period: int = 14) -> pd.Series:$/;"	f	typeref:typename:pd.Series
 balance_sheet	axion/axion.py	/^    def balance_sheet(self, ticker: str, year: str = None, quarter: str = None):$/;"	m	class:FinancialsAPI
-bar	axion/visualize.py	/^def bar(df, x, y):$/;"	f
-barh	axion/visualize.py	/^def barh(df, x, y):$/;"	f
-bbands	axion/ta.py	/^def bbands(df, column="close", period=20, num_std_dev=2):$/;"	f
-beta	axion/models.py	/^def beta(df, x, y):$/;"	f
-cache	axion/utils.py	/^def cache(id, fn):$/;"	f
+bar	axion/visualize.py	/^def bar(df: pd.DataFrame, x: str, y: str, prefix: str = '', suffix: str = '',$/;"	f	typeref:typename:Any
+barh	axion/visualize.py	/^def barh(df: pd.DataFrame, x: str, y: str, prefix: str = '', suffix: str = '',$/;"	f	typeref:typename:Any
+bbands	axion/ta.py	/^def bbands($/;"	f	typeref:typename:Tuple[pd.Series,pd.Series,pd.Series]
+beta	axion/models.py	/^def beta(df: pd.DataFrame, x: str, y: str) -> float:$/;"	f	typeref:typename:float
+cache	axion/utils.py	/^def cache(id: str, fn: Callable):$/;"	f
 calendar	axion/axion.py	/^    def calendar(self, from_date: str = None, to_date: str = None, country: str = None,$/;"	m	class:EconAPI
 calendar	axion/axion.py	/^    def calendar(self, ticker: str):$/;"	m	class:ProfilesAPI
-candles	axion/visualize.py	/^def candles(df):$/;"	f
+candles	axion/visualize.py	/^def candles(df: pd.DataFrame, prefix: str = '', suffix: str = '',$/;"	f	typeref:typename:Any
 capital_expenditures	axion/axion.py	/^    def capital_expenditures(self, ticker: str, periods: int = None):$/;"	m	class:FinancialsAPI
 cash_flow_statement	axion/axion.py	/^    def cash_flow_statement(self, ticker: str, year: str = None, quarter: str = None):$/;"	m	class:FinancialsAPI
 category	axion/axion.py	/^    def category(self, category: str):$/;"	m	class:NewsAPI
-cmo	axion/ta.py	/^def cmo(df, column="close", period=20):$/;"	f
+cmo	axion/ta.py	/^def cmo(df: pd.DataFrame, column: str = "close", period: int = 20) -> pd.Series:$/;"	f	typeref:typename:pd.Series
 coerce	axion/axion.py	/^def coerce(value):$/;"	f
 company	axion/axion.py	/^    def company(self, ticker: str):$/;"	m	class:NewsAPI
 company_examples	example.py	/^    def company_examples(self):$/;"	m	class:AxionExample
-compare	axion/utils.py	/^def compare(dfs, joins=['fact','value']):$/;"	f
+compare	axion/utils.py	/^def compare(dfs: list, joins: list = ['fact', 'value']) -> pd.DataFrame:$/;"	f	typeref:typename:pd.DataFrame
 components	axion/axion.py	/^    def components(self, ticker: str):$/;"	m	class:IndicesAPI
-composite	axion/utils.py	/^def composite(dfs, joins=['fact', 'label'], col='value'):$/;"	f
-contrast	axion/utils.py	/^def contrast(dfs, joins=['CashAndCashEquivalentsAtCarryingValue', 'ShortTermInvestments'], col="/;"	f
-convert_text_to_zero	axion/utils.py	/^def convert_text_to_zero(value):$/;"	f
+composite	axion/utils.py	/^def composite(dfs: list, joins: list = ['fact', 'label'], col: str = 'value') -> pd.DataFrame:$/;"	f	typeref:typename:pd.DataFrame
+contrast	axion/utils.py	/^def contrast(dfs: list, joins: list = ['CashAndCashEquivalentsAtCarryingValue', 'ShortTermInvest/;"	f	typeref:typename:pd.DataFrame
+convert_text_to_zero	axion/utils.py	/^def convert_text_to_zero(value: Any) -> float:$/;"	f	typeref:typename:float
 country	axion/axion.py	/^    def country(self, country: str):$/;"	m	class:NewsAPI
-cov	axion/visualize.py	/^def cov(df):$/;"	f
-create_sequences	axion/models.py	/^def create_sequences(data, sequence_length, n_preds):$/;"	f
+cov	axion/visualize.py	/^def cov(df: pd.DataFrame) -> Any:$/;"	f	typeref:typename:Any
+create_sequences	axion/models.py	/^def create_sequences(data: np.ndarray, sequence_length: int, n_preds: int) -> tuple:$/;"	f	typeref:typename:tuple
 credit_esg_examples	example.py	/^    def credit_esg_examples(self):$/;"	m	class:AxionExample
 crypto_examples	example.py	/^    def crypto_examples(self):$/;"	m	class:AxionExample
 current_assets	axion/axion.py	/^    def current_assets(self, ticker: str, periods: int = None):$/;"	m	class:FinancialsAPI
 current_liabilities	axion/axion.py	/^    def current_liabilities(self, ticker: str, periods: int = None):$/;"	m	class:FinancialsAPI
 customers	axion/axion.py	/^    def customers(self, ticker: str):$/;"	m	class:SupplyChainAPI
-d	axion/utils.py	/^d, day = 'D', 'D'   # daily$/;"	v
-d	axion/utils.py	/^def d(date_string):$/;"	f
+d	axion/utils.py	/^def d(date_string: str) -> Optional[str]:$/;"	f	typeref:typename:Optional[str]
 data	axion/axion.py	/^    def data(self, ticker: str):$/;"	m	class:ESGAPI
 dataset	axion/axion.py	/^    def dataset(self, series_id: str):$/;"	m	class:EconAPI
-day	axion/utils.py	/^d, day = 'D', 'D'   # daily$/;"	v
+date	axion/utils.py	/^def date(date_string: str) -> Optional[str]:$/;"	f	typeref:typename:Optional[str]
+day	axion/utils.py	/^D, day = 'D', 'D'   # daily$/;"	v
 dcf_rate	axion/axion.py	/^    def dcf_rate(self, ticker: str):$/;"	m	class:FinancialsAPI
 dcf_value	axion/axion.py	/^    def dcf_value(self, ticker: str):$/;"	m	class:FinancialsAPI
 debt_to_equity	axion/axion.py	/^    def debt_to_equity(self, ticker: str, from_date: str = None, to_date: str = None):$/;"	m	class:FinancialsAPI
-dedup	axion/utils.py	/^def dedup(lst):$/;"	f
-dema	axion/ta.py	/^def dema(df, column="close", period=14):$/;"	f
+dedup	axion/utils.py	/^def dedup(lst: list) -> list:$/;"	f	typeref:typename:list
+dema	axion/ta.py	/^def dema(df: pd.DataFrame, column: str = "close", period: int = 14) -> pd.Series:$/;"	f	typeref:typename:pd.Series
 desc_forms	axion/axion.py	/^    def desc_forms(self):$/;"	m	class:FilingsAPI
-df	axion/utils.py	/^def df(items):$/;"	f
-difference	axion/utils.py	/^def difference(dfs, col):$/;"	f
+df	axion/utils.py	/^def df(items: Any) -> pd.DataFrame:$/;"	f	typeref:typename:pd.DataFrame
+difference	axion/utils.py	/^def difference(dfs: list, col: str) -> pd.DataFrame:$/;"	f	typeref:typename:pd.DataFrame
 document_sentiment	axion/axion.py	/^    def document_sentiment(self, document_id: str):$/;"	m	class:FilingsAPI
 document_text	axion/axion.py	/^    def document_text(self, document_id: str):$/;"	m	class:FilingsAPI
 doit	axion/utils.py	/^    def doit():$/;"	f	function:scribe	file:
 ebitda	axion/axion.py	/^    def ebitda(self, ticker: str, from_date: str = None, to_date: str = None):$/;"	m	class:FinancialsAPI
 economic_examples	example.py	/^    def economic_examples(self):$/;"	m	class:AxionExample
-ema	axion/ta.py	/^def ema(df, column="close", period=14):$/;"	f
+ema	axion/ta.py	/^def ema(df: pd.DataFrame, column: str = "close", period: int = 14) -> pd.Series:$/;"	f	typeref:typename:pd.Series
 enterprise_value	axion/axion.py	/^    def enterprise_value(self, ticker: str, from_date: str = None, to_date: str = None, frame: s/;"	m	class:FinancialsAPI
 eps	axion/axion.py	/^    def eps(self, ticker: str, from_date: str = None, to_date: str = None):$/;"	m	class:FinancialsAPI
 etf_examples	example.py	/^    def etf_examples(self):$/;"	m	class:AxionExample
 exposure	axion/axion.py	/^    def exposure(self, ticker: str):$/;"	m	class:ETFAPI
 exposure	axion/axion.py	/^    def exposure(self, ticker: str):$/;"	m	class:IndicesAPI
 false	axion/utils.py	/^false = False$/;"	v
-fib	axion/ta.py	/^def fib(df):$/;"	f
+fib	axion/ta.py	/^def fib($/;"	f	typeref:typename:Tuple[pd.Series,pd.Series,pd.Series,pd.Series,pd.Series,pd.Series,pd.Series]
 filings	axion/axion.py	/^    def filings(self, ticker: str, limit: int = None, form: str = None):$/;"	m	class:FilingsAPI
-filter	axion/utils.py	/^def filter(df, col, items):$/;"	f
+filter	axion/utils.py	/^def filter(df: pd.DataFrame, col: str, items: list) -> pd.DataFrame:$/;"	f	typeref:typename:pd.DataFrame
 find	axion/axion.py	/^    def find(self, query: str):$/;"	m	class:EconAPI
-fit	axion/visualize.py	/^def fit(df, x, y, log=False, hover=[], group=None):$/;"	f
+fit	axion/visualize.py	/^def fit(df: pd.DataFrame, x: str, y: str, log: bool = False, hover: list = [],$/;"	f	typeref:typename:Any
 forms	axion/axion.py	/^    def forms(self, ticker: str, form_type: str, year: str = None, quarter: str = None, limit: i/;"	m	class:FilingsAPI
 free_cash_flow	axion/axion.py	/^    def free_cash_flow(self, ticker: str, periods: int = None):$/;"	m	class:FinancialsAPI
 fund	axion/axion.py	/^    def fund(self, ticker: str):$/;"	m	class:ETFAPI
@@ -270,30 +290,29 @@ gainers	axion/axion.py	/^    def gainers(self, days: int = None, limit: int = No
 gainers	axion/axion.py	/^    def gainers(self, days: int = None, limit: int = None):$/;"	m	class:FuturesAPI
 gainers	axion/axion.py	/^    def gainers(self, days: int = None, limit: int = None):$/;"	m	class:IndicesAPI
 gainers	axion/axion.py	/^    def gainers(self, days: int = None, limit: int = None, market: str = None):$/;"	m	class:StocksAPI
-gainers	axion/utils.py	/^def gainers(prices, frame, col='close', limit=500, relative=True, reverse=True):$/;"	f
+gainers	axion/utils.py	/^def gainers(prices: dict, frame: int, col: str = 'close', limit: int = 500, relative: bool = Tru/;"	f	typeref:typename:pd.DataFrame
 general	axion/axion.py	/^    def general(self):$/;"	m	class:NewsAPI
-generate_color_map	axion/visualize.py	/^def generate_color_map(column_values):$/;"	f
+generate_color_map	axion/visualize.py	/^def generate_color_map(column_values: pd.Series) -> dict:$/;"	f	typeref:typename:dict
 go	axion/visualize.py	/^import plotly.graph_objects as go$/;"	I	nameref:module:plotly.graph_objects
-graph	axion/visualize.py	/^def graph(df, x, bars=[], lines=[], areas=[], title='', color=None):$/;"	f
-h	axion/utils.py	/^h, hour = 'H', 'M'  # hourly$/;"	v
-heatmap	axion/visualize.py	/^def heatmap(df, x, y, hover=[]):$/;"	f
+graph	axion/visualize.py	/^def graph(df: pd.DataFrame, x: str, bars: List[str] = [], lines: List[str] = [],$/;"	f	typeref:typename:Any
+heatmap	axion/visualize.py	/^def heatmap(df: pd.DataFrame, x: str, y: str, hover: list = []) -> Any:$/;"	f	typeref:typename:Any
 help	axion/axion.py	/^    def help(self):$/;"	m	class:Axion
 help	axion/axion.py	/^    def help(self):$/;"	m	class:BaseAPI
 history	axion/axion.py	/^    def history(self, ticker: str):$/;"	m	class:EarningsAPI
 holdings	axion/axion.py	/^    def holdings(self, ticker: str):$/;"	m	class:ETFAPI
 holdings_all	axion/axion.py	/^    def holdings_all(self, ticker: str):$/;"	m	class:ETFAPI
-hour	axion/utils.py	/^h, hour = 'H', 'M'  # hourly$/;"	v
-ichi	axion/ta.py	/^def ichi(df):$/;"	f
+ichi	axion/ta.py	/^def ichi($/;"	f	typeref:typename:Tuple[pd.Series,pd.Series,pd.Series,pd.Series,pd.Series]
 income_statement	axion/axion.py	/^    def income_statement(self, ticker: str, year: str = None, quarter: str = None):$/;"	m	class:FinancialsAPI
 index	axion/axion.py	/^    def index(self, ticker: str):$/;"	m	class:EarningsAPI
-indexed	axion/utils.py	/^def indexed(prices):$/;"	f
+indexed	axion/utils.py	/^def indexed(prices: dict) -> pd.DataFrame:$/;"	f	typeref:typename:pd.DataFrame
 individuals	axion/axion.py	/^    def individuals(self, ticker: str):$/;"	m	class:InsidersAPI
 info	axion/axion.py	/^    def info(self, ticker: str):$/;"	m	class:ProfilesAPI
 institutions	axion/axion.py	/^    def institutions(self, ticker: str):$/;"	m	class:InsidersAPI
-kama	axion/ta.py	/^def kama(df, column="close", period=14, fast=14, slow=30):$/;"	f
-kc	axion/ta.py	/^def kc(df, period=20, atr_period=10, multiplier=2):$/;"	f
-line	axion/visualize.py	/^def line(df, x, y, log=False):$/;"	f
-linearRegression	axion/models.py	/^def linearRegression(df, x, target, n_preds=10, scale='D'):$/;"	f
+kama	axion/ta.py	/^def kama($/;"	f	typeref:typename:pd.Series
+kc	axion/ta.py	/^def kc($/;"	f	typeref:typename:Tuple[pd.Series,pd.Series,pd.Series]
+layout	axion/visualize.py	/^def layout(figs: List[Any], cols: int, height: int = 450) -> HTML:$/;"	f	typeref:typename:HTML
+line	axion/visualize.py	/^def line(df: pd.DataFrame, x: str, y: str, log: bool = False,$/;"	f	typeref:typename:Any
+linearRegression	axion/models.py	/^def linearRegression(df: pd.DataFrame, x: str, target: str, n_preds: int = 10, scale: str = 'D')/;"	f	typeref:typename:pd.DataFrame
 list	axion/axion.py	/^    def list(self, column: str):$/;"	m	class:CryptoAPI
 list	axion/axion.py	/^    def list(self, column: str):$/;"	m	class:ETFAPI
 list	axion/axion.py	/^    def list(self, column: str):$/;"	m	class:ForexAPI
@@ -331,42 +350,39 @@ losers	axion/axion.py	/^    def losers(self, days: int = None, limit: int = None
 losers	axion/axion.py	/^    def losers(self, days: int = None, limit: int = None):$/;"	m	class:FuturesAPI
 losers	axion/axion.py	/^    def losers(self, days: int = None, limit: int = None):$/;"	m	class:IndicesAPI
 losers	axion/axion.py	/^    def losers(self, days: int = None, limit: int = None, market: str = None):$/;"	m	class:StocksAPI
-losers	axion/utils.py	/^def losers(prices, frame, col='close', relative=True, limit=500):$/;"	f
-lstm	axion/models.py	/^def lstm(df, x, target, features=[], n_preds=10, scale='D'):$/;"	f
-m	axion/utils.py	/^m, month = 'M', 'M' # monthly$/;"	v
-macd	axion/ta.py	/^def macd(df, column="close", fast_period=12, slow_period=26, signal_period=9):$/;"	f
+losers	axion/utils.py	/^def losers(prices: dict, frame: int, col: str = 'close', relative: bool = True, limit: int = 500/;"	f	typeref:typename:pd.DataFrame
+lstm	axion/models.py	/^def lstm(df: pd.DataFrame, x: str, target: str, features: list = [], n_preds: int = 10, scale: s/;"	f	typeref:typename:pd.DataFrame
+macd	axion/ta.py	/^def macd($/;"	f	typeref:typename:Tuple[pd.Series,pd.Series,pd.Series]
 main	example.py	/^def main():$/;"	f
 market_cap	axion/axion.py	/^    def market_cap(self, ticker: str, from_date: str = None, to_date: str = None, frame: str = N/;"	m	class:FinancialsAPI
 metrics	axion/axion.py	/^    def metrics(self, ticker: str):$/;"	m	class:FinancialsAPI
-mom	axion/ta.py	/^def mom(df, column="close", period=10):$/;"	f
-month	axion/utils.py	/^m, month = 'M', 'M' # monthly$/;"	v
-monthago	axion/utils.py	/^monthago = '1 month ago'$/;"	v
-monthfrom	axion/utils.py	/^monthfrom = '1 month from now'$/;"	v
-multiLinearRegression	axion/models.py	/^def multiLinearRegression(df, x, target, features, n_preds=10, scale='D'):$/;"	f
-nearest_day	axion/utils.py	/^def nearest_day(date_str, force=False):$/;"	f
+mom	axion/ta.py	/^def mom(df: pd.DataFrame, column: str = "close", period: int = 10) -> pd.Series:$/;"	f	typeref:typename:pd.Series
+month	axion/utils.py	/^M, month = 'M', 'M' # monthly$/;"	v
+multiLinearRegression	axion/models.py	/^def multiLinearRegression(df: pd.DataFrame, x: str, target: str, features: list, n_preds: int = /;"	f	typeref:typename:pd.DataFrame
+nearest_day	axion/utils.py	/^def nearest_day(date_str: str, force: bool = False) -> str:$/;"	f	typeref:typename:str
 net_income	axion/axion.py	/^    def net_income(self, ticker: str, periods: int = None):$/;"	m	class:FinancialsAPI
 news	axion/axion.py	/^    def news(self, ticker: str):$/;"	m	class:SentimentAPI
 news_sentiment_examples	example.py	/^    def news_sentiment_examples(self):$/;"	m	class:AxionExample
 normalize	axion/axion.py	/^def normalize(obj):$/;"	f
-now	axion/utils.py	/^now = 'today'$/;"	v
 np	axion/models.py	/^import numpy as np$/;"	I	nameref:module:numpy
 np	axion/ta.py	/^import numpy as np$/;"	I	nameref:module:numpy
 np	axion/utils.py	/^import numpy as np$/;"	I	nameref:module:numpy
-obv	axion/ta.py	/^def obv(df):$/;"	f
+np	axion/visualize.py	/^import numpy as np$/;"	I	nameref:module:numpy
+obv	axion/ta.py	/^def obv(df: pd.DataFrame) -> pd.Series:$/;"	f	typeref:typename:pd.Series
 operating_cash_flow	axion/axion.py	/^    def operating_cash_flow(self, ticker: str, periods: int = None):$/;"	m	class:FinancialsAPI
 other_assets_examples	example.py	/^    def other_assets_examples(self):$/;"	m	class:AxionExample
-overlap	axion/utils.py	/^def overlap(dfs, col):$/;"	f
+overlap	axion/utils.py	/^def overlap(dfs: list, col: str) -> Any:$/;"	f	typeref:typename:Any
 ownership	axion/axion.py	/^    def ownership(self, ticker: str):$/;"	m	class:InsidersAPI
 pd	axion/models.py	/^import pandas as pd$/;"	I	nameref:module:pandas
 pd	axion/ta.py	/^import pandas as pd$/;"	I	nameref:module:pandas
 pd	axion/utils.py	/^import pandas as pd$/;"	I	nameref:module:pandas
 pd	axion/visualize.py	/^import pandas as pd$/;"	I	nameref:module:pandas
-pds	axion/utils.py	/^def pds(l):$/;"	f
+pds	axion/utils.py	/^def pds(l: list) -> list:$/;"	f	typeref:typename:list
 pe	axion/axion.py	/^    def pe(self, ticker: str, from_date: str = None, to_date: str = None, frame: str = None):$/;"	m	class:FinancialsAPI
 peers	axion/axion.py	/^    def peers(self, ticker: str):$/;"	m	class:SupplyChainAPI
-pie	axion/visualize.py	/^def pie(df, values, labels):$/;"	f
+pie	axion/visualize.py	/^def pie(df: pd.DataFrame, values: str, labels: str) -> Any:$/;"	f	typeref:typename:Any
 pio	axion/visualize.py	/^import plotly.io as pio$/;"	I	nameref:module:plotly.io
-polls	axion/visualize.py	/^def polls(df):$/;"	f
+polls	axion/visualize.py	/^def polls(df: pd.DataFrame, x: str='time', prefix: str = '', suffix: str = '',$/;"	f	typeref:typename:Any
 prices	axion/axion.py	/^    def prices(self, ticker: str, from_date: str = None, to_date: str = None, frame: str = 'dail/;"	m	class:CryptoAPI
 prices	axion/axion.py	/^    def prices(self, ticker: str, from_date: str = None, to_date: str = None, frame: str = 'dail/;"	m	class:ETFAPI
 prices	axion/axion.py	/^    def prices(self, ticker: str, from_date: str = None, to_date: str = None, frame: str = 'dail/;"	m	class:ForexAPI
@@ -375,47 +391,48 @@ prices	axion/axion.py	/^    def prices(self, ticker: str, from_date: str = None,
 prices	axion/axion.py	/^    def prices(self, ticker: str, from_date: str = None, to_date: str = None, frame: str = 'dail/;"	m	class:StocksAPI
 profile	axion/axion.py	/^    def profile(self, ticker: str):$/;"	m	class:ProfilesAPI
 px	axion/visualize.py	/^import plotly.express as px$/;"	I	nameref:module:plotly.express
+quarter	axion/utils.py	/^Q, quarter = 'Q', 'Q'  # quarterly$/;"	v
 quote	axion/axion.py	/^    def quote(self, ticker: str):$/;"	m	class:CryptoAPI
 quote	axion/axion.py	/^    def quote(self, ticker: str):$/;"	m	class:ETFAPI
 quote	axion/axion.py	/^    def quote(self, ticker: str):$/;"	m	class:ForexAPI
 quote	axion/axion.py	/^    def quote(self, ticker: str):$/;"	m	class:FuturesAPI
 quote	axion/axion.py	/^    def quote(self, ticker: str):$/;"	m	class:IndicesAPI
 quote	axion/axion.py	/^    def quote(self, ticker: str):$/;"	m	class:StocksAPI
-radar	axion/visualize.py	/^def radar(df, values, labels):$/;"	f
-ranger	axion/utils.py	/^def ranger(df, start, end=None, date_col="date"):$/;"	f
+radar	axion/visualize.py	/^def radar(df: pd.DataFrame, values: str, labels: str) -> Any:$/;"	f	typeref:typename:Any
+ranger	axion/utils.py	/^def ranger(df: pd.DataFrame, start: str, end: str = None, date_col: str = "date") -> pd.DataFram/;"	f	typeref:typename:pd.DataFrame
 ratings	axion/axion.py	/^    def ratings(self, entity_id: str):$/;"	m	class:CreditAPI
-read	axion/utils.py	/^def read(id):$/;"	f
+read	axion/utils.py	/^def read(id: str) -> Optional[Any]:$/;"	f	typeref:typename:Optional[Any]
 recommendation	axion/axion.py	/^    def recommendation(self, ticker: str):$/;"	m	class:ProfilesAPI
-relativity	axion/utils.py	/^def relativity(df, cols):$/;"	f
+relativity	axion/utils.py	/^def relativity(df: pd.DataFrame, cols: list) -> pd.DataFrame:$/;"	f	typeref:typename:pd.DataFrame
 report	axion/axion.py	/^    def report(self, ticker: str, year: str, quarter: str):$/;"	m	class:EarningsAPI
-resample	axion/utils.py	/^def resample(df, dates, col='time'):$/;"	f
+resample	axion/utils.py	/^def resample(df: pd.DataFrame, dates: str, col: str = 'time') -> pd.DataFrame:$/;"	f	typeref:typename:pd.DataFrame
 revenue	axion/axion.py	/^    def revenue(self, ticker: str, periods: int = None):$/;"	m	class:FinancialsAPI
-roc	axion/ta.py	/^def roc(df, column="close", period=10):$/;"	f
+roc	axion/ta.py	/^def roc(df: pd.DataFrame, column: str = "close", period: int = 10) -> pd.Series:$/;"	f	typeref:typename:pd.Series
 roe	axion/axion.py	/^    def roe(self, ticker: str, from_date: str = None, to_date: str = None):$/;"	m	class:FinancialsAPI
-rsi	axion/ta.py	/^def rsi(df, column="close", period=14):$/;"	f
+rsi	axion/ta.py	/^def rsi(df: pd.DataFrame, column: str = "close", period: int = 14) -> pd.Series:$/;"	f	typeref:typename:pd.Series
 run_all_examples	example.py	/^    def run_all_examples(self):$/;"	m	class:AxionExample
-sar	axion/ta.py	/^def sar(df, af=0.02, af_max=0.2):$/;"	f
-save	axion/utils.py	/^def save(id, obj):$/;"	f
-scatter	axion/visualize.py	/^def scatter(df, x, y, log=False, hover=[], group=None):$/;"	f
-scribe	axion/utils.py	/^def scribe(df, id, cb):$/;"	f
+sar	axion/ta.py	/^def sar(df: pd.DataFrame, af: float = 0.02, af_max: float = 0.2) -> pd.Series:$/;"	f	typeref:typename:pd.Series
+save	axion/utils.py	/^def save(id: str, obj: Any) -> None:$/;"	f	typeref:typename:None
+scatter	axion/visualize.py	/^def scatter(df: pd.DataFrame, x: str, y: str, log: bool = False, hover: list = [],$/;"	f	typeref:typename:Any
+scribe	axion/utils.py	/^def scribe(df: pd.DataFrame, id: str, cb: Callable) -> dict:$/;"	f	typeref:typename:dict
 search	axion/axion.py	/^    def search(self, query: str):$/;"	m	class:CreditAPI
 search	axion/axion.py	/^    def search(self, query: str):$/;"	m	class:EconAPI
 search	axion/axion.py	/^    def search(self, year: str, quarter: str, form: str = None, ticker: str = None):$/;"	m	class:FilingsAPI
 shades_of_white	axion/visualize.py	/^shades_of_white = [$/;"	v
 shares_outstanding_basic	axion/axion.py	/^    def shares_outstanding_basic(self, ticker: str, periods: int = None):$/;"	m	class:FinancialsAPI
 shares_outstanding_diluted	axion/axion.py	/^    def shares_outstanding_diluted(self, ticker: str, periods: int = None):$/;"	m	class:FinancialsAPI
-simmer	axion/utils.py	/^def simmer(arr):$/;"	f
-sma	axion/ta.py	/^def sma(df, column="close", period=14):$/;"	f
-smm	axion/ta.py	/^def smm(df, column="close", period=14):$/;"	f
-snap	axion/utils.py	/^def snap(dfs, names=[], overwrite=[], col='time'):$/;"	f
+simmer	axion/utils.py	/^def simmer(arr: list) -> list:$/;"	f	typeref:typename:list
+sma	axion/ta.py	/^def sma(df: pd.DataFrame, column: str = "close", period: int = 14) -> pd.Series:$/;"	f	typeref:typename:pd.Series
+smm	axion/ta.py	/^def smm(df: pd.DataFrame, column: str = "close", period: int = 14) -> pd.Series:$/;"	f	typeref:typename:pd.Series
+snap	axion/utils.py	/^def snap(dfs: list, names: list = [], overwrite: list = [], col: str = 'time') -> pd.DataFrame:$/;"	f	typeref:typename:pd.DataFrame
 snapshot	axion/axion.py	/^    def snapshot(self, ticker: str):$/;"	m	class:FinancialsAPI
 social	axion/axion.py	/^    def social(self, ticker: str):$/;"	m	class:SentimentAPI
-spread	axion/visualize.py	/^def spread(dfs, x, y):$/;"	f
-ssma	axion/ta.py	/^def ssma(df, column="close", period=14):$/;"	f
-stack	axion/utils.py	/^def stack(dfs):$/;"	f
+spread	axion/visualize.py	/^def spread(dfs: List[pd.DataFrame], x: str, y: str, prefix: str = '', suffix: str = '',$/;"	f	typeref:typename:Any
+ssma	axion/ta.py	/^def ssma(df: pd.DataFrame, column: str = "close", period: int = 14) -> pd.Series:$/;"	f	typeref:typename:pd.Series
+stack	axion/utils.py	/^def stack(dfs: list) -> pd.DataFrame:$/;"	f	typeref:typename:pd.DataFrame
 statistics	axion/axion.py	/^    def statistics(self, ticker: str):$/;"	m	class:ProfilesAPI
-stitch	axion/utils.py	/^def stitch(dfs, col='time'):$/;"	f
-stochastic_oscillator	axion/ta.py	/^def stochastic_oscillator(df, k_period=14, d_period=3):$/;"	f
+stitch	axion/utils.py	/^def stitch(dfs: list, col: str = 'time') -> pd.DataFrame:$/;"	f	typeref:typename:pd.DataFrame
+stochastic_oscillator	axion/ta.py	/^def stochastic_oscillator($/;"	f	typeref:typename:Tuple[pd.Series,pd.Series]
 stock_examples	example.py	/^    def stock_examples(self):$/;"	m	class:AxionExample
 stockholders_equity	axion/axion.py	/^    def stockholders_equity(self, ticker: str, periods: int = None):$/;"	m	class:FinancialsAPI
 summary	axion/axion.py	/^    def summary(self, ticker: str):$/;"	m	class:ProfilesAPI
@@ -433,32 +450,24 @@ tickers	axion/axion.py	/^    def tickers(self, country: str = None, exchange: st
 tickers	axion/axion.py	/^    def tickers(self, exchange: str = None):$/;"	m	class:FuturesAPI
 tickers	axion/axion.py	/^    def tickers(self, exchange: str = None):$/;"	m	class:IndicesAPI
 tickers	axion/axion.py	/^    def tickers(self, type: str = None):$/;"	m	class:CryptoAPI
-to_timestamp	axion/utils.py	/^def to_timestamp(date):$/;"	f
-today	axion/utils.py	/^today = 'today'$/;"	v
-tomorrow	axion/utils.py	/^tomorrow = '1 day from now'$/;"	v
+to_timestamp	axion/utils.py	/^def to_timestamp(date: str) -> float:$/;"	f	typeref:typename:float
 total_assets	axion/axion.py	/^    def total_assets(self, ticker: str, periods: int = None):$/;"	m	class:FinancialsAPI
 total_liabilities	axion/axion.py	/^    def total_liabilities(self, ticker: str, periods: int = None):$/;"	m	class:FinancialsAPI
 traffic	axion/axion.py	/^    def traffic(self, ticker: str):$/;"	m	class:WebTrafficAPI
 transactions	axion/axion.py	/^    def transactions(self, ticker: str):$/;"	m	class:InsidersAPI
 transcript	axion/axion.py	/^    def transcript(self, ticker: str, year: str, quarter: str):$/;"	m	class:EarningsAPI
 transcript_sentiment	axion/axion.py	/^    def transcript_sentiment(self, id: str):$/;"	m	class:EarningsAPI
-tree	axion/visualize.py	/^def tree(df):$/;"	f
+tree	axion/visualize.py	/^def tree(df: pd.DataFrame) -> Any:$/;"	f	typeref:typename:Any
 trend	axion/axion.py	/^    def trend(self, ticker: str):$/;"	m	class:EarningsAPI
-trima	axion/ta.py	/^def trima(df, column="close", period=14):$/;"	f
+trima	axion/ta.py	/^def trima(df: pd.DataFrame, column: str = "close", period: int = 14) -> pd.Series:$/;"	f	typeref:typename:pd.Series
 true	axion/utils.py	/^true = True$/;"	v
-vi	axion/ta.py	/^def vi(df, period=14):$/;"	f
-visualize	axion/visualize.py	/^def visualize(fig):$/;"	f
-vpt	axion/ta.py	/^def vpt(df):$/;"	f
-vwap	axion/ta.py	/^def vwap(df, period=14):$/;"	f
-w	axion/utils.py	/^w, week = 'W', 'W'  # weekly$/;"	v
-week	axion/utils.py	/^w, week = 'W', 'W'  # weekly$/;"	v
-weekago	axion/utils.py	/^weekago = '1 week ago'$/;"	v
-weekfrom	axion/utils.py	/^weekfrom = '1 week from today'$/;"	v
+vi	axion/ta.py	/^def vi($/;"	f	typeref:typename:Tuple[pd.Series,pd.Series]
+visualize	axion/visualize.py	/^def visualize(fig: go.Figure) -> Any:$/;"	f	typeref:typename:Any
+vpt	axion/ta.py	/^def vpt(df: pd.DataFrame) -> pd.Series:$/;"	f	typeref:typename:pd.Series
+vwap	axion/ta.py	/^def vwap(df: pd.DataFrame, period: int = 14) -> pd.Series:$/;"	f	typeref:typename:pd.Series
+week	axion/utils.py	/^W, week = 'W', 'W'  # weekly$/;"	v
 weights	axion/axion.py	/^    def weights(self, ticker: str):$/;"	m	class:ETFAPI
-williams_r	axion/ta.py	/^def williams_r(df, period=14):$/;"	f
-work	axion/utils.py	/^def work(df, cb, ref):$/;"	f
-y	axion/utils.py	/^y, year = 'Y', 'Y'  # annually$/;"	v
-year	axion/utils.py	/^y, year = 'Y', 'Y'  # annually$/;"	v
-yearago	axion/utils.py	/^yearago = '1 year ago'$/;"	v
-yearfrom	axion/utils.py	/^yearfrom = '1 year from now'$/;"	v
-yesterday	axion/utils.py	/^yesterday = '1 day ago'$/;"	v
+williams_r	axion/ta.py	/^def williams_r(df: pd.DataFrame, period: int = 14) -> pd.Series:$/;"	f	typeref:typename:pd.Series
+work	axion/utils.py	/^def work(df: pd.DataFrame, cb: Callable, ref: dict) -> None:$/;"	f	typeref:typename:None
+year	axion/utils.py	/^Y, year = 'Y', 'Y'  # annually$/;"	v
+zap	axion/utils.py	/^def zap(labels: list, values: list) -> dict:$/;"	f	typeref:typename:dict
