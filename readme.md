@@ -170,10 +170,10 @@ client.insiders.activity("AAPL")      # Net share purchase activity
 
 ### SEC Filings
 ```python
-client.filings.filings("AAPL", limit=10, form="10-K")
-client.filings.forms("AAPL", form_type="10-Q", year="2024", quarter="Q2")
-client.filings.search(year="2024", quarter="Q1", form="10-K", ticker="AAPL")
-client.filings.desc_forms()           # List available form types
+client.filings.recent("AAPL", limit=10, form="10-K")
+client.filings.history("AAPL", form_type="10-Q", start_date="2024-01-01", end_date="2024-03-31")
+client.filings.search(ticker="AAPL", form="10-K", year="2024", quarter="Q1")
+client.filings.list_forms()           # List available form types
 client.filings.document_text("document_id")     # Raw filing text
 client.filings.document_sentiment("document_id") # Filing sentiment
 ```

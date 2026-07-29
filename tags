@@ -260,7 +260,6 @@ dcf_value	axion/axion.py	/^    def dcf_value(self, ticker: str):$/;"	m	class:Fin
 debt_to_equity	axion/axion.py	/^    def debt_to_equity(self, ticker: str, from_date: str = None, to_date: str = None):$/;"	m	class:FinancialsAPI
 dedup	axion/utils.py	/^def dedup(lst: list) -> list:$/;"	f	typeref:typename:list
 dema	axion/ta.py	/^def dema(df: pd.DataFrame, column: str = "close", period: int = 14) -> pd.Series:$/;"	f	typeref:typename:pd.Series
-desc_forms	axion/axion.py	/^    def desc_forms(self):$/;"	m	class:FilingsAPI
 df	axion/utils.py	/^def df(items: Any) -> pd.DataFrame:$/;"	f	typeref:typename:pd.DataFrame
 difference	axion/utils.py	/^def difference(dfs: list, col: str) -> pd.DataFrame:$/;"	f	typeref:typename:pd.DataFrame
 document_sentiment	axion/axion.py	/^    def document_sentiment(self, document_id: str):$/;"	m	class:FilingsAPI
@@ -276,11 +275,9 @@ exposure	axion/axion.py	/^    def exposure(self, ticker: str):$/;"	m	class:ETFAP
 exposure	axion/axion.py	/^    def exposure(self, ticker: str):$/;"	m	class:IndicesAPI
 false	axion/utils.py	/^false = False$/;"	v
 fib	axion/ta.py	/^def fib($/;"	f	typeref:typename:Tuple[pd.Series,pd.Series,pd.Series,pd.Series,pd.Series,pd.Series,pd.Series]
-filings	axion/axion.py	/^    def filings(self, ticker: str, limit: int = None, form: str = None):$/;"	m	class:FilingsAPI
 filter	axion/utils.py	/^def filter(df: pd.DataFrame, col: str, items: list) -> pd.DataFrame:$/;"	f	typeref:typename:pd.DataFrame
 find	axion/axion.py	/^    def find(self, query: str):$/;"	m	class:EconAPI
 fit	axion/visualize.py	/^def fit(df: pd.DataFrame, x: str, y: str, log: bool = False, hover: list = [],$/;"	f	typeref:typename:Any
-forms	axion/axion.py	/^    def forms(self, ticker: str, form_type: str, year: str = None, quarter: str = None, limit: i/;"	m	class:FilingsAPI
 free_cash_flow	axion/axion.py	/^    def free_cash_flow(self, ticker: str, periods: int = None):$/;"	m	class:FinancialsAPI
 fund	axion/axion.py	/^    def fund(self, ticker: str):$/;"	m	class:ETFAPI
 funds	axion/axion.py	/^    def funds(self, ticker: str):$/;"	m	class:InsidersAPI
@@ -299,6 +296,7 @@ heatmap	axion/visualize.py	/^def heatmap(df: pd.DataFrame, x: str, y: str, hover
 help	axion/axion.py	/^    def help(self):$/;"	m	class:Axion
 help	axion/axion.py	/^    def help(self):$/;"	m	class:BaseAPI
 history	axion/axion.py	/^    def history(self, ticker: str):$/;"	m	class:EarningsAPI
+history	axion/axion.py	/^    def history(self, ticker: str, form_type: str, start_date: str, end_date: str = None):$/;"	m	class:FilingsAPI
 holdings	axion/axion.py	/^    def holdings(self, ticker: str):$/;"	m	class:ETFAPI
 holdings_all	axion/axion.py	/^    def holdings_all(self, ticker: str):$/;"	m	class:ETFAPI
 ichi	axion/ta.py	/^def ichi($/;"	f	typeref:typename:Tuple[pd.Series,pd.Series,pd.Series,pd.Series,pd.Series]
@@ -331,6 +329,7 @@ list_currency	axion/axion.py	/^    def list_currency(self):$/;"	m	class:StocksAP
 list_exchange	axion/axion.py	/^    def list_exchange(self):$/;"	m	class:ForexAPI
 list_exchange	axion/axion.py	/^    def list_exchange(self):$/;"	m	class:FuturesAPI
 list_exchange	axion/axion.py	/^    def list_exchange(self):$/;"	m	class:IndicesAPI
+list_forms	axion/axion.py	/^    def list_forms(self):$/;"	m	class:FilingsAPI
 list_industry	axion/axion.py	/^    def list_industry(self):$/;"	m	class:ETFAPI
 list_industry	axion/axion.py	/^    def list_industry(self):$/;"	m	class:StocksAPI
 list_market	axion/axion.py	/^    def list_market(self):$/;"	m	class:ETFAPI
@@ -402,6 +401,7 @@ radar	axion/visualize.py	/^def radar(df: pd.DataFrame, values: str, labels: str)
 ranger	axion/utils.py	/^def ranger(df: pd.DataFrame, start: str, end: str = None, date_col: str = "date") -> pd.DataFram/;"	f	typeref:typename:pd.DataFrame
 ratings	axion/axion.py	/^    def ratings(self, entity_id: str):$/;"	m	class:CreditAPI
 read	axion/utils.py	/^def read(id: str) -> Optional[Any]:$/;"	f	typeref:typename:Optional[Any]
+recent	axion/axion.py	/^    def recent(self, ticker: str, limit: int = None, form: str = None):$/;"	m	class:FilingsAPI
 recommendation	axion/axion.py	/^    def recommendation(self, ticker: str):$/;"	m	class:ProfilesAPI
 relativity	axion/utils.py	/^def relativity(df: pd.DataFrame, cols: list) -> pd.DataFrame:$/;"	f	typeref:typename:pd.DataFrame
 report	axion/axion.py	/^    def report(self, ticker: str, year: str, quarter: str):$/;"	m	class:EarningsAPI
@@ -417,7 +417,7 @@ scatter	axion/visualize.py	/^def scatter(df: pd.DataFrame, x: str, y: str, log: 
 scribe	axion/utils.py	/^def scribe(df: pd.DataFrame, id: str, cb: Callable) -> dict:$/;"	f	typeref:typename:dict
 search	axion/axion.py	/^    def search(self, query: str):$/;"	m	class:CreditAPI
 search	axion/axion.py	/^    def search(self, query: str):$/;"	m	class:EconAPI
-search	axion/axion.py	/^    def search(self, year: str, quarter: str, form: str = None, ticker: str = None):$/;"	m	class:FilingsAPI
+search	axion/axion.py	/^    def search(self, ticker: str = None, form: str = None, year: str = None, quarter: str = None/;"	m	class:FilingsAPI
 shades_of_white	axion/visualize.py	/^shades_of_white = [$/;"	v
 shares_outstanding_basic	axion/axion.py	/^    def shares_outstanding_basic(self, ticker: str, periods: int = None):$/;"	m	class:FinancialsAPI
 shares_outstanding_diluted	axion/axion.py	/^    def shares_outstanding_diluted(self, ticker: str, periods: int = None):$/;"	m	class:FinancialsAPI

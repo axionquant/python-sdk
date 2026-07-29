@@ -1495,7 +1495,7 @@ GET /insiders/:ticker/activity
 
 #### List Available Form Types
 ```
-GET /filings/desc/forms
+GET /filings/list/forms
 ```
 **Response:** Object with `commonForms` and `fundForms` arrays containing form types with descriptions.
 

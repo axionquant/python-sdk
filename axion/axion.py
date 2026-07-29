@@ -631,7 +631,7 @@ class EarningsAPI(BaseAPI):
 
 
 class FilingsAPI(BaseAPI):
-    def filings(self, ticker: str, limit: int = None, form: str = None):
+    def recent(self, ticker: str, limit: int = None, form: str = None):
         """Get recent SEC filings for a company."""
         params = {}
         if limit is not None:
@@ -640,28 +640,28 @@ class FilingsAPI(BaseAPI):
             params["form"] = form
         return self._request("GET", f"filings/{ticker}", params=params)
 
-    def forms(self, ticker: str, form_type: str, year: str = None, quarter: str = None, limit: int = None):
-        """Get specific form type filings for a company."""
+    def history(self, ticker: str, form_type: str, start_date: str, end_date: str = None):
+        """Get filings of a specific form type for a company by date range."""
+        params = {"startDate": start_date}
+        if end_date:
+            params["endDate"] = end_date
+        return self._request("GET", f"filings/{ticker}/{form_type}", params=params)
+
+    def list_forms(self):
+        """List available SEC form types and their descriptions."""
+        return self._request("GET", "filings/list/forms")
+
+    def search(self, ticker: str = None, form: str = None, year: str = None, quarter: str = None):
+        """Search filings by year/quarter and optional filters."""
         params = {}
+        if ticker:
+            params["ticker"] = ticker
+        if form:
+            params["form"] = form
         if year:
             params["year"] = year
         if quarter:
             params["quarter"] = quarter
-        if limit is not None:
-            params["limit"] = limit
-        return self._request("GET", f"filings/{ticker}/forms/{form_type}", params=params)
-
-    def desc_forms(self):
-        """List available SEC form types and their descriptions."""
-        return self._request("GET", "filings/desc/forms")
-
-    def search(self, year: str, quarter: str, form: str = None, ticker: str = None):
-        """Search filings by year/quarter and optional filters."""
-        params = {"year": year, "quarter": quarter}
-        if form:
-            params["form"] = form
-        if ticker:
-            params["ticker"] = ticker
         return self._request("GET", "filings/search", params=params)
 
     def document_sentiment(self, document_id: str):
