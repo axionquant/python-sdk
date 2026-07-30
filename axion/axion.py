@@ -631,13 +631,13 @@ class EarningsAPI(BaseAPI):
 
 
 class FilingsAPI(BaseAPI):
-    def recent(self, ticker: str, limit: int = None, form: str = None):
+    def recent(self, ticker: str, form: str = None, limit: int = None):
         """Get recent SEC filings for a company."""
         params = {}
-        if limit is not None:
-            params["limit"] = limit
         if form is not None:
             params["form"] = form
+        if limit is not None:
+            params["limit"] = limit
         return self._request("GET", f"filings/{ticker}", params=params)
 
     def history(self, ticker: str, form_type: str, start_date: str, end_date: str = None):

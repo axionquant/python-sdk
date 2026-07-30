@@ -170,7 +170,7 @@ client.insiders.activity("AAPL")      # Net share purchase activity
 
 ### SEC Filings
 ```python
-client.filings.recent("AAPL", limit=10, form="10-K")
+client.filings.recent("AAPL", form="10-K", limit=10)
 client.filings.history("AAPL", form_type="10-Q", start_date="2024-01-01", end_date="2024-03-31")
 client.filings.search(ticker="AAPL", form="10-K", year="2024", quarter="Q1")
 client.filings.list_forms()           # List available form types

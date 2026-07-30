@@ -401,7 +401,7 @@ radar	axion/visualize.py	/^def radar(df: pd.DataFrame, values: str, labels: str)
 ranger	axion/utils.py	/^def ranger(df: pd.DataFrame, start: str, end: str = None, date_col: str = "date") -> pd.DataFram/;"	f	typeref:typename:pd.DataFrame
 ratings	axion/axion.py	/^    def ratings(self, entity_id: str):$/;"	m	class:CreditAPI
 read	axion/utils.py	/^def read(id: str) -> Optional[Any]:$/;"	f	typeref:typename:Optional[Any]
-recent	axion/axion.py	/^    def recent(self, ticker: str, limit: int = None, form: str = None):$/;"	m	class:FilingsAPI
+recent	axion/axion.py	/^    def recent(self, ticker: str, form: str = None, limit: int = None):$/;"	m	class:FilingsAPI
 recommendation	axion/axion.py	/^    def recommendation(self, ticker: str):$/;"	m	class:ProfilesAPI
 relativity	axion/utils.py	/^def relativity(df: pd.DataFrame, cols: list) -> pd.DataFrame:$/;"	f	typeref:typename:pd.DataFrame
 report	axion/axion.py	/^    def report(self, ticker: str, year: str, quarter: str):$/;"	m	class:EarningsAPI
