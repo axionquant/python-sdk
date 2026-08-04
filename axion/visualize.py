@@ -1,6 +1,7 @@
 import base64
 import html
 import random
+from pathlib import Path
 import numpy as np
 import pandas as pd
 from typing import Any, Optional, Tuple, Callable, List
@@ -23,20 +24,58 @@ class PlotHTML(HTML):
             super().__init__(data=data)
         self.filepath = filepath
 
+
 def visualize(fig: go.Figure) -> Any:
     """Display a plotly figure in a notebook (inline HTML) or in the browser otherwise."""
     if get_ipython() is not None:
-        vizFileName = '.viz-' + str(random.randint(1, 100)) + '.html'
-        fig.write_html(vizFileName, auto_open=False, config={"responsive": True})
-        return PlotHTML(filename=vizFileName, filepath=vizFileName)
+        cache_dir = Path("./.axion_cache")
+        cache_dir.mkdir(parents=True, exist_ok=True)
+
+        vizFileName = f".viz-{random.randint(1, 1000)}.html"
+        vizPath = cache_dir / vizFileName
+
+        fig.write_html(vizPath, auto_open=False, config={"responsive": True})
+        return PlotHTML(filename=vizFileName, filepath=str(vizPath))
+
     pio.show(fig)
 
 
-BG_COLOR = 'rgba(0,0,0,0)'
-GRID_COLOR = 'rgba(255,255,255,0.15)'
-TEXT_COLOR = 'rgba(255,255,255,1)'
-MUTED_TEXT_COLOR = 'rgba(180,180,180,1)'
-ACCENT_COLOR = 'rgba(52, 152, 219,1.0)'
+THEMES = {
+    'dark': {
+        'BG_COLOR': 'rgba(0,0,0,0)',
+        'GRID_COLOR': 'rgba(255,255,255,0.15)',
+        'TEXT_COLOR': 'rgba(255,255,255,1)',
+        'MUTED_TEXT_COLOR': 'rgba(180,180,180,1)',
+        'ACCENT_COLOR': 'rgba(52, 152, 219,1.0)',
+    },
+    'light': {
+        'BG_COLOR': 'rgba(255,255,255,1)',
+        'GRID_COLOR': 'rgba(200,200,200,1)',
+        'TEXT_COLOR': 'rgba(15,15,15,1)',
+        'MUTED_TEXT_COLOR': 'rgba(87,87,87,1)',
+        'ACCENT_COLOR': 'rgba(52, 152, 219,1.0)',
+    },
+}
+
+# default dark theme
+BG_COLOR = THEMES['dark']['BG_COLOR']
+GRID_COLOR = THEMES['dark']['GRID_COLOR']
+TEXT_COLOR = THEMES['dark']['TEXT_COLOR']
+MUTED_TEXT_COLOR = THEMES['dark']['MUTED_TEXT_COLOR']
+ACCENT_COLOR = THEMES['dark']['ACCENT_COLOR']
+
+
+def switch_theme(theme: str):
+    global BG_COLOR, GRID_COLOR, TEXT_COLOR, MUTED_TEXT_COLOR, ACCENT_COLOR
+
+    colors = THEMES.get((theme or '').lower(), THEMES['dark'])
+
+    BG_COLOR = colors['BG_COLOR']
+    GRID_COLOR = colors['GRID_COLOR']
+    TEXT_COLOR = colors['TEXT_COLOR']
+    MUTED_TEXT_COLOR = colors['MUTED_TEXT_COLOR']
+    ACCENT_COLOR = colors['ACCENT_COLOR']
+
 
 shades_of_white = [
     'rgb(31, 119, 180)',  # blue

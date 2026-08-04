@@ -64,7 +64,7 @@
 7. Supply Chain API	api-reference-and-responses.md	/^### 7. Supply Chain API$/;"	S	section:Axion API Reference""Alternative Data APIs
 8. Sentiment API	api-reference-and-responses.md	/^### 8. Sentiment API$/;"	S	section:Axion API Reference""Alternative Data APIs
 9. ESG API	api-reference-and-responses.md	/^### 9. ESG API$/;"	S	section:Axion API Reference""Alternative Data APIs
-ACCENT_COLOR	axion/visualize.py	/^ACCENT_COLOR = 'rgba(52, 152, 219,1.0)'$/;"	v
+ACCENT_COLOR	axion/visualize.py	/^ACCENT_COLOR = THEMES['dark']['ACCENT_COLOR']$/;"	v
 Alternative Data APIs	api-reference-and-responses.md	/^## Alternative Data APIs$/;"	s	chapter:Axion API Reference
 Axion	axion/axion.py	/^class Axion:$/;"	c
 Axion API Reference	api-reference-and-responses.md	/^# Axion API Reference$/;"	c
@@ -72,7 +72,7 @@ Axion Client	readme.md	/^## Axion Client$/;"	s	chapter:Axion Python SDK
 Axion Python SDK	readme.md	/^# Axion Python SDK$/;"	c
 AxionExample	example.py	/^class AxionExample:$/;"	c
 BASE_URL	axion/axion.py	/^BASE_URL = "https:\/\/api.axionquant.com"$/;"	v
-BG_COLOR	axion/visualize.py	/^BG_COLOR = 'rgba(0,0,0,0)'$/;"	v
+BG_COLOR	axion/visualize.py	/^BG_COLOR = THEMES['dark']['BG_COLOR']$/;"	v
 BaseAPI	axion/axion.py	/^class BaseAPI:$/;"	c
 Basic Shares Outstanding	api-reference-and-responses.md	/^#### Basic Shares Outstanding$/;"	t	subsection:Axion API Reference""Fundamentals APIs""11. Financials API
 Company Profiles	readme.md	/^### Company Profiles$/;"	S	section:Axion Python SDK""Axion Client
@@ -104,7 +104,7 @@ ForexAPI	axion/axion.py	/^class ForexAPI(BaseAPI):$/;"	c
 Fundamentals APIs	api-reference-and-responses.md	/^## Fundamentals APIs$/;"	s	chapter:Axion API Reference
 Futures	readme.md	/^### Futures$/;"	S	section:Axion Python SDK""Axion Client
 FuturesAPI	axion/axion.py	/^class FuturesAPI(BaseAPI):$/;"	c
-GRID_COLOR	axion/visualize.py	/^GRID_COLOR = 'rgba(255,255,255,0.15)'$/;"	v
+GRID_COLOR	axion/visualize.py	/^GRID_COLOR = THEMES['dark']['GRID_COLOR']$/;"	v
 Get All Cryptocurrency Tickers	api-reference-and-responses.md	/^#### Get All Cryptocurrency Tickers$/;"	t	subsection:Axion API Reference""Market Data APIs""5. Crypto API
 Get All Forex Tickers	api-reference-and-responses.md	/^#### Get All Forex Tickers$/;"	t	subsection:Axion API Reference""Market Data APIs""4. Forex API
 Get All Futures Tickers	api-reference-and-responses.md	/^#### Get All Futures Tickers$/;"	t	subsection:Axion API Reference""Market Data APIs""3. Futures API
@@ -166,7 +166,7 @@ License	readme.md	/^## License$/;"	s	chapter:Axion Python SDK
 List Available Form Types	api-reference-and-responses.md	/^#### List Available Form Types$/;"	t	subsection:Axion API Reference""Fundamentals APIs""14. SEC Filings API
 M	axion/utils.py	/^M, month = 'M', 'M' # monthly$/;"	v
 ML Models (`models`)	readme.md	/^## ML Models (`models`)$/;"	s	chapter:Axion Python SDK
-MUTED_TEXT_COLOR	axion/visualize.py	/^MUTED_TEXT_COLOR = 'rgba(180,180,180,1)'$/;"	v
+MUTED_TEXT_COLOR	axion/visualize.py	/^MUTED_TEXT_COLOR = THEMES['dark']['MUTED_TEXT_COLOR']$/;"	v
 Macros & Signals APIs	api-reference-and-responses.md	/^## Macros & Signals APIs$/;"	s	chapter:Axion API Reference
 Market Data APIs	api-reference-and-responses.md	/^## Market Data APIs$/;"	s	chapter:Axion API Reference
 Modules	readme.md	/^## Modules$/;"	s	chapter:Axion Python SDK
@@ -190,7 +190,8 @@ Stocks	readme.md	/^### Stocks$/;"	S	section:Axion Python SDK""Axion Client
 StocksAPI	axion/axion.py	/^class StocksAPI(BaseAPI):$/;"	c
 Supply Chain	readme.md	/^### Supply Chain$/;"	S	section:Axion Python SDK""Axion Client
 SupplyChainAPI	axion/axion.py	/^class SupplyChainAPI(BaseAPI):$/;"	c
-TEXT_COLOR	axion/visualize.py	/^TEXT_COLOR = 'rgba(255,255,255,1)'$/;"	v
+TEXT_COLOR	axion/visualize.py	/^TEXT_COLOR = THEMES['dark']['TEXT_COLOR']$/;"	v
+THEMES	axion/visualize.py	/^THEMES = {$/;"	v
 Technical Analysis (`ta`)	readme.md	/^## Technical Analysis (`ta`)$/;"	s	chapter:Axion Python SDK
 Total Assets	api-reference-and-responses.md	/^#### Total Assets$/;"	t	subsection:Axion API Reference""Fundamentals APIs""11. Financials API
 Total Liabilities	api-reference-and-responses.md	/^#### Total Liabilities$/;"	t	subsection:Axion API Reference""Fundamentals APIs""11. Financials API
@@ -438,6 +439,7 @@ stockholders_equity	axion/axion.py	/^    def stockholders_equity(self, ticker: s
 summary	axion/axion.py	/^    def summary(self, ticker: str):$/;"	m	class:ProfilesAPI
 suppliers	axion/axion.py	/^    def suppliers(self, ticker: str):$/;"	m	class:SupplyChainAPI
 supply_chain_examples	example.py	/^    def supply_chain_examples(self):$/;"	m	class:AxionExample
+switch_theme	axion/visualize.py	/^def switch_theme(theme: str):$/;"	f
 ticker	axion/axion.py	/^    def ticker(self, ticker: str):$/;"	m	class:CryptoAPI
 ticker	axion/axion.py	/^    def ticker(self, ticker: str):$/;"	m	class:ETFAPI
 ticker	axion/axion.py	/^    def ticker(self, ticker: str):$/;"	m	class:ForexAPI

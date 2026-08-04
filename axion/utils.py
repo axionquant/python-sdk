@@ -31,6 +31,7 @@ def cache(id: str, fn: Callable):
             p = pickle.load(f)
     else:
         p = fn()
+        os.makedirs("./.axion_cache", exist_ok=True)
         with open(file_path, 'wb') as f:
             pickle.dump(p, f)
     return p
@@ -39,6 +40,7 @@ def cache(id: str, fn: Callable):
 def save(id: str, obj: Any) -> None:
     """Serialize and persist an object to disk cache."""
     file_path = f"./.axion_cache/{id}.pkl"
+    os.makedirs("./.axion_cache", exist_ok=True)
     with open(file_path, 'wb') as f:
         pickle.dump(obj, f)
 
