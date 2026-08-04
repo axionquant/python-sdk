@@ -31,11 +31,18 @@ def visualize(fig: go.Figure) -> Any:
         cache_dir = Path("./.axion_cache")
         cache_dir.mkdir(parents=True, exist_ok=True)
 
-        vizFileName = f".viz-{random.randint(1, 1000)}.html"
-        vizPath = cache_dir / vizFileName
+        vizPath = cache_dir / f".viz-{random.randint(1, 1000)}.html"
 
-        fig.write_html(vizPath, auto_open=False, config={"responsive": True})
-        return PlotHTML(filename=vizFileName, filepath=str(vizPath))
+        fig.write_html(
+            vizPath,
+            auto_open=False,
+            config={"responsive": True}
+        )
+
+        return PlotHTML(
+            filename=str(vizPath),
+            filepath=str(vizPath)
+        )
 
     pio.show(fig)
 
