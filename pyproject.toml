@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "axionquant-sdk"
-version = "1.2.5"
+version = "1.2.6"
 description = "Market data optimized for quantitative research, fundamental analysis, and algorithmic trading."
 readme = "README.md"
 requires-python = ">=3.8"
@@ -32,5 +32,11 @@ dev = [ ]
 include = ["axion*"]
 
 [project.urls]
-Homepage = "https://github.com/axionquant/python-sdk"
-
+Homepage = "https://axionquant.com/"
+Documentation = "https://axionquant.com/docs"
+Repository = "https://github.com/axionquant/python-sdk"
+Issues = "https://github.com/axionquant/python-sdk/issues"
+"Python SDK" = "https://axionquant.com/developers/libraries"
+"Financial Data API" = "https://axionquant.com/"
+"Market Data API" = "https://axionquant.com/docs/01-market-data"
+"Fundamentals API" = "https://axionquant.com/docs/03-fundamentals"
