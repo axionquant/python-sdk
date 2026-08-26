@@ -66,43 +66,48 @@
 9. ESG API	api-reference-and-responses.md	/^### 9. ESG API$/;"	S	section:Axion API Reference""Alternative Data APIs
 ACCENT_COLOR	axion/visualize.py	/^ACCENT_COLOR = THEMES['dark']['ACCENT_COLOR']$/;"	v
 Alternative Data APIs	api-reference-and-responses.md	/^## Alternative Data APIs$/;"	s	chapter:Axion API Reference
+Alternative Financial Data	readme.md	/^## Alternative Financial Data$/;"	s	chapter:AxionQuant Python SDK
 Axion	axion/axion.py	/^class Axion:$/;"	c
 Axion API Reference	api-reference-and-responses.md	/^# Axion API Reference$/;"	c
-Axion Client	readme.md	/^## Axion Client$/;"	s	chapter:Axion Python SDK
-Axion Python SDK	readme.md	/^# Axion Python SDK$/;"	c
 AxionExample	example.py	/^class AxionExample:$/;"	c
+AxionQuant Python SDK	readme.md	/^# AxionQuant Python SDK$/;"	c
 BASE_URL	axion/axion.py	/^BASE_URL = "https:\/\/api.axionquant.com"$/;"	v
 BG_COLOR	axion/visualize.py	/^BG_COLOR = THEMES['dark']['BG_COLOR']$/;"	v
 BaseAPI	axion/axion.py	/^class BaseAPI:$/;"	c
 Basic Shares Outstanding	api-reference-and-responses.md	/^#### Basic Shares Outstanding$/;"	t	subsection:Axion API Reference""Fundamentals APIs""11. Financials API
-Company Profiles	readme.md	/^### Company Profiles$/;"	S	section:Axion Python SDK""Axion Client
-Credit Ratings	readme.md	/^### Credit Ratings$/;"	S	section:Axion Python SDK""Axion Client
+Beta Analysis	readme.md	/^### Beta Analysis$/;"	S	section:AxionQuant Python SDK""Machine Learning and Financial Modeling
+Company Profiles	readme.md	/^### Company Profiles$/;"	S	section:AxionQuant Python SDK""Fundamental Data and Financial Analysis
+Credit Ratings	readme.md	/^### Credit Ratings$/;"	S	section:AxionQuant Python SDK""Alternative Financial Data
 CreditAPI	axion/axion.py	/^class CreditAPI(BaseAPI):$/;"	c
-Crypto	readme.md	/^### Crypto$/;"	S	section:Axion Python SDK""Axion Client
 CryptoAPI	axion/axion.py	/^class CryptoAPI(BaseAPI):$/;"	c
+Cryptocurrency Market Data	readme.md	/^### Cryptocurrency Market Data$/;"	S	section:AxionQuant Python SDK""Financial Market Data
 D	axion/utils.py	/^D, day = 'D', 'D'   # daily$/;"	v
 DCF Valuation	api-reference-and-responses.md	/^#### DCF Valuation$/;"	t	subsection:Axion API Reference""Fundamentals APIs""11. Financials API
-Date Formats & Time Frames	readme.md	/^## Date Formats & Time Frames$/;"	s	chapter:Axion Python SDK
 Discount Rate / WACC	api-reference-and-responses.md	/^#### Discount Rate \/ WACC$/;"	t	subsection:Axion API Reference""Fundamentals APIs""11. Financials API
-ESG	readme.md	/^### ESG$/;"	S	section:Axion Python SDK""Axion Client
+Documentation and Resources	readme.md	/^## Documentation and Resources$/;"	s	chapter:AxionQuant Python SDK
+ESG Data	readme.md	/^### ESG Data$/;"	S	section:AxionQuant Python SDK""Alternative Financial Data
 ESGAPI	axion/axion.py	/^class ESGAPI(BaseAPI):$/;"	c
+ETF Data	readme.md	/^## ETF Data$/;"	s	chapter:AxionQuant Python SDK
 ETFAPI	axion/axion.py	/^class ETFAPI(BaseAPI):$/;"	c
-ETFs	readme.md	/^### ETFs$/;"	S	section:Axion Python SDK""Axion Client
-Earnings	readme.md	/^### Earnings$/;"	S	section:Axion Python SDK""Axion Client
+Earnings Data	readme.md	/^### Earnings Data$/;"	S	section:AxionQuant Python SDK""Fundamental Data and Financial Analysis
 EarningsAPI	axion/axion.py	/^class EarningsAPI(BaseAPI):$/;"	c
 EconAPI	axion/axion.py	/^class EconAPI(BaseAPI):$/;"	c
 Economic Calendar	api-reference-and-responses.md	/^#### Economic Calendar$/;"	t	subsection:Axion API Reference""Macros & Signals APIs""17. Economic Data API
-Economic Data	readme.md	/^### Economic Data$/;"	S	section:Axion Python SDK""Axion Client
-Error Handling	readme.md	/^## Error Handling$/;"	s	chapter:Axion Python SDK
+Economic and Macroeconomic Data	readme.md	/^## Economic and Macroeconomic Data$/;"	s	chapter:AxionQuant Python SDK
+Error Handling	readme.md	/^## Error Handling$/;"	s	chapter:AxionQuant Python SDK
 FilingsAPI	axion/axion.py	/^class FilingsAPI(BaseAPI):$/;"	c
+Financial Data Visualization	readme.md	/^## Financial Data Visualization$/;"	s	chapter:AxionQuant Python SDK
+Financial Market Data	readme.md	/^## Financial Market Data$/;"	s	chapter:AxionQuant Python SDK
 Financial Metrics (Composite)	api-reference-and-responses.md	/^#### Financial Metrics (Composite)$/;"	t	subsection:Axion API Reference""Fundamentals APIs""11. Financials API
+Financial News and Sentiment	readme.md	/^## Financial News and Sentiment$/;"	s	chapter:AxionQuant Python SDK
 Financial Snapshot	api-reference-and-responses.md	/^#### Financial Snapshot$/;"	t	subsection:Axion API Reference""Fundamentals APIs""11. Financials API
-Financials	readme.md	/^### Financials$/;"	S	section:Axion Python SDK""Axion Client
+Financial Statements and Metrics	readme.md	/^### Financial Statements and Metrics$/;"	S	section:AxionQuant Python SDK""Fundamental Data and Financial Analysis
 FinancialsAPI	axion/axion.py	/^class FinancialsAPI(BaseAPI):$/;"	c
-Forex	readme.md	/^### Forex$/;"	S	section:Axion Python SDK""Axion Client
+Forex Market Data	readme.md	/^### Forex Market Data$/;"	S	section:AxionQuant Python SDK""Financial Market Data
 ForexAPI	axion/axion.py	/^class ForexAPI(BaseAPI):$/;"	c
+Fundamental Data and Financial Analysis	readme.md	/^## Fundamental Data and Financial Analysis$/;"	s	chapter:AxionQuant Python SDK
 Fundamentals APIs	api-reference-and-responses.md	/^## Fundamentals APIs$/;"	s	chapter:Axion API Reference
-Futures	readme.md	/^### Futures$/;"	S	section:Axion Python SDK""Axion Client
+Futures Market Data	readme.md	/^### Futures Market Data$/;"	S	section:AxionQuant Python SDK""Financial Market Data
 FuturesAPI	axion/axion.py	/^class FuturesAPI(BaseAPI):$/;"	c
 GRID_COLOR	axion/visualize.py	/^GRID_COLOR = THEMES['dark']['GRID_COLOR']$/;"	v
 Get All Cryptocurrency Tickers	api-reference-and-responses.md	/^#### Get All Cryptocurrency Tickers$/;"	t	subsection:Axion API Reference""Market Data APIs""5. Crypto API
@@ -153,52 +158,56 @@ Get Recommendation Trends	api-reference-and-responses.md	/^#### Get Recommendati
 Get Sector & Region Weights	api-reference-and-responses.md	/^#### Get Sector & Region Weights$/;"	t	subsection:Axion API Reference""Market Data APIs""6. ETFs API
 Get Social Media Sentiment	api-reference-and-responses.md	/^#### Get Social Media Sentiment$/;"	t	subsection:Axion API Reference""Alternative Data APIs""8. Sentiment API
 Get Specific Futures Ticker	api-reference-and-responses.md	/^#### Get Specific Futures Ticker$/;"	t	subsection:Axion API Reference""Market Data APIs""3. Futures API
-Get Started	readme.md	/^## Get Started$/;"	s	chapter:Axion Python SDK
 Get Stock Ticker Details	api-reference-and-responses.md	/^#### Get Stock Ticker Details$/;"	t	subsection:Axion API Reference""Market Data APIs""1. Stocks API
 Get Top Holdings	api-reference-and-responses.md	/^#### Get Top Holdings$/;"	t	subsection:Axion API Reference""Market Data APIs""6. ETFs API
 Get Website Traffic	api-reference-and-responses.md	/^#### Get Website Traffic$/;"	t	subsection:Axion API Reference""Alternative Data APIs""10. Company Web Traffic API
-Indices	readme.md	/^### Indices$/;"	S	section:Axion Python SDK""Axion Client
+Index Data	readme.md	/^### Index Data$/;"	S	section:AxionQuant Python SDK""Financial Market Data
 IndicesAPI	axion/axion.py	/^class IndicesAPI(BaseAPI):$/;"	c
-Insiders & Ownership	readme.md	/^### Insiders & Ownership$/;"	S	section:Axion Python SDK""Axion Client
+Insider Trading and Institutional Ownership	readme.md	/^## Insider Trading and Institutional Ownership$/;"	s	chapter:AxionQuant Python SDK
 InsidersAPI	axion/axion.py	/^class InsidersAPI(BaseAPI):$/;"	c
-Installation	readme.md	/^## Installation$/;"	s	chapter:Axion Python SDK
-License	readme.md	/^## License$/;"	s	chapter:Axion Python SDK
+Installation	readme.md	/^## Installation$/;"	s	chapter:AxionQuant Python SDK
+LSTM Forecasting	readme.md	/^### LSTM Forecasting$/;"	S	section:AxionQuant Python SDK""Machine Learning and Financial Modeling
+License	readme.md	/^## License$/;"	s	chapter:AxionQuant Python SDK
+Linear Regression	readme.md	/^### Linear Regression$/;"	S	section:AxionQuant Python SDK""Machine Learning and Financial Modeling
 List Available Form Types	api-reference-and-responses.md	/^#### List Available Form Types$/;"	t	subsection:Axion API Reference""Fundamentals APIs""14. SEC Filings API
 M	axion/utils.py	/^M, month = 'M', 'M' # monthly$/;"	v
-ML Models (`models`)	readme.md	/^## ML Models (`models`)$/;"	s	chapter:Axion Python SDK
 MUTED_TEXT_COLOR	axion/visualize.py	/^MUTED_TEXT_COLOR = THEMES['dark']['MUTED_TEXT_COLOR']$/;"	v
+Machine Learning and Financial Modeling	readme.md	/^## Machine Learning and Financial Modeling$/;"	s	chapter:AxionQuant Python SDK
 Macros & Signals APIs	api-reference-and-responses.md	/^## Macros & Signals APIs$/;"	s	chapter:Axion API Reference
 Market Data APIs	api-reference-and-responses.md	/^## Market Data APIs$/;"	s	chapter:Axion API Reference
-Modules	readme.md	/^## Modules$/;"	s	chapter:Axion Python SDK
+Momentum and Oscillators	readme.md	/^### Momentum and Oscillators$/;"	S	section:AxionQuant Python SDK""Technical Analysis
+Multi-Feature Regression	readme.md	/^### Multi-Feature Regression$/;"	S	section:AxionQuant Python SDK""Machine Learning and Financial Modeling
 Net Income	api-reference-and-responses.md	/^#### Net Income$/;"	t	subsection:Axion API Reference""Fundamentals APIs""11. Financials API
-News	readme.md	/^### News$/;"	S	section:Axion Python SDK""Axion Client
 NewsAPI	axion/axion.py	/^class NewsAPI(BaseAPI):$/;"	c
 Operating Cash Flow	api-reference-and-responses.md	/^#### Operating Cash Flow$/;"	t	subsection:Axion API Reference""Fundamentals APIs""11. Financials API
 PlotHTML	axion/visualize.py	/^class PlotHTML(HTML):$/;"	c
 ProfilesAPI	axion/axion.py	/^class ProfilesAPI(BaseAPI):$/;"	c
+Python Data Utilities	readme.md	/^## Python Data Utilities$/;"	s	chapter:AxionQuant Python SDK
 Q	axion/utils.py	/^Q, quarter = 'Q', 'Q'  # quarterly$/;"	v
-Quick Start	readme.md	/^## Quick Start$/;"	s	chapter:Axion Python SDK
+Quick Start	readme.md	/^## Quick Start$/;"	s	chapter:AxionQuant Python SDK
 Revenue	api-reference-and-responses.md	/^#### Revenue$/;"	t	subsection:Axion API Reference""Fundamentals APIs""11. Financials API
-SEC Filings	readme.md	/^### SEC Filings$/;"	S	section:Axion Python SDK""Axion Client
+SEC Filings and Regulatory Data	readme.md	/^## SEC Filings and Regulatory Data$/;"	s	chapter:AxionQuant Python SDK
 Search Economic Series	api-reference-and-responses.md	/^#### Search Economic Series$/;"	t	subsection:Axion API Reference""Macros & Signals APIs""17. Economic Data API
 Search Filings by Year and Quarter	api-reference-and-responses.md	/^#### Search Filings by Year and Quarter$/;"	t	subsection:Axion API Reference""Fundamentals APIs""14. SEC Filings API
 Search Organizations	api-reference-and-responses.md	/^#### Search Organizations$/;"	t	subsection:Axion API Reference""Fundamentals APIs""16. Credit Ratings API
-Sentiment	readme.md	/^### Sentiment$/;"	S	section:Axion Python SDK""Axion Client
 SentimentAPI	axion/axion.py	/^class SentimentAPI(BaseAPI):$/;"	c
 Stockholders' Equity	api-reference-and-responses.md	/^#### Stockholders' Equity$/;"	t	subsection:Axion API Reference""Fundamentals APIs""11. Financials API
-Stocks	readme.md	/^### Stocks$/;"	S	section:Axion Python SDK""Axion Client
+Stocks and Equities	readme.md	/^### Stocks and Equities$/;"	S	section:AxionQuant Python SDK""Financial Market Data
 StocksAPI	axion/axion.py	/^class StocksAPI(BaseAPI):$/;"	c
-Supply Chain	readme.md	/^### Supply Chain$/;"	S	section:Axion Python SDK""Axion Client
+Supply Chain Data	readme.md	/^### Supply Chain Data$/;"	S	section:AxionQuant Python SDK""Alternative Financial Data
 SupplyChainAPI	axion/axion.py	/^class SupplyChainAPI(BaseAPI):$/;"	c
+Supported Date Formats and Time Frames	readme.md	/^## Supported Date Formats and Time Frames$/;"	s	chapter:AxionQuant Python SDK
 TEXT_COLOR	axion/visualize.py	/^TEXT_COLOR = THEMES['dark']['TEXT_COLOR']$/;"	v
 THEMES	axion/visualize.py	/^THEMES = {$/;"	v
-Technical Analysis (`ta`)	readme.md	/^## Technical Analysis (`ta`)$/;"	s	chapter:Axion Python SDK
+Technical Analysis	readme.md	/^## Technical Analysis$/;"	s	chapter:AxionQuant Python SDK
 Total Assets	api-reference-and-responses.md	/^#### Total Assets$/;"	t	subsection:Axion API Reference""Fundamentals APIs""11. Financials API
 Total Liabilities	api-reference-and-responses.md	/^#### Total Liabilities$/;"	t	subsection:Axion API Reference""Fundamentals APIs""11. Financials API
-Utilities (`utils`)	readme.md	/^## Utilities (`utils`)$/;"	s	chapter:Axion Python SDK
-Visualization (`visualize`)	readme.md	/^## Visualization (`visualize`)$/;"	s	chapter:Axion Python SDK
+Trend Direction	readme.md	/^### Trend Direction$/;"	S	section:AxionQuant Python SDK""Technical Analysis
+Trend Indicators	readme.md	/^### Trend Indicators$/;"	S	section:AxionQuant Python SDK""Technical Analysis
+Volatility and Channels	readme.md	/^### Volatility and Channels$/;"	S	section:AxionQuant Python SDK""Technical Analysis
+Volume Indicators	readme.md	/^### Volume Indicators$/;"	S	section:AxionQuant Python SDK""Technical Analysis
 W	axion/utils.py	/^W, week = 'W', 'W'  # weekly$/;"	v
-Web Traffic	readme.md	/^### Web Traffic$/;"	S	section:Axion Python SDK""Axion Client
+Web Traffic Data	readme.md	/^### Web Traffic Data$/;"	S	section:AxionQuant Python SDK""Alternative Financial Data
 WebTrafficAPI	axion/axion.py	/^class WebTrafficAPI(BaseAPI):$/;"	c
 Y	axion/utils.py	/^Y, year = 'Y', 'Y'  # annually$/;"	v
 __all__	axion/__init__.py	/^__all__ = ['Axion', 'visualize', 'ta', 'utils', 'models']$/;"	v

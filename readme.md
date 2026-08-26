@@ -1,8 +1,24 @@
-# Axion Python SDK
+# AxionQuant Python SDK
 
-A comprehensive Python client for the [Axion](https://axionquant.com) financial market data, technical analysis, visualization, and machine learning - built for quantitative research in Jupyter notebooks and Python scripts.
+The **AxionQuant Python SDK** is a Python client for the [Axion Financial Data API](https://axionquant.com). Access market data, company fundamentals, financial statements, SEC filings, economic data, ETF data, cryptocurrency, forex, futures, news, and alternative financial data directly from Python.
+
+Built for **quantitative research, financial analysis, financial modeling, and machine learning**, the SDK integrates naturally with pandas, Jupyter notebooks, Plotly, scikit-learn, and TensorFlow.
+
+* **Market data API** for stocks, crypto, forex, futures, and indices
+* **Fundamental data API** for financial statements, ratios, earnings, and valuation
+* **SEC filings API** for 10-K, 10-Q, and other regulatory filings
+* **Economic data API** for macroeconomic and FRED data
+* **ETF data API** for holdings, exposure, weights, and fund information
+* **Technical analysis** with common indicators including RSI, MACD, SMA, EMA, ATR, Bollinger Bands, and VWAP
+* **Interactive financial charts** powered by Plotly
+* **Machine learning tools** for regression, beta analysis, and forecasting
+* **Pandas integration** for quantitative analysis and research workflows
+
+[Get a free Axion API key](https://axionquant.com/dashboard/api-keys) · [Read the API documentation](https://axionquant.com/docs) · [Learn about the Python SDK](https://axionquant.com/developers/libraries)
 
 ## Installation
+
+Install the AxionQuant Python SDK from PyPI:
 
 ```bash
 pip install axionquant-sdk
@@ -10,119 +26,134 @@ pip install axionquant-sdk
 
 ## Quick Start
 
-[Get your free API key](https://axionquant.com/dashboard/api-keys)
+Get your [free Axion API key](https://axionquant.com/dashboard/api-keys) and start retrieving financial market data in Python:
 
 ```python
 from axion import Axion, ta, visualize, utils as axion_utils
 
 client = Axion(api_key="your_api_key_here")
 
-# Fetch stock prices and convert to DataFrame
+# Fetch historical stock prices and convert to a DataFrame
 prices = client.stocks.prices("AAPL", from_date="2024-01-01")
 df = axion_utils.df(prices)
 
-# Run technical analysis
-roc = ta.roc(df, 'close')
+# Calculate a technical indicator
+roc = ta.roc(df, "close")
 
-# Visualize
+# Create an interactive candlestick chart
 visualize.candles(df)
 ```
 
-## Modules
+The SDK is designed for workflows ranging from simple **stock market data analysis in Python** to larger quantitative research and machine learning pipelines.
 
-The SDK is organized into five importable modules:
+## Financial Market Data
 
-```python
-from axion import Axion        # API client
-from axion import ta           # Technical analysis
-from axion import visualize    # Charting & visualization
-from axion import utils        # Data utilities
-from axion import models       # ML / prediction models
-```
+The AxionQuant API provides programmatic access to financial market data across multiple asset classes.
 
----
+### Stocks and Equities
 
-## Axion Client
+Retrieve stock quotes, historical prices, ticker information, market gainers and losers, and other equity market data.
 
-Initialize with your API key:
-
-```python
-client = Axion(api_key="your_api_key_here")
-```
-
-### Stocks
 ```python
 client.stocks.tickers(country="america")
-client.stocks.ticker("AAPL")              # Single ticker lookup
+client.stocks.ticker("AAPL")
 client.stocks.quote("AAPL")
-client.stocks.prices("AAPL", from_date="2024-01-01", to_date="2024-12-31", frame="daily")
-client.stocks.gainers(days=5, limit=10)  # Top gainers
-client.stocks.losers(days=5, limit=10)   # Top losers
+client.stocks.prices(
+    "AAPL",
+    from_date="2024-01-01",
+    to_date="2024-12-31",
+    frame="daily"
+)
+client.stocks.gainers(days=5, limit=10)
+client.stocks.losers(days=5, limit=10)
 ```
 
-### Crypto
+### Cryptocurrency Market Data
+
+Retrieve cryptocurrency tickers, quotes, historical prices, gainers, and losers.
+
 ```python
 client.crypto.tickers(type="coin")
-client.crypto.ticker("BTC")              # Single ticker lookup
+client.crypto.ticker("BTC")
 client.crypto.quote("BTC")
 client.crypto.prices("BTC", from_date="2024-01-01", frame="weekly")
 client.crypto.gainers(days=5, limit=10)
 client.crypto.losers(days=5, limit=10)
 ```
 
-### Forex
+### Forex Market Data
+
+Access foreign exchange tickers, quotes, historical prices, and market performance data.
+
 ```python
 client.forex.tickers()
-client.forex.ticker("EURUSD")            # Single ticker lookup
+client.forex.ticker("EURUSD")
 client.forex.quote("EURUSD")
 client.forex.prices("EURUSD", from_date="2024-01-01")
 client.forex.gainers(limit=5)
 client.forex.losers(limit=5)
 ```
 
-### Futures
+### Futures Market Data
+
+Access futures contracts, quotes, historical prices, and market performance.
+
 ```python
 client.futures.tickers(exchange="CME")
-client.futures.ticker("ES")              # Single ticker lookup
+client.futures.ticker("ES")
 client.futures.quote("ES")
 client.futures.prices("ES", from_date="2024-01-01")
 client.futures.gainers(limit=5)
 client.futures.losers(limit=5)
 ```
 
-### Indices
+### Index Data
+
+Retrieve index prices, constituents, exposure, quotes, gainers, and losers.
+
 ```python
 client.indices.tickers()
-client.indices.ticker("SPX")             # Single ticker lookup
+client.indices.ticker("SPX")
 client.indices.quote("SPX")
 client.indices.prices("SPX", from_date="2024-01-01")
-client.indices.components("SPX")         # Index constituents
-client.indices.exposure("AAPL")          # Which indices hold AAPL
+client.indices.components("SPX")
+client.indices.exposure("AAPL")
 client.indices.gainers(limit=5)
 client.indices.losers(limit=5)
 ```
 
+## Fundamental Data and Financial Analysis
+
+Use the AxionQuant Python SDK to retrieve **company fundamentals, financial statements, earnings data, valuation metrics, ownership data, and analyst information**.
+
 ### Company Profiles
+
 ```python
-client.profiles.profile("AAPL")       # Business summary
-client.profiles.info("AAPL")          # Company info
-client.profiles.statistics("AAPL")    # Key ratios
-client.profiles.summary("AAPL")       # Market data summary
-client.profiles.recommendation("AAPL") # Analyst recommendations
-client.profiles.calendar("AAPL")      # Earnings dates / dividends
+client.profiles.profile("AAPL")
+client.profiles.info("AAPL")
+client.profiles.statistics("AAPL")
+client.profiles.summary("AAPL")
+client.profiles.recommendation("AAPL")
+client.profiles.calendar("AAPL")
 ```
 
-### Earnings
+### Earnings Data
+
+Access historical earnings, earnings trends, reports, earnings call transcripts, and transcript sentiment.
+
 ```python
 client.earnings.history("AAPL")
 client.earnings.trend("AAPL")
 client.earnings.index("AAPL")
 client.earnings.report("AAPL", year="2024", quarter="Q1")
-client.earnings.transcript("AAPL", year="2024", quarter="Q1")        # Earnings call transcript
-client.earnings.transcript_sentiment("base64_encoded_id")             # Transcript sentiment
+client.earnings.transcript("AAPL", year="2024", quarter="Q1")
+client.earnings.transcript_sentiment("base64_encoded_id")
 ```
 
-### Financials
+### Financial Statements and Metrics
+
+Retrieve balance sheets, income statements, cash flow statements, historical financial metrics, valuation ratios, and calculated financial ratios.
+
 ```python
 # Financial statements
 client.financials.balance_sheet("AAPL")
@@ -142,10 +173,9 @@ client.financials.operating_cash_flow("AAPL")
 client.financials.capital_expenditures("AAPL")
 client.financials.shares_outstanding_basic("AAPL")
 client.financials.shares_outstanding_diluted("AAPL")
-client.financials.metrics("AAPL")     # Calculated ratios
-client.financials.snapshot("AAPL")    # Full data snapshot
 
-# Historical valuation ratios
+# Financial ratios and valuation
+client.financials.metrics("AAPL")
 client.financials.eps("AAPL", from_date="2024-01-01", to_date="2024-12-31")
 client.financials.pe("AAPL")
 client.financials.market_cap("AAPL")
@@ -154,35 +184,59 @@ client.financials.enterprise_value("AAPL")
 client.financials.ebitda("AAPL")
 client.financials.debt_to_equity("AAPL")
 
-client.financials.dcf_value("AAPL")   # DCF valuation (fair price, margin of safety)
-client.financials.dcf_rate("AAPL")    # Discount rate / WACC calculation
+# DCF valuation
+client.financials.dcf_value("AAPL")
+client.financials.dcf_rate("AAPL")
 ```
 
-### Insiders & Ownership
-```python
-client.insiders.individuals("AAPL")   # Insider holders
-client.insiders.institutions("AAPL")  # Institutional ownership
-client.insiders.funds("AAPL")         # Fund ownership
-client.insiders.ownership("AAPL")     # Major holders breakdown
-client.insiders.transactions("AAPL")  # Insider transactions
-client.insiders.activity("AAPL")      # Net share purchase activity
-```
+## SEC Filings and Regulatory Data
 
-### SEC Filings
+Access **SEC filings and corporate regulatory data** programmatically, including 10-K and 10-Q filings.
+
 ```python
 client.filings.recent("AAPL", form="10-K", limit=10)
-client.filings.history("AAPL", form_type="10-Q", start_date="2024-01-01", end_date="2024-03-31")
-client.filings.search(ticker="AAPL", form="10-K", year="2024", quarter="Q1")
-client.filings.list_forms()           # List available form types
-client.filings.document_text("document_id")     # Raw filing text
-client.filings.document_sentiment("document_id") # Filing sentiment
+
+client.filings.history(
+    "AAPL",
+    form_type="10-Q",
+    start_date="2024-01-01",
+    end_date="2024-03-31"
+)
+
+client.filings.search(
+    ticker="AAPL",
+    form="10-K",
+    year="2024",
+    quarter="Q1"
+)
+
+client.filings.list_forms()
+client.filings.document_text("document_id")
+client.filings.document_sentiment("document_id")
 ```
 
-### Economic Data
+## Insider Trading and Institutional Ownership
+
+Analyze insider transactions, institutional ownership, fund ownership, and major shareholders.
+
 ```python
-client.econ.find("semiconductor spending")  # AI-powered FRED search
+client.insiders.individuals("AAPL")
+client.insiders.institutions("AAPL")
+client.insiders.funds("AAPL")
+client.insiders.ownership("AAPL")
+client.insiders.transactions("AAPL")
+client.insiders.activity("AAPL")
+```
+
+## Economic and Macroeconomic Data
+
+Access economic indicators, macroeconomic datasets, economic calendars, and FRED data for quantitative research.
+
+```python
+client.econ.find("semiconductor spending")
 client.econ.search("unemployment rate")
 client.econ.dataset("UNRATE")
+
 client.econ.calendar(
     from_date="2024-01-01",
     to_date="2024-12-31",
@@ -193,21 +247,27 @@ client.econ.calendar(
 )
 ```
 
-### ETFs
+## ETF Data
+
+Retrieve ETF information, fund holdings, portfolio exposure, sector weights, regional weights, quotes, and historical performance.
+
 ```python
 client.etfs.tickers()
-client.etfs.ticker("SPY")              # Single ticker lookup
+client.etfs.ticker("SPY")
 client.etfs.fund("SPY")
 client.etfs.holdings("SPY")
 client.etfs.holdings_all("SPY")
 client.etfs.exposure("SPY")
-client.etfs.weights("SPY")             # Sector & region weights
+client.etfs.weights("SPY")
 client.etfs.quote("SPY")
 client.etfs.gainers(limit=5)
 client.etfs.losers(limit=5)
 ```
 
-### News
+## Financial News and Sentiment
+
+Retrieve general financial news, company news, country-specific news, category-based news, and market sentiment.
+
 ```python
 client.news.general()
 client.news.company("AAPL")
@@ -215,7 +275,6 @@ client.news.country("US")
 client.news.category("technology")
 ```
 
-### Sentiment
 ```python
 client.sentiment.all("AAPL")
 client.sentiment.social("AAPL")
@@ -223,182 +282,223 @@ client.sentiment.news("AAPL")
 client.sentiment.analyst("AAPL")
 ```
 
-### ESG
+## Alternative Financial Data
+
+The SDK also provides access to additional datasets useful for fundamental and quantitative research.
+
+### ESG Data
+
 ```python
 client.esg.data("AAPL")
 ```
 
 ### Credit Ratings
+
 ```python
 client.credit.search("Apple Inc")
 client.credit.ratings("entity_id")
 ```
 
-### Supply Chain
+### Supply Chain Data
+
 ```python
 client.supply_chain.customers("AAPL")
 client.supply_chain.suppliers("AAPL")
 client.supply_chain.peers("AAPL")
 ```
 
-### Web Traffic
+### Web Traffic Data
+
 ```python
 client.web_traffic.traffic("AAPL")
 ```
 
----
+## Technical Analysis
 
-## Technical Analysis (`ta`)
-
-All functions accept a pandas DataFrame and return a Series (or tuple of Series).
+The `ta` module provides common **technical analysis indicators for Python and pandas**, including trend, momentum, volatility, volume, and market structure indicators.
 
 ```python
 import axion.ta as ta
+```
 
-# Trend
+### Trend Indicators
+
+```python
 ta.sma(df, column="close", period=14)
 ta.ema(df, column="close", period=14)
 ta.dema(df, column="close", period=14)
 ta.ssma(df, column="close", period=14)
 ta.trima(df, column="close", period=14)
 ta.kama(df, column="close", period=14)
+```
 
-# Momentum & Oscillators
+### Momentum and Oscillators
+
+```python
 ta.rsi(df, column="close", period=14)
-ta.macd(df)                            # returns (macd_line, signal, histogram)
+ta.macd(df)
 ta.roc(df, column="close", period=10)
 ta.mom(df, column="close", period=10)
 ta.cmo(df, column="close", period=20)
-ta.stochastic_oscillator(df)           # returns (K, D)
+ta.stochastic_oscillator(df)
 ta.williams_r(df, period=14)
 ta.adx(df, period=14)
+```
 
-# Volatility & Channels
+### Volatility and Channels
+
+```python
 ta.atr(df, period=14)
-ta.bbands(df)                          # returns (upper, mid, lower)
-ta.kc(df)                              # Keltner Channels
+ta.bbands(df)
+ta.kc(df)
+```
 
-# Volume
+### Volume Indicators
+
+```python
 ta.obv(df)
 ta.vpt(df)
 ta.vwap(df)
-
-# Trend Direction
-ta.vi(df, period=14)                   # Vortex Indicator (VI+, VI-)
-ta.ichi(df)                            # Ichimoku Cloud
-ta.sar(df)                             # Parabolic SAR
-ta.fib(df)                             # Fibonacci Pivot Points
 ```
 
----
+### Trend Direction
 
-## Visualization (`visualize`)
+```python
+ta.vi(df, period=14)
+ta.ichi(df)
+ta.sar(df)
+ta.fib(df)
+```
 
-All chart functions accept a pandas DataFrame and render an interactive Plotly chart.
+## Financial Data Visualization
+
+The `visualize` module provides interactive **Plotly charts for financial and quantitative analysis**.
 
 ```python
 import axion.visualize as visualize
+```
 
-visualize.candles(df)                            # Candlestick chart
-visualize.line(df, x="time", y="close")          # Line chart
-visualize.bar(df, x="time", y="volume")          # Bar chart
-visualize.barh(df, x="value", y="label")         # Horizontal bar
-visualize.scatter(df, x="time", y="close")       # Scatter plot
-visualize.fit(df, x="revenue", y="price")        # Scatter + OLS trendline
+```python
+visualize.candles(df)
+visualize.line(df, x="time", y="close")
+visualize.bar(df, x="time", y="volume")
+visualize.barh(df, x="value", y="label")
+visualize.scatter(df, x="time", y="close")
+visualize.fit(df, x="revenue", y="price")
 visualize.area(df, x="time", y="value", group="sector")
 visualize.pie(df, values="marketCap", labels="ticker")
 visualize.radar(df, values="score", labels="category")
 visualize.heatmap(df, x="col1", y="col2")
-visualize.cov(df)                                # Correlation heatmap
-visualize.polls(df)                              # Multi-series line chart
-visualize.spread(dfs, x="time", y="close")       # Two assets + spread
-visualize.tree(df)                               # Treemap (sector/industry/symbol)
-
-# Flexible multi-series chart
-visualize.graph(df, x="time", bars=["volume"], lines=["close", "sma"])
+visualize.cov(df)
+visualize.polls(df)
+visualize.spread(dfs, x="time", y="close")
+visualize.tree(df)
+visualize.graph(
+    df,
+    x="time",
+    bars=["volume"],
+    lines=["close", "sma"]
+)
 ```
 
----
+## Python Data Utilities
 
-## Utilities (`utils`)
+The `utils` module provides date handling, DataFrame transformation, comparison, resampling, caching, and concurrency utilities for financial data workflows.
 
 ```python
 import axion.utils as axion_utils
-
-# Date helpers
-axion_utils.d("1 month ago")           # Natural language → "YYYY-MM-DD"
-axion_utils.to_timestamp("2024-01-01")
-axion_utils.nearest_day("2024-01-06")  # Nearest market open day
-
-# Date shorthand constants
-axion_utils.today / axion_utils.yesterday / axion_utils.weekago
-axion_utils.monthago / axion_utils.yearago / axion_utils.yearfrom
-
-# Frame shorthand constants
-axion_utils.d   # daily
-axion_utils.w   # weekly
-axion_utils.m   # monthly
-axion_utils.y   # yearly
-
-# DataFrame helpers
-axion_utils.df(items)                  # Create DataFrame from list of dicts
-axion_utils.pds(list_of_lists)         # Convert 2D list of dicts → list of DataFrames
-axion_utils.stack(dfs)                 # Concat DataFrames vertically
-axion_utils.stitch(dfs, col="time")    # Merge different data types on shared column
-axion_utils.snap(dfs, names, overwrite) # Merge same-type DataFrames side-by-side
-axion_utils.filter(df, col, items)     # Filter rows by column values
-axion_utils.dedup(lst)                 # Remove duplicates from list
-axion_utils.simmer(arr)                # Flatten 2D list to 1D
-axion_utils.resample(df, "2024-01-01 2024-12-31")
-
-# Analysis helpers
-axion_utils.relativity(df, cols)       # Add pct_change columns
-axion_utils.indexed(prices)            # Average a dict of price DataFrames
-axion_utils.composite(dfs)             # Combine and average financials/facts
-axion_utils.contrast(dfs, joins)       # Reshape for side-by-side graphing
-axion_utils.compare(dfs, joins)        # Cross-DataFrame % diff comparison
-axion_utils.gainers(prices, frame)     # Top gainers from price dict
-axion_utils.losers(prices, frame)      # Top losers from price dict
-axion_utils.overlap(dfs, col)          # Intersection of column values
-axion_utils.difference(dfs, col)       # Non-overlapping values
-
-# Concurrency
-axion_utils.work(df, callback, ref)    # Threaded execution with progress bar
-
-# Caching / Persistence
-axion_utils.cache(id, fn)              # Load from cache or run function
-axion_utils.save(id, obj)             # Manually save object to cache
-axion_utils.read(id)                  # Read object from cache
-axion_utils.scribe(df, id, cb)        # Cache + work helper combined
 ```
 
----
+```python
+# Date helpers
+axion_utils.d("1 month ago")
+axion_utils.to_timestamp("2024-01-01")
+axion_utils.nearest_day("2024-01-06")
 
-## ML Models (`models`)
+# Date shorthand
+axion_utils.today
+axion_utils.yesterday
+axion_utils.weekago
+axion_utils.monthago
+axion_utils.yearago
+axion_utils.yearfrom
+
+# DataFrame helpers
+axion_utils.df(items)
+axion_utils.pds(list_of_lists)
+axion_utils.stack(dfs)
+axion_utils.stitch(dfs, col="time")
+axion_utils.snap(dfs, names, overwrite)
+axion_utils.filter(df, col, items)
+axion_utils.dedup(lst)
+axion_utils.simmer(arr)
+axion_utils.resample(df, "2024-01-01 2024-12-31")
+```
+
+## Machine Learning and Financial Modeling
+
+The `models` module provides machine learning utilities for **financial forecasting, regression analysis, benchmark analysis, and quantitative modeling**.
 
 ```python
 import axion.models as models
-
-# Linear regression forecast
-preds = models.linearRegression(df, x="time", target="close", n_preds=10)
-
-# Multi-feature linear regression
-preds = models.multiLinearRegression(df, x="time", target="close",
-                                     features=["volume", "rsi"], n_preds=10)
-
-# Beta relative to benchmark
-b = models.beta(df, x="stock_return", y="market_return")
-
-# LSTM deep learning forecast
-preds = models.lstm(df, x="time", target="close",
-                    features=["volume", "rsi"], n_preds=10)
 ```
 
----
+### Linear Regression
 
-## Date Formats & Time Frames
+```python
+preds = models.linearRegression(
+    df,
+    x="time",
+    target="close",
+    n_preds=10
+)
+```
 
-All API date parameters use `YYYY-MM-DD` format. Supported price frames: `daily`, `weekly`, `monthly`, `quarterly`, `yearly`.
+### Multi-Feature Regression
+
+```python
+preds = models.multiLinearRegression(
+    df,
+    x="time",
+    target="close",
+    features=["volume", "rsi"],
+    n_preds=10
+)
+```
+
+### Beta Analysis
+
+```python
+b = models.beta(
+    df,
+    x="stock_return",
+    y="market_return"
+)
+```
+
+### LSTM Forecasting
+
+```python
+preds = models.lstm(
+    df,
+    x="time",
+    target="close",
+    features=["volume", "rsi"],
+    n_preds=10
+)
+```
+
+## Supported Date Formats and Time Frames
+
+API date parameters use the `YYYY-MM-DD` format.
+
+Supported historical price time frames:
+
+* `daily`
+* `weekly`
+* `monthly`
+* `quarterly`
+* `yearly`
 
 ## Error Handling
 
@@ -409,12 +509,22 @@ except Exception as e:
     print(f"Error: {e}")
 ```
 
-Common errors: `HTTP Error`, `Connection Error`, `Timeout Error`, `Authentication Error`.
+Common errors include:
 
-## Get Started
+* HTTP errors
+* Connection errors
+* Timeout errors
+* Authentication errors
 
-For detailed API documentation, support, or to obtain an API key, visit the [Axion](https://axionquant.com) website.
+## Documentation and Resources
+
+* [AxionQuant Financial Data API](https://axionquant.com)
+* [API Documentation](https://axionquant.com/docs)
+* [Python SDK Documentation](https://axionquant.com/developers/libraries)
+* [Get a Free API Key](https://axionquant.com/dashboard/api-keys)
+* [AxionQuant GitHub](https://github.com/axionquant/python-sdk)
 
 ## License
 
 MIT
+
