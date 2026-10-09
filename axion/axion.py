@@ -559,10 +559,6 @@ class NewsAPI(BaseAPI):
 
 
 class SentimentAPI(BaseAPI):
-    def all(self, ticker: str):
-        """Get all sentiment data (social, news, and analyst) for a ticker."""
-        return self._request("GET", f"sentiment/{ticker}/all")
-
     def social(self, ticker: str):
         """Get social sentiment data for a ticker."""
         return self._request("GET", f"sentiment/{ticker}/social")

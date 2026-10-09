@@ -715,40 +715,6 @@ GET /sentiment/:ticker/analyst
 }
 ```
 
-#### Get All Sentiment Data
-```
-GET /sentiment/:ticker/all
-```
-**Path Params:** `ticker` (string, required).
-
-**Response:** Aggregate of social, news, and analyst sentiment.
-
-**Sample Response:**
-```json
-{
-  "socialSentiment": {
-    "label": "NEGATIVE",
-    "score": 0.979367434978485,
-    "breakdown": {
-      "positive": { "count": 0, "avgScore": 0 },
-      "negative": { "count": 100, "avgScore": 0.979367434978485 }
-    }
-  },
-  "newsSentiment": {
-    "label": "NEGATIVE",
-    "score": 0.952301025390625,
-    "breakdown": {
-      "positive": { "count": 10, "avgScore": 0.875148761272431 },
-      "negative": { "count": 16, "avgScore": 0.952301025390625 }
-    }
-  },
-  "analystSentiment": {
-    "sentiment": "POSITIVE",
-    "score": 0.66
-  }
-}
-```
-
 ---
 
 ### 9. ESG API

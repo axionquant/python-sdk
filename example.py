@@ -208,7 +208,7 @@ class AxionExample:
                     if isinstance(article, dict):
                         print(f"  - {article.get('title', 'N/A')}")
 
-            sentiment = self.client.sentiment.all("AAPL")
+            sentiment = self.client.sentiment.news("AAPL")
             if isinstance(sentiment, dict):
                 print(f"\nAAPL sentiment data available")
                 for key in sentiment:

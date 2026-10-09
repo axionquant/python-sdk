@@ -276,7 +276,6 @@ client.news.category("technology")
 ```
 
 ```python
-client.sentiment.all("AAPL")
 client.sentiment.social("AAPL")
 client.sentiment.news("AAPL")
 client.sentiment.analyst("AAPL")

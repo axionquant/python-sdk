@@ -114,7 +114,6 @@ Get All Cryptocurrency Tickers	api-reference-and-responses.md	/^#### Get All Cry
 Get All Forex Tickers	api-reference-and-responses.md	/^#### Get All Forex Tickers$/;"	t	subsection:Axion API Reference""Market Data APIs""4. Forex API
 Get All Futures Tickers	api-reference-and-responses.md	/^#### Get All Futures Tickers$/;"	t	subsection:Axion API Reference""Market Data APIs""3. Futures API
 Get All Index Tickers	api-reference-and-responses.md	/^#### Get All Index Tickers$/;"	t	subsection:Axion API Reference""Market Data APIs""2. Indices API
-Get All Sentiment Data	api-reference-and-responses.md	/^#### Get All Sentiment Data$/;"	t	subsection:Axion API Reference""Alternative Data APIs""8. Sentiment API
 Get All Stock Tickers	api-reference-and-responses.md	/^#### Get All Stock Tickers$/;"	t	subsection:Axion API Reference""Market Data APIs""1. Stocks API
 Get Analyst Sentiment	api-reference-and-responses.md	/^#### Get Analyst Sentiment$/;"	t	subsection:Axion API Reference""Alternative Data APIs""8. Sentiment API
 Get Calendar Events	api-reference-and-responses.md	/^#### Get Calendar Events$/;"	t	subsection:Axion API Reference""Fundamentals APIs""12. Profile API (Corp. Intelligence)
@@ -227,7 +226,6 @@ _style_time_axis	axion/visualize.py	/^def _style_time_axis(fig: go.Figure, df: p
 _style_value_axis	axion/visualize.py	/^def _style_value_axis(fig: go.Figure, values: pd.Series, axis: str = 'y',$/;"	f	typeref:typename:go.Figure
 activity	axion/axion.py	/^    def activity(self, ticker: str):$/;"	m	class:InsidersAPI
 adx	axion/ta.py	/^def adx(df: pd.DataFrame, period: int = 14) -> pd.Series:$/;"	f	typeref:typename:pd.Series
-all	axion/axion.py	/^    def all(self, ticker: str):$/;"	m	class:SentimentAPI
 analyst	axion/axion.py	/^    def analyst(self, ticker: str):$/;"	m	class:SentimentAPI
 area	axion/visualize.py	/^def area(df: pd.DataFrame, x: str, y: str, group: str, sub: str = "",$/;"	f	typeref:typename:Any
 atr	axion/ta.py	/^def atr(df: pd.DataFrame, period: int = 14) -> pd.Series:$/;"	f	typeref:typename:pd.Series
